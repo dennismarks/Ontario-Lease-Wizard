@@ -47,7 +47,45 @@ In terms of testing, we are planning on incorporating tests in our work using Je
 
 ## Q5: What are the user stories that make up the MVP?
 
-**TODO ADD USER STORIES**
+### 1.
+
+**User**
+As a landlord renting out an extra room in my own home, I want to be able to add etiquette guidelines to the lease so the roommate expectations are clearly defined.
+
+**Acceptance Criteria**
+- Have a variety of common guidelines, with fill in the blank style, to select from
+- Ability to select percent/flat amount of bill(s) they will pay if any
+- Expectations of yard work if any (shovelling, mowing lawn)
+- Have custom creation option
+- Automatically format additional terms and add to lease
+- Branching logic on additional terms
+- Have to use the online tool instead of copying pasting to avoid overloading the lease
+
+
+### 2.
+
+**User**
+As a student renting out an apartment I want to be able to easily review specific sections of my lease to clear up a disagreement with the landlord about responsibilities of repairs. 
+
+**Acceptance Criteria**
+- Access lease in online form in review mode
+- Be able to skip to specific section based on my concern
+- This includes generic sections of the lease and the additional terms 
+- Be able to navigate with left sidebar
+
+## 3.
+
+**User**
+As a landlord with multiple properties, I want to be able to set fixed-payment due dates automatically based on my desired payment frequency.
+
+**Acceptance Criteria**
+- Need an initial payment due date
+- Date picker to select the initial due date
+- Date picker to select the last payment due date
+- Dropdown to select frequency (e.g. monthly, bi-weekly, weekly, etc)
+- Ability to select custom frequency (e.g. 45 days, 90 days). Unit should be in days
+- This will not necessarily result in the same date every month. That’s a different functionality (Not required)
+- Could possibly test this by checking # of payments matches # of due dates
 
 
 # Process Details
