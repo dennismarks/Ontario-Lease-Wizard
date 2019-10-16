@@ -27,6 +27,10 @@ Currently the Landlord & Tenant board offers all its legal documents online on i
 
 This web app with save time for new landlords making information easily available to them only when and if they need it (ie. links to specific parts of the instructions). Through our web app, matters pertaining to tenants/landlords become more clear for our users, who otherwise may be intimidated by the large amount of ‘legalese’ found in current tenant/landlord forms.
 
+There are currently tools and recourses for other parts of the landlord/tenant relationship outside of the lease form. Other tools for landlords focused on facilitating tenant screening, payment systems, and maintenance logs. 
+There are websites devoted to legal and practical education for landlord and tenants – they are not, however, focused on or designed around the lease document.
+There are several civic tech projects focused on later phases on the tenancy relationship in response to existing conflicts
+
 ## Q4: How will you build it?
 
 Our partners, Design and Law already have an existing application built with React as a starting point. This codebase includes the main page of the web-app alongside a simple menu for navigation. From inspection, this codebase looks clean and has all the necessities to get started.
@@ -65,14 +69,17 @@ Strengths and Weaknesses
 - Organizing the Slack workspace through channels and app integration
 - Making sure group is informed of expectations and deadlines
 - Guide meeting discussion to hit all our topics while still being concise; efficient meetings
-- Allowing the group to be greater than the sum of its parts
+- Allowing the group to be greater than the sum of its parts throught open communication
 
-Strengths and Weaknesses:
+Strengths:
 - Loves testing and testing more
 - Optimizing to the last drop, sometimes too much so
 - Well versed in functional programming concepts to solve more niche problems
+
+ Weaknesses:
 - Stays too focuses on minute details, ie. can’t see the forest the trees
 - Overloading myself by taking on too large of a part
+- No experience with databases or working in groups this big
 
 **Max** - Meeting logistics + Facilitator
 - Plan and inform the team on the best time/location for end-of-sprint(EOS) and general reviews/meetings.
@@ -190,6 +197,9 @@ Priority of tasks is chosen in the team with the help of the partner. Tasks are 
 # Highlights
 We realized very early on that the human planning and team management would need to have a very laid out process. A team of 4 has a much different dynamic than a team of 7.
 
-A team of 4 can “self organize” to a certain extent. There is less work to do, each person can take ownership of one section, non overlapping parts of the project.
+A team of 4 can “self organize” to a certain extent. 
+- there is less work to do
+- each person can take ownership of one section
+- non overlapping parts of the project
 
 A team of 7 needs better communication, times set up directly for meetings as it’s much harder to organize 7 people than 4 people ad-hoc. One single chat, i.e facebook messenger, gets clogged very quickly with different people talking about different things and scrolling up to find something from a few days ago might be an impossible task.
