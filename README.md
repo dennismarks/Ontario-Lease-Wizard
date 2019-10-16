@@ -4,30 +4,41 @@
 
 
 Application that landlords and tenants will use to complete a lease in a more transparent, interactive, user-friendly medium. Completing a lease is a tedious and complicated task, where most of the language is not comprehensible by non-legal expert. 
+
 In collaboration with Law & CoLab, we are aiming to make it easier for landlords and tenants to handle their contracts themselves, without requiring a lawyer to draft and explain all the legal terms within a lease contract for. 
+
 As a part of this, we want to make a web-based application with a straightforward UI for the landlord, asking about their requirements on the lease terms, housing situation, timeline of events, and any other required information. These series of questions and answers are then used to automatically generate a legal document that can be shared with the tenants, offering transparency and ease of use to both the tenant and the landlord. 
+
 For instance, landlords fill out questions such as start date, end date, break clauses, payment methods and checkboxes for list of already-includes utilities, which is then presented to the tenant in an easy-to-understand and concise way. A legal document is required to be filled out amongst the two parties, but that’s also all handled by the application itself, requiring no manual work.
 
 ## Q2: Who are your target users?
 
 An **inexperienced landlord** who is not that familiar with Ontario leases and landlord-tenant laws. (single lease)
+
 A **realtor/small landlord** who is looking to easily manage their multiple leases and keep track of specific dates that can sometimes be confusing.
+
 A **tenant** who has been sent a lease by their landlord and is asked to sign the lease [easily manage and understand important dates of a lease such as rent payments and notices with specific TODO by dates].
+
 A **tenant** who is curious about the tool and wants to get their landlord to use it. (just explore mode)
 
 ## Q3: Why would your users choose your product? What are they using today to solve their problem/need?
 
 Currently the Landlord & Tenant board offers all its legal documents online on its website or in person at select locations. For each form there is an associated “instructions” form containing long and detailed information and instructions on how to fill in these legal documents. This can still be difficult for people new to the norm of legal documents. Our web app tries to connect these forms and instructions in a very intuitive form that is easy to follow. 
-This web app with save time for new landlords making information easily available to them only when and if they need it (ie. links to specific parts of the instructions). Additionally, 
-Through our web app, matters pertaining to tenants/landlords become more clear for our users, who otherwise may be intimidated by the large amount of ‘legalese’ found in current tenant/landlord forms.
+
+This web app with save time for new landlords making information easily available to them only when and if they need it (ie. links to specific parts of the instructions). Through our web app, matters pertaining to tenants/landlords become more clear for our users, who otherwise may be intimidated by the large amount of ‘legalese’ found in current tenant/landlord forms.
 
 ## Q4: How will you build it?
 
 Our partners, Design and Law already have an existing application built with React as a starting point. This codebase includes the main page of the web-app alongside a simple menu for navigation. From inspection, this codebase looks clean and has all the necessities to get started.
+
 Since most of our team members are familiar with Python and there is an abundance of PDF manipulation libraries in Python, we’ll be going ahead as Python/Flask as our backend. In terms of hosting, we are planning on using Heroku for hosting the web application. 
+
 In terms of the database, we definitely want to stick to a relational database, as we have more experience with it and a few of our members have experienced the hurdles of using a non-relational database, which can be shown to cause headaches and be immature. 
+
 For deployment of the database, Google Cloud Platform(GCP) seems to offer the most versatile toolkit with the most competitive prices. We will be requesting and using free credits offered by Google for the duration of the term, and will handover to our partners later in the year. There are some files that need to be stored that don’t require the need of a database, such as listing’s images and contracts - Google Buckets will suffice for storing such files. 
+
 Regarding third-party libraries, we have chosen JavaScript as it offers vast amounts of publicially open-source libraries to use, and will be taking advantage of that. For instance, there is no need for us to recreate a calendar component, where a perfectly working one exists with features that are hard to resist (Animation, export, different views, etc). PDF manipulation and exports are a central component to this project, and from some initial digging and research, PyPDF seems to be a suitable library for exporting our content into the PDF and is relatively easy to use. 
+
 In terms of testing, we are planning on incorporating tests in our work using Jest, and write tests for both the backends and frontend.
 
 ## Q5: What are the user stories that make up the MVP?
@@ -135,26 +146,33 @@ Weaknesses:
 ## Team Rules
 
 **Communications**
+
 We’ll be using Slack our main channel of communication amongst our team members. We expect most queries by every member be addressed by the end of the day. To communicate with our partners, we’ll mostly be using emails for formal content, and have also created a private channel on Slack to allow instant messaging between us for more informal conversations. 
 Our meetings are set up using google hangouts to be able to voice chat for faster communication
 
 **Meetings**
+
 A weekly 1 hour meeting time has been set that works with everyone's schedule and everyone is then expected to attend. Tasks are assigned each sprint - 2 week periods for task completion - and due to lack of estimation skills they might not always be able to be completed. The team will give notice if an initial estimation was too short for the task so we can share the load if another task was overestimated that sprint as well.
 
 **Conflict Resolution**
+
 1. Dominant personality
-Some members have pointed out that some members have, unintentionally, “carried” the decision making process. We plan to have an equal voice between all members, for all ideas are valued in our team. All decisions will be decided by the major consensus.
+- Some members have pointed out that some members have, unintentionally, “carried” the decision making process. We plan to have an equal voice between all members, for all ideas are valued in our team. All decisions will be decided by the major consensus.
 2. Communication delays
-Since most of the team members are taking on heavy workload at school, communication might sometimes be a bit delayed. Fortunately each member is either the same classes/projects outside of 301 or has a longtime partnership with each other so most communication can be relayed through personal contacts.
+- Since most of the team members are taking on heavy workload at school, communication might sometimes be a bit delayed. Fortunately each member is either the same classes/projects outside of 301 or has a longtime partnership with each other so most communication can be relayed through personal contacts.
 3. Analysis Paralysis
-We also had a problem where we weren’t sure which tech stack to follow through. Our solution is to designate members to do research on each stack and present their findings at the next meeting so we can all decisively go with the best solution for the team and for our partners.
+- We also had a problem where we weren’t sure which tech stack to follow through. Our solution is to designate members to do research on each stack and present their findings at the next meeting so we can all decisively go with the best solution for the team and for our partners.
 
 **Events**
+
 We have planned weekly meetings and have booked a room for the meetings every week to host. We have chosen 2 weeks as our sprint time to match the same amount of time we will go between regularly scheduled partner meetings to show updates, get feedback, further directions etc. 
+
 We have a meeting at the beginning of every sprint for task assignment, estimation, planning for the sprint. We have a meeting in the middle of every sprint to make sure everyone is on track, if there are issues/bottlenecks, estimations that were very off.
+
 We have slack channels for what we consider the bigger parts we can generally group tasks into (front end, back end, general discussion, meeting set ups) for short bursts of interactions between the team.
 
 **Partner Meetings**
+
 1st meeting: Google Hangouts on Wed Oct 9:
 - We discussed logistics on communications carrying forward the term.
 - We cleared up confusions and come to a consensus on the priority of work.
@@ -164,12 +182,15 @@ We have slack channels for what we consider the bigger parts we can generally gr
 - A main issue during the review was user stories so we redid them with the partners guidance
 
 **Artifacts**
+
 We are using trello and slack integration for organization purposes. We have cards for each task that are moved from backlog all the way to completed following the agile methodology. These cards will have people assigned to them during the sprint planning and will be moved to different columns during the sprint so all team members know who is working on what, and more generally what is getting done during this sprint. 
-Priority of tasks is chosen in the team with the help of the partner. 
-Tasks are assigned by volunteering for the task based on many factors, how much time each member has that week to assign to this project, how familiar they are with the technology needed, how much they are willing to learn, how interested they are in working on that task.
+
+Priority of tasks is chosen in the team with the help of the partner. Tasks are assigned by volunteering for the task based on many factors, how much time each member has that week to assign to this project, how familiar they are with the technology needed, how much they are willing to learn, how interested they are in working on that task.
 
 # Highlights
 We realized very early on that the human planning and team management would need to have a very laid out process. A team of 4 has a much different dynamic than a team of 7.
+
 A team of 4 can “self organize” to a certain extent. There is less work to do, each person can take ownership of one section, non overlapping parts of the project.
+
 A team of 7 needs better communication, times set up directly for meetings as it’s much harder to organize 7 people than 4 people ad-hoc. One single chat, i.e facebook messenger, gets clogged very quickly with different people talking about different things and scrolling up to find something from a few days ago might be an impossible task.
 
