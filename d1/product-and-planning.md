@@ -5,7 +5,7 @@
 
 Application that landlords and tenants will use to complete a lease in a more transparent, interactive, user-friendly medium. Completing a lease is a tedious and complicated task, where most of the language is not comprehensible by non-legal expert.
 
-In collaboration with Law & CoLab, we are aiming to make it easier for landlords and tenants to handle their contracts themselves, without requiring a lawyer or realtor to draft and explain all the legal terms within a lease contract for.
+In collaboration with Law & Design CoLab, we are aiming to make it easier for landlords and tenants to handle their contracts themselves, without requiring a lawyer or realtor to draft and explain all the legal terms within a lease contract for.
 
 As a part of this, we want to make a web-based application with a straightforward UI for the landlord, asking about their requirements on the lease terms, housing situation, timeline of events, and any other required information. These series of questions and answers are then used to automatically generate a legal document that can be shared with the tenants, offering transparency and ease of use to both the tenant and the landlord.
 
