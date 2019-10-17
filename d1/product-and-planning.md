@@ -73,7 +73,7 @@ As a student renting out an apartment I want to be able to easily review specifi
 - This includes generic sections of the lease and the additional terms 
 - Be able to navigate with left sidebar
 
-## 3.
+### 3.
 
 **User**
 As a landlord with multiple properties, I want to be able to set fixed-payment due dates automatically based on my desired payment frequency.
@@ -87,7 +87,7 @@ As a landlord with multiple properties, I want to be able to set fixed-payment d
 - This will not necessarily result in the same date every month. That’s a different functionality (Not required)
 - Could possibly test this by checking # of payments matches # of due dates
 
-## 4.
+### 4.
 
 **User**
 As a tenant I want to be able to see on a timeline the important dates so I won't forget any
@@ -98,6 +98,57 @@ As a tenant I want to be able to see on a timeline the important dates so I won'
 - See monthly payment date
 - See when I need to give notice to move out
 - See when the last day to give notice to increase rent is
+
+### 5.
+
+**User**
+As a tenant/landlord, I want to be able to use the information provided on the form and extract it as a PDF to the official Ontario lease form.
+
+**Acceptance Requirement**
+- Form has to be completed fully in order to extract it
+- Each section that is completed in the application will be added to the correct section within the form
+- a filled PDF file to be downloaded on user's computer
+- Generate on the fly, don't save document anywhere (Extension: Can save the generated file on a Google Bucket in order to retrieve it faster in the future)
+- Style/formatting of the existing Ontario Lease form will not change
+
+### 6.
+
+**User Story**
+As a landlord, I want to be able create an account on the platform that allows me to continue the wizard where I left off.
+
+**Acceptance Requirement**
+- Sign up button right after the "Get Started" page
+    - Input first name in box
+    - Input last name in box
+    - Input address in box (separate inputs for street, city, postal codes)
+    - \# of rental units
+    - Input email address
+    - Email address should be a valid email address (RegEx)
+    - Input for password (should not be visible)
+    - Help text under password, indicating that password must be at least 8 charactres long
+    - Input for password confirmation
+    - Upon clicking sign up, application should check all the fields are given, passwords match, and the account doesn't already exist
+- Upon completion of registration, users will have to confirm their email address via the link sent to them.
+- Not a part of this story, but once users are logged in, their progress will be saved
+
+### 7.
+
+**User Story**:
+As a landlord/tenant, I want to have access to more thoroguh explanations of the terms/sections within the form.
+
+**Acceptance Requirement**
+Sidebar on the right side of the screen
+
+- Heading "Resources" which is defined as:
+    - "Glossary of Terms" row: Section which provides external hyperlinls of the common terms (As defined by partners)
+    - Each term will have its own row
+- Heading "Resources" which is define as:
+    - "Learn more" row: A row per common questions/instructions (As defined by partners)
+    - Questions will be in bold and answer/text will be in normal font
+- Any links to external links within any of the above will be a hyperlink with a blue headlight
+- Each row is expandable, which means the answer/more info will be provided once the row has been expanded
+- Can only have one row expanded at a time
+
 
 # Process Details
 
