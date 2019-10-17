@@ -58,7 +58,7 @@ As a landlord renting out an extra room in my own home, I want to be able to add
 - Expectations of yard work if any (shovelling, mowing lawn)
 - Have custom creation option
 - Automatically format additional terms and add to lease
-- Branching logic on additional terms
+- Selecting terms resulting in more granular choice options for that particular term
 - Have to use the online tool instead of copying pasting to avoid overloading the lease
 
 
