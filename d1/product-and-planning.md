@@ -87,6 +87,17 @@ As a landlord with multiple properties, I want to be able to set fixed-payment d
 - This will not necessarily result in the same date every month. That’s a different functionality (Not required)
 - Could possibly test this by checking # of payments matches # of due dates
 
+## 4.
+
+**User**
+As a tenant I want to be able to see on a timeline the important dates so I won't forget any
+
+**Acceptance Criteria**
+- See move in date
+- See move out date
+- See monthly payment date
+- See when I need to give notice to move out
+- See when the last day to give notice to increase rent is
 
 # Process Details
 
