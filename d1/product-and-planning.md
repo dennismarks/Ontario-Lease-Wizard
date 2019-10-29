@@ -5,7 +5,7 @@
 
 Application that landlords and tenants will use to complete a lease in a more transparent, interactive, user-friendly medium. Completing a lease is a tedious and complicated task, where most of the language is not comprehensible by non-legal expert.
 
-In collaboration with Law & CoLab, we are aiming to make it easier for landlords and tenants to handle their contracts themselves, without requiring a lawyer to draft and explain all the legal terms within a lease contract for.
+In collaboration with Law & Design CoLab, we are aiming to make it easier for landlords and tenants to handle their contracts themselves, without requiring a lawyer or realtor to draft and explain all the legal terms within a lease contract for.
 
 As a part of this, we want to make a web-based application with a straightforward UI for the landlord, asking about their requirements on the lease terms, housing situation, timeline of events, and any other required information. These series of questions and answers are then used to automatically generate a legal document that can be shared with the tenants, offering transparency and ease of use to both the tenant and the landlord.
 
@@ -19,7 +19,7 @@ A **realtor/small landlord** who is looking to easily manage their multiple leas
 
 A **tenant** who has been sent a lease by their landlord and is asked to sign the lease [easily manage and understand important dates of a lease such as rent payments and notices with specific TODO by dates].
 
-A **tenant** who is curious about the tool and wants to get their landlord to use it. (just explore mode)
+A **tenant** who is curious about the tool and wants to get their landlord to use it. (Just-Explore mode) The mode allows guests to freely go through the steps without having to agree to any part of the lease.
 
 ## Q3: Why would your users choose your product? What are they using today to solve their problem/need?
 
@@ -29,11 +29,11 @@ This web app with save time for new landlords making information easily availabl
 
 There are currently tools and recourses for other parts of the landlord/tenant relationship outside of the lease form. Other tools for landlords focused on facilitating tenant screening, payment systems, and maintenance logs. 
 There are websites devoted to legal and practical education for landlord and tenants – they are not, however, focused on or designed around the lease document.
-There are several civic tech projects focused on later phases on the tenancy relationship in response to existing conflicts
+There are several civic tech projects focused on later phases on the tenancy relationship in response to existing conflicts.
 
 ## Q4: How will you build it?
 
-Our partners, Design and Law already have an existing application built with React as a starting point. This codebase includes the main page of the web-app alongside a simple menu for navigation. From inspection, this codebase looks clean and has all the necessities to get started.
+Our partners, Law and Design CoLab already have an existing application built with React as a starting point. This codebase includes the main page of the web-app alongside a simple menu for navigation. From inspection, this codebase looks clean and has all the necessities to get started.
 
 Since most of our team members are familiar with Python and there is an abundance of PDF manipulation libraries in Python, we’ll be going ahead as Python/Flask as our backend. In terms of hosting, we are planning on using Heroku for hosting the web application.
 
@@ -49,7 +49,7 @@ In terms of testing, we are planning on incorporating tests in our work using Je
 
 ### 1.
 
-**User**
+**User Story**:
 As a landlord renting out an extra room in my own home, I want to be able to add etiquette guidelines to the lease so the roommate expectations are clearly defined.
 
 **Acceptance Criteria**
@@ -64,8 +64,8 @@ As a landlord renting out an extra room in my own home, I want to be able to add
 
 ### 2.
 
-**User**
-As a student renting out an apartment I want to be able to easily review specific sections of my lease to clear up a disagreement with the landlord about responsibilities of repairs. 
+**User Story**:
+As a student renting out an apartment, I want to be able to easily review specific sections of my lease to clear up a disagreement with the landlord about responsibilities of repairs. 
 
 **Acceptance Criteria**
 - Access lease in online form in review mode
@@ -75,7 +75,7 @@ As a student renting out an apartment I want to be able to easily review specifi
 
 ### 3.
 
-**User**
+**User Story**:
 As a landlord with multiple properties, I want to be able to set fixed-payment due dates automatically based on my desired payment frequency.
 
 **Acceptance Criteria**
@@ -89,8 +89,8 @@ As a landlord with multiple properties, I want to be able to set fixed-payment d
 
 ### 4.
 
-**User**
-As a tenant I want to be able to see on a timeline the important dates so I won't forget any
+**User Story**:
+As a tenant I want to be able to see on a timeline the important dates so I won't forget any.
 
 **Acceptance Criteria**
 - See move in date
@@ -101,7 +101,7 @@ As a tenant I want to be able to see on a timeline the important dates so I won'
 
 ### 5.
 
-**User**
+**User Story**:
 As a tenant/landlord, I want to be able to use the information provided on the form and extract it as a PDF to the official Ontario lease form.
 
 **Acceptance Requirement**
@@ -113,7 +113,7 @@ As a tenant/landlord, I want to be able to use the information provided on the f
 
 ### 6.
 
-**User Story**
+**User Story**:
 As a landlord, I want to be able create an account on the platform that allows me to continue the wizard where I left off.
 
 **Acceptance Requirement**
@@ -184,7 +184,8 @@ Strengths:
 **Max** - Meeting logistics + Facilitator
 - Plan and inform the team on the best time/location for end-of-sprint(EOS) and general reviews/meetings.
 - Stay on top of the flow of the team. Investigate and address problems between members. Point of contact for immediate issues.
-- Contribution to team: Backend development advisor and developer.
+
+Strengths and Weaknesses:
 - Have experience with Python and its deployment process.
 - Currently learning JS on-the-go.
 - Have a habit of not addressing technical debt in the development process.
@@ -286,11 +287,11 @@ We have slack channels for what we consider the bigger parts we can generally gr
 
 2nd meeting: Google Hangouts on Sat Oct 12:
 - Reviewed this document and fixed details according to their needs/wants
-- A main issue during the review was user stories so we redid them with the partners guidance
+- A main issue during the review was user stories so we redid them with the partners guidance.
 
 **Artifacts**
 
-We are using trello and slack integration for organization purposes. We have cards for each task that are moved from backlog all the way to completed following the agile methodology. These cards will have people assigned to them during the sprint planning and will be moved to different columns during the sprint so all team members know who is working on what, and more generally what is getting done during this sprint.
+We are using Trello and Slack integration for organization purposes. We have cards for each task that are moved from backlog all the way to completed following the agile methodology. These cards will have people assigned to them during the sprint planning and will be moved to different columns during the sprint so all team members know who is working on what, and more generally what is getting done during this sprint.
 
 Priority of tasks is chosen in the team with the help of the partner. Tasks are assigned by volunteering for the task based on many factors, how much time each member has that week to assign to this project, how familiar they are with the technology needed, how much they are willing to learn, how interested they are in working on that task.
 
