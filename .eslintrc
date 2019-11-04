@@ -1,0 +1,22 @@
+{
+    "parser": "babel-eslint",
+    "plugins": [
+        "babel",
+        "prettier"
+    ],
+    "rules": {
+        "prettier/prettier": "error",
+        "react/prop-types": "off",
+        "react/no-unescaped-entities": "warn"
+    },
+    "extends": [
+        "prettier",
+        "prettier/react",
+        "plugin:react/recommended"
+    ],
+    "settings": {
+        "react": {
+            "version": "detect"
+        }
+    }
+}
