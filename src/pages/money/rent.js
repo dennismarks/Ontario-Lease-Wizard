@@ -18,7 +18,7 @@ export class Rent extends Component {
           onClick={() =>
             this.setState({ fullDateStatus: !this.state.fullDateStatus })
           }
-        />
+        />{" "}
         <label htmlFor="yes">Yes</label>
       </div>
     );
@@ -29,7 +29,7 @@ export class Rent extends Component {
           name="fixed"
           id="no"
           value="no"
-          defauSSltChecked
+          defaultChecked
           onClick={() =>
             this.setState({ fullDateStatus: !this.state.fullDateStatus })
           }

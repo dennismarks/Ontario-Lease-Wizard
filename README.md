@@ -1,5 +1,7 @@
 Ontario Lease Wizard, written in **React** using Create React App.
 
+Figma: https://www.figma.com/file/bNQsYMh1dNhGVlZRSMy8Ly/Standard-Lease-Prototype-for-Development-Teams
+
 # Development
 You should install [yarn](https://yarnpkg.com/lang/en/) first. Then, of course, run `yarn install` in the root directory.
 
