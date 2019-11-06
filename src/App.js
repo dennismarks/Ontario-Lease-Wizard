@@ -4,6 +4,8 @@ import Header from "./components/header";
 import Navigation from "./components/navigation";
 import Content from "./components/content";
 import Footer from "./components/footer";
+import { MuiPickersUtilsProvider } from "@material-ui/pickers";
+import MomentUtils from "@date-io/moment";
 
 class App extends Component {
   constructor() {
@@ -33,7 +35,9 @@ class App extends Component {
         <Header />
         <div className="AppGrid">
           <Navigation />
-          <Content handler={this.handler} state={this.state} />
+          <MuiPickersUtilsProvider utils={MomentUtils}>
+            <Content handler={this.handler} state={this.state} />
+          </MuiPickersUtilsProvider>
           <Footer />
         </div>
       </div>
