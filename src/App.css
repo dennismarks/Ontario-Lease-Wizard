@@ -1,19 +1,86 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css?family=Work+Sans:300,400,500&display=swap");
 /* Reset! */
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
   margin: 0;
   padding: 0;
   border: 0;
@@ -23,22 +90,35 @@ time, mark, audio, video {
   -webkit-font-smoothing: antialiased; }
 
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
   display: block; }
 
 body {
   line-height: 1; }
 
-ol, ul {
+ol,
+ul {
   list-style: none; }
 
-blockquote, q {
+blockquote,
+q {
   quotes: none; }
 
-blockquote:before, blockquote:after,
-q:before, q:after {
-  content: '';
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
   content: none; }
 
 table {
@@ -66,10 +146,10 @@ table {
   overflow: hidden;
   font-family: "Work Sans", sans-serif;
   font-weight: 300;
-  background-color: #FFF; }
+  background-color: #fff; }
   .App label {
     cursor: pointer; }
-  .App input[type=checkbox] {
+  .App input[type="checkbox"] {
     width: 20px;
     height: 20px;
     vertical-align: middle;
@@ -78,8 +158,8 @@ table {
     -webkit-appearance: none;
     border: 1px solid #006689;
     border-radius: 3px; }
-    .App input[type=checkbox]:checked:after {
-      content: '✓';
+    .App input[type="checkbox"]:checked:after {
+      content: "✓";
       font-size: 20px;
       bottom: 1px;
       left: 1px;
@@ -87,7 +167,7 @@ table {
       position: absolute;
       height: 20px;
       width: 20px; }
-  .App input[type=radio] {
+  .App input[type="radio"] {
     display: inline-block;
     -webkit-appearance: none;
     height: 14px;
@@ -96,10 +176,10 @@ table {
     border: 2px solid #006689;
     border-radius: 30px;
     margin-top: 16px; }
-    .App input[type=radio]:checked {
+    .App input[type="radio"]:checked {
       border: 1px solid #006689; }
-    .App input[type=radio]:checked:after {
-      content: '';
+    .App input[type="radio"]:checked:after {
+      content: "";
       display: block;
       height: 2px;
       top: 2px;
@@ -119,12 +199,15 @@ table {
     padding-left: 8px;
     font-size: 16px; }
     .App span.date:empty::before {
-      content: 'mm/dd/yyyy';
+      content: "mm/dd/yyyy";
       font-size: 16px;
-      color: #C4C4C4;
+      color: #c4c4c4;
       display: inline-block; }
 
-.App h1, h2, h3, h4 {
+.App h1,
+h2,
+h3,
+h4 {
   font-weight: 500; }
 
 /* Header */
@@ -264,7 +347,7 @@ nav {
       display: block;
       padding: 1.5em 1em 1.5em 2em;
       width: 75%;
-      border-top: 1px solid #C4C4C4; }
+      border-top: 1px solid #c4c4c4; }
       nav ul li span {
         cursor: pointer;
         display: inline-block;
@@ -311,7 +394,7 @@ nav {
 .content .loginLeft {
   width: 25%;
   padding: 2% 18% 2% 2%;
-  border-right: 1px solid #C4C4C4;
+  border-right: 1px solid #c4c4c4;
   float: left; }
   .content .loginLeft h3.signIn {
     margin-top: 10vh; }
@@ -331,7 +414,8 @@ nav {
   .content .loginRight p {
     margin-bottom: 1em; }
 
-.content .disclaimer h3, .content .disclaimer p {
+.content .disclaimer h3,
+.content .disclaimer p {
   margin-bottom: 1em; }
 
 .content .disclaimer label {
@@ -365,7 +449,7 @@ nav {
   top: -15px;
   right: 0%; }
 
-.content input[type=submit] {
+.content input[type="submit"] {
   padding: 1em 2em 1em 2em;
   text-transform: uppercase;
   border-radius: 3px;
@@ -381,7 +465,7 @@ nav {
 .content #rent div.picker {
   position: relative; }
 
-.content #rent img[alt=calendar] {
+.content #rent img[alt="calendar"] {
   position: absolute;
   left: 30px; }
 
@@ -411,7 +495,7 @@ nav {
       display: block;
       padding: 1em 0.5em 1em 2em;
       width: 90%;
-      border-top: 1px solid #C4C4C4; }
+      border-top: 1px solid #c4c4c4; }
       .sidebar div ul li span {
         cursor: pointer;
         display: inline;
@@ -426,8 +510,34 @@ footer {
   z-index: 2;
   grid-row: 4;
   position: relative;
-  background-color: #EEEEEE; }
+  background-color: #eeeeee; }
+  footer .track {
+    margin: 35px 280px 0 246px;
+    height: 25px;
+    background-color: #c4c4c4;
+    border-radius: 3px;
+    transition: 0.3s ease-in-out; }
+    footer .track .thumb {
+      float: left;
+      height: 100%;
+      background-color: #ffffff;
+      box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
+      border-radius: 3px;
+      transition: width 0.3s ease-in-out; }
+    footer .track .perc-sign {
+      margin-right: -50px;
+      padding-top: 1px;
+      float: right;
+      color: #424242;
+      font-family: Work Sans;
+      font-style: normal;
+      font-weight: 300;
+      font-size: 16px;
+      line-height: 24px; }
   footer button {
+    width: 108px;
+    height: 44px;
+    top: 25px;
     padding: 1em 1.7em 1em 1.5em;
     text-transform: uppercase;
     border-radius: 3px;
@@ -449,20 +559,18 @@ footer {
       padding: 1em 1em 1em 1.7em;
       background-color: white;
       position: absolute;
-      top: 20%;
-      left: 20px; }
+      left: 58px; }
       footer button#previous svg.chevronLeft {
         position: absolute;
         left: 1px;
         top: 11px; }
     footer button#next {
-      background-color: #7BF1D4;
+      background-color: #7bf1d4;
       position: absolute;
-      left: calc(100% - 120px);
-      top: 20%; }
+      left: calc(100% - 158px); }
       footer button#next svg.chevronRight {
         position: absolute;
-        right: -2px;
+        right: 2px;
         top: 11px; }
     footer button svg.chevronRight {
       display: inline-block; }
@@ -473,3 +581,15 @@ footer {
 
 .switch-wrapper > div {
   position: absolute; }
+
+.fade-in {
+  opacity: 1;
+  animation-name: fadeInOpacity;
+  animation-timing-function: ease-in-out;
+  animation-duration: 1.5s; }
+
+@keyframes fadeInOpacity {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }

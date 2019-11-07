@@ -1,54 +1,134 @@
-@import url('https://fonts.googleapis.com/css?family=Work+Sans:300,400,500&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Work+Sans:300,400,500&display=swap");
 
 $primary: #006689;
-$secondary: #7BF1D4;
-$lightgray: #EEEEEE;
-$mediumgray: #C4C4C4;
+$secondary: #7bf1d4;
+$lightgray: #eeeeee;
+$mediumgray: #c4c4c4;
 
 /* Reset! */
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
   vertical-align: baseline;
   -webkit-font-smoothing: antialiased;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
 }
 body {
-	line-height: 1;
+  line-height: 1;
 }
-ol, ul {
-	list-style: none;
+ol,
+ul {
+  list-style: none;
 }
-blockquote, q {
-	quotes: none;
+blockquote,
+q {
+  quotes: none;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
 }
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
 * {
@@ -76,11 +156,11 @@ table {
   overflow: hidden;
   font-family: "Work Sans", sans-serif;
   font-weight: 300;
-  background-color:#FFF;
+  background-color: #fff;
   label {
     cursor: pointer;
   }
-  input[type=checkbox] {
+  input[type="checkbox"] {
     width: 20px;
     height: 20px;
     vertical-align: middle;
@@ -90,7 +170,7 @@ table {
     border: 1px solid $primary;
     border-radius: 3px;
     &:checked:after {
-      content: '✓';
+      content: "✓";
       font-size: 20px;
       bottom: 1px;
       left: 1px;
@@ -100,7 +180,7 @@ table {
       width: 20px;
     }
   }
-  input[type=radio] {
+  input[type="radio"] {
     display: inline-block;
     -webkit-appearance: none;
     height: 14px;
@@ -113,7 +193,7 @@ table {
       border: 1px solid $primary;
     }
     &:checked:after {
-      content: '';
+      content: "";
       display: block;
       height: 2px;
       top: 2px;
@@ -125,7 +205,7 @@ table {
       background-color: $primary;
     }
   }
-    span.date {
+  span.date {
     border: 1px solid $primary;
     border-radius: 3px;
     width: 147px;
@@ -135,15 +215,18 @@ table {
     padding-left: 8px;
     font-size: 16px;
     &:empty::before {
-    content: 'mm/dd/yyyy';
-    font-size: 16px;
-    color: $mediumgray;
-    display: inline-block;
+      content: "mm/dd/yyyy";
+      font-size: 16px;
+      color: $mediumgray;
+      display: inline-block;
     }
   }
 }
 
-.App h1, h2, h3, h4 {
+.App h1,
+h2,
+h3,
+h4 {
   font-weight: 500;
 }
 
@@ -323,7 +406,7 @@ nav {
     margin-top: 8vh;
     margin-bottom: 8vh;
     height: calc(100% - 16vh);
-    box-shadow: 4px 2px 6px 0px rgba(0,0,0,0.25);
+    box-shadow: 4px 2px 6px 0px rgba(0, 0, 0, 0.25);
     overflow: scroll;
   }
 }
@@ -349,17 +432,17 @@ nav {
       text-decoration: none;
     }
     button {
-        // padding: 1em 2em 1em 2em;
-        text-transform: uppercase;
-        // border-radius: 3px;
-        cursor: pointer;
-        // background-color: $primary;
-        // color: white;
-        color: $primary;
-        // box-shadow: 2px 4px 6px 0px rgba(0,0,0,0.25);
-        outline: 0;
-        border: 0;
-        font-size: 0.9em;
+      // padding: 1em 2em 1em 2em;
+      text-transform: uppercase;
+      // border-radius: 3px;
+      cursor: pointer;
+      // background-color: $primary;
+      // color: white;
+      color: $primary;
+      // box-shadow: 2px 4px 6px 0px rgba(0,0,0,0.25);
+      outline: 0;
+      border: 0;
+      font-size: 0.9em;
       &#getStarted {
         margin: 0 auto;
         display: block;
@@ -378,7 +461,7 @@ nav {
 }
 
 // Individual pages
-  // Login
+// Login
 
 .content {
   // input {
@@ -428,7 +511,8 @@ nav {
 
 .content {
   .disclaimer {
-    h3, p {
+    h3,
+    p {
       margin-bottom: 1em;
     }
     label {
@@ -468,18 +552,18 @@ nav {
     top: -15px;
     right: 0%;
   }
-  input[type=submit] {
-        padding: 1em 2em 1em 2em;
-        text-transform: uppercase;
-        border-radius: 3px;
-        cursor: pointer;
-        background-color: $primary;
-        color: white;
-        box-shadow: 2px 4px 6px 0px rgba(0,0,0,0.25);
-        outline: 0;
-        border: 0;
-        font-size: 0.9em;
-        margin-bottom: 1em;
+  input[type="submit"] {
+    padding: 1em 2em 1em 2em;
+    text-transform: uppercase;
+    border-radius: 3px;
+    cursor: pointer;
+    background-color: $primary;
+    color: white;
+    box-shadow: 2px 4px 6px 0px rgba(0, 0, 0, 0.25);
+    outline: 0;
+    border: 0;
+    font-size: 0.9em;
+    margin-bottom: 1em;
   }
 }
 
@@ -490,7 +574,7 @@ nav {
     div.picker {
       position: relative;
     }
-    img[alt=calendar] {
+    img[alt="calendar"] {
       position: absolute;
       left: 30px;
     }
@@ -498,7 +582,7 @@ nav {
 }
 
 .sidebar {
-  box-shadow: -4px 2px 6px 0px rgba(0,0,0,0.25);
+  box-shadow: -4px 2px 6px 0px rgba(0, 0, 0, 0.25);
   margin-top: 8vh;
   margin-bottom: 8vh;
   height: calc(100% - 16vh);
@@ -550,13 +634,42 @@ footer {
   grid-row: 4;
   position: relative;
   background-color: $lightgray;
+  .track {
+    margin: 35px 280px 0 246px;
+    height: 25px;
+    background-color: #c4c4c4;
+    border-radius: 3px;
+    transition: 0.3s ease-in-out;
+    .thumb {
+      float: left;
+      height: 100%;
+      background-color: #ffffff;
+      box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
+      border-radius: 3px;
+      transition: width 0.3s ease-in-out;
+    }
+    .perc-sign {
+      margin-right: -50px;
+      padding-top: 1px;
+      float: right;
+      color: #424242;
+      font-family: Work Sans;
+      font-style: normal;
+      font-weight: 300;
+      font-size: 16px;
+      line-height: 24px;
+    }
+  }
   button {
+    width: 108px;
+    height: 44px;
+    top: 25px;
     padding: 1em 1.7em 1em 1.5em;
     text-transform: uppercase;
     border-radius: 3px;
     cursor: pointer;
     color: $primary;
-    box-shadow: 2px 4px 6px 0px rgba(0,0,0,0.25);
+    box-shadow: 2px 4px 6px 0px rgba(0, 0, 0, 0.25);
     outline: 0;
     border: 0;
     font-size: 0.9em;
@@ -573,8 +686,7 @@ footer {
       padding: 1em 1em 1em 1.7em;
       background-color: white;
       position: absolute;
-      top: 20%;
-      left: 20px;
+      left: 58px;
       svg.chevronLeft {
         position: absolute;
         left: 1px;
@@ -584,16 +696,15 @@ footer {
     &#next {
       background-color: $secondary;
       position: absolute;
-      left: calc(100% - 120px);
-      top: 20%;
+      left: calc(100% - 158px);
       svg.chevronRight {
         position: absolute;
-        right: -2px;
+        right: 2px;
         top: 11px;
       }
     }
     svg.chevronRight {
-    display: inline-block;
+      display: inline-block;
     }
   }
 }
@@ -605,4 +716,20 @@ footer {
 
 .switch-wrapper > div {
   position: absolute;
+}
+
+.fade-in {
+  opacity: 1;
+  animation-name: fadeInOpacity;
+  animation-timing-function: ease-in-out;
+  animation-duration: 1.5s;
+}
+
+@keyframes fadeInOpacity {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
