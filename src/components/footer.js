@@ -9,6 +9,12 @@ export class Footer extends Component {
     const previousHidden = location => {
       switch (location.pathname) {
         case "/concerns":
+        case "/rent":
+        case "/utilities":
+        case "/deposits":
+        case "/dates":
+        case "/payment":
+        case "/timeline":
           return false;
         default:
           return true;
@@ -17,6 +23,12 @@ export class Footer extends Component {
     const nextHidden = location => {
       switch (location.pathname) {
         case "/concerns":
+        case "/rent":
+        case "/utilities":
+        case "/deposits":
+        case "/dates":
+        case "/payment":
+        case "/timeline":
           return false;
         default:
           return true;
@@ -26,6 +38,18 @@ export class Footer extends Component {
       switch (location.pathname) {
         case "/concerns":
           return "/disclaimer";
+        case "/rent":
+          return "/concerns";
+        case "/utilities":
+          return "/rent";
+        case "/deposits":
+          return "/utilities";
+        case "/dates":
+          return "/deposits";
+        case "/payment":
+          return "/dates";
+        case "/timeline":
+          return "payment";
         default:
           return "/";
       }
@@ -34,6 +58,16 @@ export class Footer extends Component {
       switch (location.pathname) {
         case "/concerns":
           return "/rent";
+        case "/rent":
+          return "utilities";
+        case "/utilities":
+          return "/deposits";
+        case "/deposits":
+          return "/dates";
+        case "/dates":
+          return "/payment";
+        case "/payment":
+          return "timeline";
         default:
           return "/";
       }
