@@ -4,6 +4,8 @@ import Header from "./components/header";
 import Navigation from "./components/navigation";
 import Content from "./components/content";
 import Footer from "./components/footer";
+import theme from "./theme";
+import { ThemeProvider } from "@material-ui/core/styles";
 import { MuiPickersUtilsProvider } from "@material-ui/pickers";
 import MomentUtils from "@date-io/moment";
 
@@ -31,16 +33,18 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
-        <Header />
-        <div className="AppGrid">
-          <Navigation />
-          <MuiPickersUtilsProvider utils={MomentUtils}>
-            <Content handler={this.handler} state={this.state} />
-          </MuiPickersUtilsProvider>
-          <Footer />
+      <ThemeProvider theme={theme}>
+        <div className="App">
+          <Header />
+          <div className="AppGrid">
+            <Navigation />
+            <MuiPickersUtilsProvider utils={MomentUtils}>
+              <Content handler={this.handler} state={this.state} />
+            </MuiPickersUtilsProvider>
+            <Footer />
+          </div>
         </div>
-      </div>
+      </ThemeProvider>
     );
   }
 }
