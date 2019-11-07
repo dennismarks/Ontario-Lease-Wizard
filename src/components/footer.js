@@ -6,21 +6,7 @@ export class Footer extends Component {
   render() {
     // It will only show our buttons if it's the right route for them to appear.
     const { location } = this.props;
-    const previousHidden = location => {
-      switch (location.pathname) {
-        case "/concerns":
-        case "/rent":
-        case "/utilities":
-        case "/deposits":
-        case "/dates":
-        case "/payment":
-        case "/timeline":
-          return false;
-        default:
-          return true;
-      }
-    };
-    const nextHidden = location => {
+    const showButton = location => {
       switch (location.pathname) {
         case "/concerns":
         case "/rent":
@@ -49,7 +35,7 @@ export class Footer extends Component {
         case "/payment":
           return "/dates";
         case "/timeline":
-          return "payment";
+          return "/payment";
         default:
           return "/";
       }
@@ -67,7 +53,7 @@ export class Footer extends Component {
         case "/dates":
           return "/payment";
         case "/payment":
-          return "timeline";
+          return "/timeline";
         default:
           return "/";
       }
@@ -108,7 +94,7 @@ export class Footer extends Component {
         <Link to={previousLink(location)}>
           <button
             id="previous"
-            className={previousHidden(location) ? "hidden" : null}
+            className={showButton(location) ? "hidden" : null}
           >
             <ChevronLeft size={24} className="chevronLeft" />
             Previous
@@ -128,7 +114,7 @@ export class Footer extends Component {
           </div>
         </div>
         <Link to={nextLink(location)}>
-          <button id="next" className={nextHidden(location) ? "hidden" : null}>
+          <button id="next" className={showButton(location) ? "hidden" : null}>
             Next <ChevronRight size={24} className="chevronRight" />
           </button>
         </Link>
