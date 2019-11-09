@@ -9,7 +9,7 @@ import Disclaimer from "../pages/disclaimer.js";
 import Concerns from "../pages/concerns.js";
 import Rent from "../pages/money/rent.js";
 import Dates from "../pages/money/dates";
-
+import Deposits from "../pages/money/deposits";
 
 // Importing our sidebars (they change with the route, as the pages do.)
 import sidebarHome from "../sidebars/home.js";
@@ -59,6 +59,7 @@ export class Content extends Component {
                 <Dates state={this.props.state} handler={this.props.handler} />
               )}
             />
+            <Route exact path="/deposits" component={Deposits} />
           </AnimatedSwitch>
         </div>
         <div className="sidebar">
