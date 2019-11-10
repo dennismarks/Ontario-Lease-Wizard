@@ -9,6 +9,7 @@ import Disclaimer from "../pages/disclaimer.js";
 import Concerns from "../pages/concerns.js";
 import Rent from "../pages/money/rent.js";
 import Dates from "../pages/money/dates";
+import Utilities from "../pages/money/utilities_services.js";
 import Deposits from "../pages/money/deposits";
 
 // Importing our sidebars (they change with the route, as the pages do.)
@@ -35,6 +36,7 @@ export class Content extends Component {
             <Route exact path="/" component={Home} />
             <Route exact path="/login" component={loginProfile} />
             <Route exact path="/disclaimer" component={Disclaimer} />
+            <Route exact path="/utilities" component={Utilities} />
             <Route
               exact
               path="/concerns"
