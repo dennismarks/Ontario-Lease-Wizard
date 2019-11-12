@@ -166,7 +166,17 @@ Describe your team's working culture.
 
 
 **Conflict Resolution:**
- * List at least three team scenarios/conflicts you discussed in lecture and how you decided you will resolve them. Indecisions? Non-responsive team members? Any other scenarios you can think of?
+1. Dominant personality
+
+- Some members have pointed out that some members have, unintentionally, "carried" the decision making process. We plan to have an equal voice between all members, for all ideas are valued in our team. All decisions will be decided by the major consensus.
+
+2. Communication delays
+
+- Since most of the team members are taking on heavy workload at school, communication might sometimes be a bit delayed. Fortunately each member is either the same classes/projects outside of 301 or has a longtime partnership with each other so most communication can be relayed through personal contacts.
+
+3. Analysis Paralysis
+
+- We also had a problem where we weren't sure which tech stack to follow through. Our solution is to designate members to do research on each stack and present their findings at the next meeting so we can all decisively go with the best solution for the team and for our partners.
 
 
 ## Events
@@ -187,6 +197,14 @@ We decided we want to keep our amounts of meeting small and efficient. Many team
 You must have at least 2 meetings with your project partner - an initial planning meeting discussing the features you will build this iteration and a sprint demo meeting to review what you've done. Describe the meetings here:
 * When and where will you meet?
 * What do you intend to discuss(**note you will have meeting minutes in the review document**)?
+
+**First meeting**: Tuesday the 12th, 11AM
+- The meeting will be conducted through Google Hangouts for easy connection. 
+- The goal of the meeting is to inform the partners about the sprint plan and the stable build. As well as informing them about their ability to add feedbacks to the repository. We hope to align our goal with theirs as well as hearing feedbacks about the quality of work from the last sprint.
+
+**Second meeting**: Saturday the 23rd, TBA
+- The meeting will be conducted through Google Hangouts.
+- The goal of the meeting is to demo the product to the partners, as well as getting feedbacks. We hope to be able to demonstrate the backend integrated with React by the end of the sprint. So our family of feedbacks in focus would be how well the application works given assumed parameters.
 
 #### Artifacts
 
