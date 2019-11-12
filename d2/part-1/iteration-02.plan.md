@@ -250,8 +250,6 @@ We chose 2 people to accept as we didn’t think 1 person was enough, 2 pairs of
 **Overall comments:**
 We wanted to use the industry standard tool of GitHub, we want to follow good practices of feature branching, submitting/reviewing/accepting PRs. We want to make sure that nothing gets into production after being looked at by only the original developer. Even if this is simply “just” a class project we are working with a non profit that has a big stake in this succeeding and we strive to be as professional as possible including internal decisions like our workflow. 
 
-TODO: should we talk about slack in our workflow? Is this strictly about our development workflow?
-
 **Deployment**
 We decided to have the main deployment for stable build (demo purposes) on Heroku. Since we are doing PR reviews where the PR needs to have at least 2 approvals, which requires the merging to follow the application’s flow and data handling, the master branch is considered to be the stable version of the application. As that is, the stable build will be continuously deployed when there’s a commit to the master branch. Also since github is integrated with slack, the partners are automatically notified of the new build, ie whenever a PR is approved. 
 
