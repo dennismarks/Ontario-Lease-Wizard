@@ -1,7 +1,4 @@
-# Ontario Lease Wizard/Simply Lease
-
- > _Note:_ This document is meant to be written during (or shortly after) your initial planning meeting.     
- > It does not really make sense for you to edit this document much (if at all) while working on the project - Instead, at the end of the planning phase, you can refer back to this document and decide which parts of your plan you are happy with and which parts you would like to change.
+# Ontario Lease Wizard/Simply House
 
 
 ## Iteration 3
@@ -14,7 +11,7 @@
 **What's new?**
 We have switched from Trello cards to GitHub issues. We organized times where multiple team members work in the same space together to better facility communication and bounce ideas off each other. We are using Facebook messenger for less formal and quicker communication in the team.
 
-#### Roles & responsibilities
+### Roles & responsibilities
 
 **Mark** - Partner liaison
 
@@ -33,7 +30,7 @@ We have switched from Trello cards to GitHub issues. We organized times where mu
 - I'm relatively new to front end however, I'm currently in 3 courses related to JavaScript/React and functional programming so I expect myself to pick it up quickly
 - I need to improve upon my testing skills and want to new strategies for useful testing
 - Time  Management - I tend to take on large tasks which is difficult with a large course load, and although im usually able to pull through it leaves me with little personal time in my day 
-
+------
 **Demetre** - Internal communication lead (Slack babysitter)
 
 - Organizing the Slack workspace through channels and app integration
@@ -63,7 +60,7 @@ We have switched from Trello cards to GitHub issues. We organized times where mu
 	- I am bad at estimating how much time things will take and it has caused me issues in the past (and probably in the future too)
 - No experience with databases or working in groups this big
 	- Need to really try to catch up with the essentials as other team members do have this kind of essential experience
-	
+------
 **Max** - Meeting logistics + Facilitator
 
 - Plan and inform the team on the best time/location for end-of-sprint(EOS) and general reviews/meetings.
@@ -81,7 +78,7 @@ We have switched from Trello cards to GitHub issues. We organized times where mu
 - Currently learning JS, extensively, React and MaterialUI.
 - Have a habit of not addressing technical debt in the development process.
 - Have not had lots of experience in a commercial project.
-
+------
 **Dennis** - Front End Lead
 
 - Prioritize and tailor user experience
@@ -99,7 +96,7 @@ We have switched from Trello cards to GitHub issues. We organized times where mu
 - Little experience with databases
 - Average with Flask for our back end
 - Don’t like the planning of the development process
-
+------
 **Amir** - CTO / Tech Lead
 
 - Oversee the overall infrastructure and guide other team members in the right direction.
@@ -117,7 +114,7 @@ We have switched from Trello cards to GitHub issues. We organized times where mu
 - Not the most creative and artsy. In terms of front-end, CSS isn't my best or most favorite thing
 - Databases and complicated queries a gray area
 - Can get a little too stressed and may not be able to handle as I should if things don't go well
-
+------
 **Steven** - Scrum master - Trello organization
 
 - Ensures all the components of Agile/Scrum are respected and followed while still tailoring to the group's uniqueness and dynamic.
@@ -133,7 +130,7 @@ We have switched from Trello cards to GitHub issues. We organized times where mu
 - Have no experience working with Javascript backend frameworks such as NodeJS or Express before
 - Have no experience being a product manager
 - Have no experience with NoSQL databases
-
+------
 **Kevin** - Software Architect
 
 - Will be involved in the planning, writing and reviewing of the code. Additionally, will be actively helping resolve any issues regarding the code and otherwise that we run into when developing the software.
@@ -152,7 +149,7 @@ We have switched from Trello cards to GitHub issues. We organized times where mu
 - Sometimes I overestimate myself, believing that I can take on more tasks than I can reasonably handle in a certain amount of time, and consequently end up having to sacrifice time elsewhere, such as from my sleep.
 
 
-#### Team Rules
+## Team Rules
 
 Describe your team's working culture.
 
@@ -172,7 +169,7 @@ Describe your team's working culture.
  * List at least three team scenarios/conflicts you discussed in lecture and how you decided you will resolve them. Indecisions? Non-responsive team members? Any other scenarios you can think of?
 
 
-#### Events
+## Events
 
 **Meetings**
 - We have beginning sprint meetings where the people who met with partner talk about what the partner prioritized for the next sprint and we as a team break that down into individual tasks that we add to github and assign for the sprint.
@@ -204,15 +201,7 @@ List/describe the artifacts you will produce in order to organize your team.
 **Organization tools:**
 We have switched from using Trello to using GitHub issues and projects to keep all of our necessary artifacts and organization on a single medium. Issues are opened and assigned based on that sprints organization meeting which is described elsewhere. We chose to switch to GitHub issues instead of Trello since we can see our entire workflow together instead of split across 2 different websites. It also ties directly to our GitHub accounts instead of requiring Trello accounts as well, this means we have less overhead for working together
 
-#### Deployment and Github Workflow
-
-Describe your Git / GitHub workflow. Essentially, we want to understand how your team members share a codebase, avoid conflicts and deploys the application.
-
- * Be concise, yet precise. For example, "we use pull-requests" is not a precise statement since it leaves too many open questions - Pull-requests from where to where? Who reviews the pull-requests? Who is responsible for merging them? etc.
- * If applicable, specify any naming conventions or standards you decide to adopt.
- * Describe your overall deployment process from writing code to viewing a live application
- * What deployment tool(s) are you using and why
- * Don't forget to **explain why** you chose this workflow or particular aspects of it!
+## Deployment and Github Workflow
 
 **Workflow:**
 We are all considered admins in our team’s GitHub repository for the sake of simplicity. This allows any single person to merge un-reviewed branches, close any issue, and assign issues to anyone. While we acknowledge this is dangerous, it makes collaboration easier as nobody on this team is a true “team manager/product manager” as we all share that responsibility. Having everyone as admin allows each person on the team to act as a product manager when required. We are working with a system built on common respect and trust to ensure nobody abuses these permissions, for example, by merging un-reviewed PRs. 
@@ -249,13 +238,7 @@ We decided to have the main deployment for stable build (demo purposes) on Herok
 
 ## Product
 
-#### Goals and tasks
-
- * Describe your goals for this iteration and the tasks that you will have to complete in order to achieve these goals.
- * Order the items from most to least important.
- * Feel free (but not obligated) to specify some/all tasks as user stories.
-
-Goals:
+### Goals:
 
 **Generate a lease pdf**
 
