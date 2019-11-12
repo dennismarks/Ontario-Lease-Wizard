@@ -180,7 +180,7 @@ Describe your team's working culture.
 
 4. Recognition and Responsibility
 
-- We sometimes have issues with work needing to get done but members having delays finishing their assigned task(s) on time. Whether it be an actual feature that needs to be implemeneted or people needings to review other members pull requests, we politely remind our team members of their responsibilities which usually gets them back on track. We also like to reward our hard working members, even a quick "good job" or "thanks for helping with X" goes a long way in giving recognition where deserved. 
+- We sometimes have issues with work needing to get done but members having delays finishing their assigned task(s) on time. Whether it be an actual feature that needs to be implemented, bug that needs to be addressed or pull requests still needing to be reviewing by other members, we politely remind our team members of their responsibilities which usually gets them back on track to completing the assigned task. We also like to reward our hard working members, usually a quick "good job" or "thanks for helping with ..." goes a long way in giving recognition where deserved. 
 
 
 ## Events
