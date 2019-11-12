@@ -178,6 +178,10 @@ Describe your team's working culture.
 
 - We also had a problem where we weren't sure which tech stack to follow through. Our solution is to designate members to do research on each stack and present their findings at the next meeting so we can all decisively go with the best solution for the team and for our partners.
 
+4. Recognition and Responsibility
+
+- We sometimes have issues with work needing to get done but members having delays finishing their assigned task(s) on time. Whether it be an actual feature that needs to be implemeneted or people needings to review other members pull requests, we politely remind our team members of their responsibilities which usually gets them back on track. We also like to reward our hard working members, even a quick "good job" or "thanks for helping with X" goes a long way in giving recognition where deserved. 
+
 
 ## Events
 
