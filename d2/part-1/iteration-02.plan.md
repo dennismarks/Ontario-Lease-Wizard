@@ -16,13 +16,6 @@ We have switched from Trello cards to GitHub issues. We organized times where mu
 
 #### Roles & responsibilities
 
-Describe the different roles on the team and the responsibilities associated with each role. 
- * Roles should reflect the structure of your team and be appropriate for your project. Not necessarily one role to one team member.
-
-List each team member and:
- * A description of their role(s) and responsibilities including the components they'll work on and non-software related work
- * 3 technical strengths and weaknesses each (e.g. languages, frameworks, libraries, development methodologies, etc.)
-
 **Mark** - Partner liaison
 
 - Acts as the link between the technical team and the stakeholder
@@ -72,6 +65,7 @@ List each team member and:
 	- Need to really try to catch up with the essentials as other team members do have this kind of essential experience
 	
 **Max** - Meeting logistics + Facilitator
+
 - Plan and inform the team on the best time/location for end-of-sprint(EOS) and general reviews/meetings.
 - Stay on top of the flow of the team. Investigate and address problems between members. Point of contact for immediate issues.
 - Backend development advisor and developer.
@@ -162,41 +156,33 @@ List each team member and:
 
 Describe your team's working culture.
 
-Communications:
- * What is the expected frequency? What methods/channels are appropriate? 
- * If you have a partner project, what is your process (in detail) for communicating with your partner?
- The team agreed on a tentative response time of 24h. That all concerns and ideas should be addressed within that time frame. We have 3 channels of communications: 
-Facebook’s Messenger group chat, which is for urgent discussions, since not everyone is on top of Slack on a daily basis due to their work; 
-Slack channels, for general discussions, planning and partner’s communications;
-Github PR/Issues, for code specifics in order to streamline the review process.
+**Communications:**
+- The team agreed on a tentative response time of 24h. That all concerns and ideas should be addressed within that time frame. We have 3 channels of communications: 
+	- Facebook’s Messenger group chat, which is for urgent discussions, since not everyone is on top of Slack on a daily basis due to their work; 
+	- Slack channels, for general discussions, planning and partner’s communications;
+	- Github PR/Issues, for code specifics in order to streamline the review process.
  
-Meetings:
- * How are people held accountable for attending meetings, completing action items? Is there a moderator or process?
-For most team meetings, it is expected that everyone to show up, either physically or through group calls. As it’s when we have our retrospective discussion on the previous sprint and the status of each member. And a meeting would only be facilitated if and only if at least 5 people are avaliable.
-If someone is not present, they need to reach out to members, whom attended to get a rundown of their tasks and expectations. 
-Often times, it will be the members whom has most recently in contact with the partners to facilitate the meeting for they are most updated with Partner’s expectations. Generally it would be Amir (Tech Lead), Mark (Partner liaison) and Max (Facilitator).
+**Meetings:**
+- For most team meetings, it is expected that everyone to show up, either physically or through group calls. As it’s when we have our retrospective discussion on the previous sprint and the status of each member. And a meeting would only be facilitated if and only if at least 5 people are avaliable.
+- If someone is not present, they need to reach out to members, whom attended to get a rundown of their tasks and expectations. 
+- Often times, it will be the members whom has most recently in contact with the partners to facilitate the meeting for they are most updated with Partner’s expectations. Generally it would be Amir (Tech Lead), Mark (Partner liaison) and Max (Facilitator).
 
 
-Conflict Resolution:
+**Conflict Resolution:**
  * List at least three team scenarios/conflicts you discussed in lecture and how you decided you will resolve them. Indecisions? Non-responsive team members? Any other scenarios you can think of?
 
 
 #### Events
 
-Describe meetings (and other events) you are planning to have:
- * When and where? Recurring or ad hoc? In-person or online?
- * What's the purpose of each meeting?
- * Other events could be coding sessions, code reviews, quick weekly sync meeting online, etc.
+**Meetings**
+- We have beginning sprint meetings where the people who met with partner talk about what the partner prioritized for the next sprint and we as a team break that down into individual tasks that we add to github and assign for the sprint.
+- We have popup work sessions where we work on similar tasks together. These are ad-hoc as we deem them necessary. For example, last sprint we were all making front end pages and we decided to get together to make sure we could help each other for common issues
+- We have decided we don’t need code review sessions as we are requiring 2 accepts for each PRs so we are confident our code quality will stay high quality and consistent. 
+- Meetings are moderated by Demetre based on the purpose of the meeting. We think this ensures that each meeting at the minimum meets the goal of why it was called. He also takes meeting minutes for the group to reference.
+- We have sprint planning meetings where we decide what are the must-haves for that sprint and what are extend goals based on the feedback we get from the partner after their weekend code review.  We prioritize tasks and user stories tied directly to the core functionality of MVP. For us this is inputting required information and then creating the lease PDF. We aren’t focusing on things such as log in, multiple leases, saving progress mid lease creation for example.
+- We have quick sprint review sessions mostly for us to realign ourselves and aid us in making better time estimates. We found getting up to speed took longer than we expected it to for example. These meetings include going over what worked and what didn’t and if we need to hold more meetings, less meetings, if we have things we need clarification from partner.
 
-Meetings
-We have beginning sprint meetings where the people who met with partner talk about what the partner prioritized for the next sprint and we as a team break that down into individual tasks that we add to github and assign for the sprint.
-We have popup work sessions where we work on similar tasks together. These are ad-hoc as we deem them necessary. For example, last sprint we were all making front end pages and we decided to get together to make sure we could help each other for common issues
-We have decided we don’t need code review sessions as we are requiring 2 accepts for each PRs so we are confident our code quality will stay high quality and consistent. 
-Meetings are moderated by Demetre based on the purpose of the meeting. We think this ensures that each meeting at the minimum meets the goal of why it was called. He also takes meeting minutes for the group to reference.
-We have sprint planning meetings where we decide what are the must-haves for that sprint and what are extend goals based on the feedback we get from the partner after their weekend code review.  We prioritize tasks and user stories tied directly to the core functionality of MVP. For us this is inputting required information and then creating the lease PDF. We aren’t focusing on things such as log in, multiple leases, saving progress mid lease creation for example.
-We have quick sprint review sessions mostly for us to realign ourselves and aid us in making better time estimates. We found getting up to speed took longer than we expected it to for example. These meetings include going over what worked and what didn’t and if we need to hold more meetings, less meetings, if we have things we need clarification from partner.
-
-Overall:
+**Overall:**
 We decided we want to keep our amounts of meeting small and efficient. Many team members have difficult schedules and other shifting priorities week to week and we don’t want to be spending time in meeting when we could be spending time actually creating our product. This is why we only have planning meetings and partner meetings as our regularly scheduled meetings. 
 
 
@@ -215,6 +201,8 @@ List/describe the artifacts you will produce in order to organize your team.
    * How do you prioritize tasks?
    * How do tasks get assigned to team members?
 
+**Organization tools:**
+We have switched from using Trello to using GitHub issues and projects to keep all of our necessary artifacts and organization on a single medium. Issues are opened and assigned based on that sprints organization meeting which is described elsewhere. We chose to switch to GitHub issues instead of Trello since we can see our entire workflow together instead of split across 2 different websites. It also ties directly to our GitHub accounts instead of requiring Trello accounts as well, this means we have less overhead for working together
 
 #### Deployment and Github Workflow
 
@@ -226,40 +214,37 @@ Describe your Git / GitHub workflow. Essentially, we want to understand how your
  * What deployment tool(s) are you using and why
  * Don't forget to **explain why** you chose this workflow or particular aspects of it!
 
-Workflow:
+**Workflow:**
 We are all considered admins in our team’s GitHub repository for the sake of simplicity. This allows any single person to merge un-reviewed branches, close any issue, and assign issues to anyone. While we acknowledge this is dangerous, it makes collaboration easier as nobody on this team is a true “team manager/product manager” as we all share that responsibility. Having everyone as admin allows each person on the team to act as a product manager when required. We are working with a system built on common respect and trust to ensure nobody abuses these permissions, for example, by merging un-reviewed PRs. 
 
-Organization tools:
-We have switched from using Trello to using GitHub issues and projects to keep all of our necessary artifacts and organization on a single medium. Issues are opened and assigned based on that sprints organization meeting which is described elsewhere. We chose to switch to GitHub issues instead of Trello since we can see our entire workflow together instead of split across 2 different websites. It also ties directly to our GitHub accounts instead of requiring Trello accounts as well, this means we have less overhead for working together
-
-Branching strategy:
+**Branching strategy:**
 For each issue we take on (in GitHub issues), we create a branch. We name our branches to match the name of the issue for easily knowing what the branch should do. The branch can be a feature branch, refactoring legacy code, bug fixing, or whatever else this issue entails, but this makes it easy to review the PR and compare to the issue and make sure all the specs were met before approval. We chose this strategy to ensure that each branch should do one thing and only one thing, we want to avoid having one branch be too far-reaching in terms of what it aims to contain. We believe in the “branch early and branch often” philosophy of using git. We know this can result in having many merge issues but we aim to avoid this by separating our tasks/issues in a way that avoids having 2 people work on the same part of the code base at the same time, instead we chose to have 1 person work on the same part of the code base in sequence instead of 2 people in parallel. We can also mitigate merge conflict issues by pulling and merging often. 
 
 We branch only off of master for each issue. The issues are small enough and self contained where we don’t need to have people branch from not master. This is to reduce complexity of merges and to keep our git as simple as possible, nobody wants to deal with complex merges and branch issues. 
 
-Submitting a PR:
+**Submitting a PR:**
 When a teammate has finished implementing their code to address an issue, they submit a pull request with details about their design decisions for that issue, if they chose react class components, functional components etc. The route needed to access that page if applicable, i.e /rent or /deposits. What modules they installed and a description of what that module does. If they needed to create a new generic component to be used in other pages, ex We have a common tooltip/extra information component we use.
 
 We only submit PRs for issue branches to master
 
-Reviewing PRs:
+**Reviewing PRs:**
 Everyone is responsible for reviewing PRs. All teammates are invited to review on github and will receive updates by email if they have opted into this option and on the slack channel by default that a PR is ready to review. Comments from reviews include asking for clarification on a certain implementation choice, reminders to use components we have already made for consistency across pages, following naming conventions.
 
-Accepting PRs:
+**Accepting PRs:**
 A PR needs to be accepted by at least 2 team members before it can be squashed and merged. We use squash and merge to keep the history simple and easy to understand, if we ever need to dig deep into the commits before squashing we can reopen the PR and review again.
 For a PR to be accepted it needs to meet the functional criteria of the issue, it needs to follow our decided conventions for naming, using class vs functional components, pass our linter (ESLint), and overall follow good coding style. 
 We chose 2 people to accept as we didn’t think 1 person was enough, 2 pairs of eyes to look everything over since we are accepting into master and master is sacred. 
 3 people would be too many since that’s nearly half our team and we want to spend more time making sure we are adding new features and not just nitpicking over every PR. However, on more important pull requests, as decided by the team, it may make sense for more/all members to have a chance to review the PR and submit any objects/suggestions the might have. We will have 2-3 issues to each person for every sprint and we don’t have to have to require 3 people to review 15-20 PRs every sprint. 
 
-Overall comments:
+**Overall comments:**
 We wanted to use the industry standard tool of GitHub, we want to follow good practices of feature branching, submitting/reviewing/accepting PRs. We want to make sure that nothing gets into production after being looked at by only the original developer. Even if this is simply “just” a class project we are working with a non profit that has a big stake in this succeeding and we strive to be as professional as possible including internal decisions like our workflow. 
 
 TODO: should we talk about slack in our workflow? Is this strictly about our development workflow?
 
-Deployment
+**Deployment**
 We decided to have the main deployment for stable build (demo purposes) on Heroku. Since we are doing PR reviews where the PR needs to have at least 2 approvals, which requires the merging to follow the application’s flow and data handling, the master branch is considered to be the stable version of the application. As that is, the stable build will be continuously deployed when there’s a commit to the master branch. Also since github is integrated with slack, the partners are automatically notified of the new build, ie whenever a PR is approved. 
 
-Our rationale behind continuous deployment is that since the partners are going to be using that build to check in, it pushes each team members to ensure their code is up to standard and working. For their immediate feedbacks can give us more time to reflect on our vision of the 
+- Our rationale behind continuous deployment is that since the partners are going to be using that build to check in, it pushes each team members to ensure their, and others, code is up to standard and working as planned. For their immediate feedback can give us more time to reflect and adjust accordingly.
 
 
 ## Product
@@ -271,13 +256,16 @@ Our rationale behind continuous deployment is that since the partners are going 
  * Feel free (but not obligated) to specify some/all tasks as user stories.
 
 Goals:
+
 **Generate a lease pdf**
+
 We would like to implement the functionality to generate the lease document. The user should be able to get the lease document in pdf form when requesting it in the front end. The document should be generated from the information in the database provided by the user.
 
 Tasks: 
 Implement a Python function that generates a pdf based on the lease template and the information in the database (once the database is set up)
 
 **Send information from front end to back end**
+
 We would like to implement functionality to send form data from the front end to the back end and store the data in a database. 
 
 Tasks: 
@@ -286,6 +274,7 @@ Setup a MySql database + schema
 Implement a Flask route to receive data in the back end and insert into the database
 
 **Add more front end pages**
+
 We would like to implement some more pages for the front end during this iteration as well. 
 
 Tasks:
@@ -302,10 +291,10 @@ List/describe the artifacts you will produce in order to present your project id
 
 Both our old Trello board and GitHub Projects board consist of the following columns:
 
-1- To-Do: Tasks that are planned for the current sprint, but have not been started yet
-2- In Progress: Tasks that have been picked up by someone and are currently in progress
-3- In Review: Tasks that have been completed by the author and have a corresponding pull request for them. At this point, at least 2 reviewers must look at the code to ensure code quality. For tasks not involving code, a PR needs to be created so that it can go under the same review process. E.g. Research best db solution, choice of DatePicker, Docker vs Local, etc. 
-4- Done: PR has been merged into master, or the team has reached a consensus if it does not involve code. 
+1. To-Do: Tasks that are planned for the current sprint, but have not been started yet
+2. In Progress: Tasks that have been picked up by someone and are currently in progress
+3. In Review: Tasks that have been completed by the author and have a corresponding pull request for them. At this point, at least 2 reviewers must look at the code to ensure code quality. For tasks not involving code, a PR needs to be created so that it can go under the same review process. E.g. Research best db solution, choice of DatePicker, Docker vs Local, etc. 
+4. Done: PR has been merged into master, or the team has reached a consensus if it does not involve code. 
 
 We have chosen this workflow as it’s easy to see what tasks are planned for the sprint, and what the status of each task is, and whether or not a particular task needs attention (help for implementation of needs reviewers)
 
