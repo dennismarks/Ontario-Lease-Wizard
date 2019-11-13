@@ -9,6 +9,7 @@ import Disclaimer from "../pages/disclaimer.js";
 import Concerns from "../pages/concerns.js";
 import Rent from "../pages/money/rent.js";
 import Dates from "../pages/money/dates";
+import PaymentMethods from "../pages/money/payment";
 import Utilities from "../pages/money/utilities_services.js";
 import Deposits from "../pages/money/deposits";
 
@@ -61,6 +62,7 @@ export class Content extends Component {
                 <Dates state={this.props.state} handler={this.props.handler} />
               )}
             />
+            <Route exact path="/payment" component={PaymentMethods} />
             <Route exact path="/deposits" component={Deposits} />
           </AnimatedSwitch>
         </div>
