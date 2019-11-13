@@ -1,5 +1,5 @@
 <p align="center">
-<strong>Ontario Lease Wizard</strong>, written in **React** using Create React App.
+<img alt="OLW Banner" src="docs/images/Banner.jpg">
 </p>
 
 ## Table of Contents
