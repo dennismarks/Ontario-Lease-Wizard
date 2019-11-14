@@ -65,7 +65,7 @@ List process-related (i.e. team organization) decisions that, in retrospect, wer
 
 #### Artifacts:
 
- By choosing to use github issues over trello, most of our artifacts are in fact in this github repository, under the issues tab, where it can be noted which tasks were taken on and completed by which team members.
+ By choosing to use GitHub issues over Trello, most of our artifacts are in fact in this GitHub repository, under the issues tab, where it can be noted which tasks were taken on and completed by which team members.
 
 
 #### How was your product demo?
