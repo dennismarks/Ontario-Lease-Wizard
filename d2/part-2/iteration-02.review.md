@@ -1,4 +1,4 @@
-# Lease Wizard
+# Lease Wizard (team 9)
 
 ## Iteration 1 (Sprint 1) - Review & Retrospect
 
@@ -44,6 +44,18 @@ List process-related (i.e. team organization) decisions that, in retrospect, wer
 ## Product - Review
 
 #### Goals and/or tasks that were met/completed:
+
+1. Pages in Money subsection<br/>
+  We planned to finish creating all of these initial pages, as an exercise of creating these pages, but also as something we can show to the client to start. All the tasks/pages we planned for the spring were finished on time for the demo, though some PRs of these pages were not quite yet done and spilled into the next sprint to be merged.
+
+2. Dealing with Legacy code<br/>
+  We had pre-existing CSS given to us. This CSS was very generous in its selectors. Every single button was given the same style, this is unreasonable to use in an application of this size. We had to change this code to allow us to style submit buttons different from day pickers different from navigation buttons. Essentially,we planned to refactor and make modifications to the original code so that it suits our needs and were successful in doing so.
+
+3. Initial Process Setup<br/>
+  Much of our process work is front loaded. We needed to set up deployment for the first demo. We needed to learn how to use GitHub pull requests. We needed to find ways to automate the tasks moving from one lane to another based on the branch it's associated with. All of this work was done in the first sprint so we can take advantage of all of it in later sprints.
+
+4. Setup Linter<br/>
+  As a way to expediate our development process and minimize unwanted coding styles, we wanted to follow the best coding practice guidelines and decided to use a linter (ESlint+ Prettier) to the project, that will show warnings to the users once a certain bad practice/issue is found throughout the codebase. This should enable us to write much cleaner and consistent code that will eventually make it easier for us, or any other development team to continue working on this project.
 
 #### Goals and/or tasks that were planned but not met/completed:
 
