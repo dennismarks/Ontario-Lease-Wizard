@@ -51,6 +51,11 @@ List process-related (i.e. team organization) decisions that, in retrospect, wer
 
   2. Related to the above task, we also haven't had the chance to setup the Google Cloud Platform account and the neccesary VMs/DB we may need for this project. This is simply due to the fact that this was blocked by the task above, and has postponed to once we have the setup figured out, no need to start burning credits!
 
+#### Artifacts:
+
+ By choosing to use github issues over trello, most of our artifacts are in fact in this github repository, under the issues tab, where it can be noted which tasks were taken on and completed by which team members.
+
+
 #### How was your product demo?
 
  Prepare:
