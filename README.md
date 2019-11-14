@@ -7,14 +7,18 @@
 - [Getting Started](#getting-started)
 - [Build Instructions](#build-instructions)
 - [TA Instructions](#ta-instructions)
-  - [User Interactions](#user-interactions)
-    - [Guest](#guest)
-    - [Landlord](#landlord)
-    - [Tenants](#tenants)
 - [Motivation](#motivation)
+- [User Interactions](#user-interactions)
+  - [Guest](#guest)
+  - [Landlord](#landlord)
+  - [Tenant](#tenant)
 - [Resources](#resources)
 
 ## Getting Started
+
+We use `yarn` as the package manager for this project. If you don't have yarn installed already, you can do so by following [this link](https://yarnpkg.com/lang/en/docs/install/). 
+
+Any version of `Node+8` will suffice. If you don't have node installed, [Download](https://nodejs.org/en/download/) from here, or `homebrew` for easier installation on Mac.
 
 To run the application, clone the repo and run the following commands:
 
@@ -37,23 +41,11 @@ The output of the build process will be located in the `build/` folder.
 
 ## TA Instructions
 
-Start by following the instructions in the [Getting Started](#getting-started) section above to install dependencies and run the application development server. When you load up the app in your browser, you should see the application Home screen.
+If you want to run the project **locally**, you can simply follow the instructions in the [Getting Started](#getting-started) section above to install dependencies and run the application development server. When you load up the app in your browser, you should see the application Home screen.
 
-### User Interactions
+We also have a up and running version of the application hosted on Heroku, which can be found [here](http://simplyhouse-stable.herokuapp.com). This is the most up-to-date version of the application on the `master` branch.
 
-#### Guest
-
-**NOTE**: As of the time of writing, the back-end is not initialized and deployed. As well as some front-end pages in order to fully use the application
-
-As a guest user, you are able to complete the forms but **without** any saving features.
-
-#### Landlord
-
-**WIP** As a landlord user, you have the ability to create multiple leases for multiple tenants.
-
-#### Tenants
-
-**WIP** As a tenant user, you have the ability to save your progress with the forms online, so it is easy to pick it up afterwards.
+**NOTE**: We are still trying to figure out the perfect configurations and setup with Heroku, which may mean the link may not work as expected every time. If the website did not load initially, simply refresh the page once, and that should load up the website without any problems. 
 
 ## Motivation
 
@@ -63,6 +55,22 @@ As a guest user, you are able to complete the forms but **without** any saving f
   - Leave people confused or misinformed about their legal rights and obligations
   - Contain terms that parties never read, are ambiguous, or may not comply with the law
   - Leave people feeling vulnerable and upset increasing the risk of conflict
+
+## User Interactions
+
+### Guest
+
+**NOTE**: As of the time of writing, the backend is not initialized and deployed. Additionally, some front-end pages have been partially completed, meaning that some features may not be available yet.
+
+As a guest user, you are able to complete the forms but **without** saving any of your progress.
+
+### Landlord
+
+As a landlord user, you have the ability to create multiple leases for multiple tenants, by following the simple-to-use form hosted by the application. Any terms/definitions that may not seem obvious, will be defined in the **Resources** section in the right-hand side. Once the form has been completed, it's sent to the tenant to be viewed.
+
+### Tenant
+
+As a tenant user, you have the ability to view the terms, requiremtns, and any relevant information set out by the landlord in a consise and simple user interface. Analagous to the landlord view, any common terms, policies, or frequently asked questions will be answered in the **Resources** section.
 
 ## Resources
 
