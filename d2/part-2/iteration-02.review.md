@@ -1,9 +1,4 @@
-# YOUR PRODUCT/TEAM NAME
-
- > _Note:_ This document is meant to be written during (or shortly after) your review meeting, which should happen fairly close to the due date.      
- >      
- > _Suggestion:_ Have your review meeting a day or two before the due date. This way you will have some time to go over (and edit) this document, and all team members should have a chance to make their contribution.
-
+# Lease Wizard
 
 ## Iteration 1 (Sprint 1) - Review & Retrospect
 
@@ -50,10 +45,6 @@ List process-related (i.e. team organization) decisions that, in retrospect, wer
 
 #### Goals and/or tasks that were met/completed:
 
- * From most to least important.
- * Refer/link to artifact(s) that show that a goal/task was met/completed.
- * If a goal/task was not part of the original iteration plan, please mention it.
-
 #### Goals and/or tasks that were planned but not met/completed:
 
   1. We wanted to have our backend setup by this point, so that we can start working on the PDF generation right away. Given our stack consists of Flask and React, this proved to be more complicated than we anticipated, and requires more research and investigation. We have inquired Adam about implementing this setup but haven't had the chance to sit down and listen to his advice. We will be meeting with him this upcoming sprint and take his advice in how to best hook the backend with the frontend.
@@ -61,11 +52,23 @@ List process-related (i.e. team organization) decisions that, in retrospect, wer
   2. Related to the above task, we also haven't had the chance to setup the Google Cloud Platform account and the neccesary VMs/DB we may need for this project. This is simply due to the fact that this was blocked by the task above, and has postponed to once we have the setup figured out, no need to start burning credits!
 
 #### How was your product demo?
- * How did you prepare your demo?
- * What did you manage to demo to your partner?
- * Did your partner accept the features?
- * Were there change requests?
- * What did you learn from the demo from either a process or product perspective?
+
+ Prepare:
+
+We have deployed our master/stable branch on Heroku, and are using continuous deployment (CD) to keep the application up to date with the newest accepted PR. This allows our partners to have an update-to-date view on the product we are creating without having to look through branches, checkout code, install packages and all the extra faff with it. While our main contact Avery knows how to set up this project locally, having it hosted and deployed now will save us headaches down the road and avoid the "it works on my computer". Any PR merged to master will be automatically deployed to Heroku using Heroku's plugin for GitHub.
+
+ Partners thoughts:
+
+They enjoyed the progress we were making as well as the process of having PRs and reviews to be required. They liked our process just as much as our progress in this regard. They appreciated on being able to view our open issues to see what tasks we have made for ourselves and to make sure we have the same idea of what to focus on in mind.
+
+In terms of the quality of pages, they were understanding about our use of material UI for ease of development (not having to create custom components) and how it won't perfectly match the mock-ups we have on Figma.
+
+They request a few changes after a more thorough review of the pages delivered. These requests were given on the slack workspace informally and they also opened issues for us to keep these requested changes tracked like any other task we assigned to ourselves.
+
+Overall:
+
+For the partner, we think having them be able to see our entire process laid out for them and showing we are being as professional as possible gave them a little ease of mind. This compared to just pushing to Heroku every 2 weeks with no view on process or progress in between.
+
 
 ## Meeting Highlights
 
@@ -88,3 +91,11 @@ Below is a list of goals for tasks that we want to achieve in the upcoming sprin
 
  4. Fix the UI/Bugs<br/>
   We want to deliver a product that works well, and essentially meets a high standard set by both parties, rather than creating many subpar pages/components. This means we want to address the feedback given to us as a result of our partner meeting (Issues on GitHub with tag "feedback"). This allows whoever takes over this product down the line, is better able to implement new features and use any existing components that we've created.
+
+Couple of points regarding processes:
+
+1. Time to create pages:<br/>
+ We hope that we can amortize the cost of creating pages since we are much more familiar with all the technologies we have chosen to use as well as the existing legacy code from the partner. We hope that we have set ourselves up to save time in the future by setting up all the generic components we hope to use such as buttons, tooltips, and text fields for example.
+
+2. PR time estimations:<br/>
+ We realized that our biggest bottleneck is terms of writing code is the delay between submitting PRs and having them reviewed. We underestimated how long it would take to do each review. We didn't consider that often we needed to go back, and change code based on reviews and then re-review before accepting the PR. Going forward we should bake more time into how long each task will take to include some time for this back-and -forth of the review process.
