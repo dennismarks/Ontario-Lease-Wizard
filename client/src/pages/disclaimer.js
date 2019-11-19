@@ -43,7 +43,7 @@ export class Disclaimer extends Component {
         </p>
         <Link
           className={this.state.checked ? null : "disabledLink"}
-          to="/concerns"
+          to="/rent"
         >
           <button disabled={!this.state.checked}>Next</button>
         </Link>

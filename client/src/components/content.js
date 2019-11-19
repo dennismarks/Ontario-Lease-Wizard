@@ -6,7 +6,6 @@ import { AnimatedSwitch } from "react-router-transition";
 import Home from "../pages/home.js";
 import loginProfile from "../pages/login_start.js";
 import Disclaimer from "../pages/disclaimer.js";
-import Concerns from "../pages/concerns.js";
 import Rent from "../pages/money/rent.js";
 import Dates from "../pages/money/dates";
 import PaymentMethods from "../pages/money/payment";
@@ -18,7 +17,7 @@ import sidebarHome from "../sidebars/home.js";
 
 // The Router below changes the page content depending on the current route path. Each page is going to have some way -- whether in the footer or on the page, or even through components/navigation.js -- to push a new path, thus changing the content.
 
-// If a component needs to manipulate App-level state (and that will be often) then you need to throw the Route a render and make an inline function to inject the passing of props and prop functions. See /concerns below.
+// If a component needs to manipulate App-level state (and that will be often) then you need to throw the Route a render and make an inline function to inject the passing of props and prop functions.
 export class Content extends Component {
   render() {
     return (
@@ -38,16 +37,6 @@ export class Content extends Component {
             <Route exact path="/login" component={loginProfile} />
             <Route exact path="/disclaimer" component={Disclaimer} />
             <Route exact path="/utilities" component={Utilities} />
-            <Route
-              exact
-              path="/concerns"
-              render={() => (
-                <Concerns
-                  state={this.props.state}
-                  handler={this.props.handler}
-                />
-              )}
-            />
             <Route
               exact
               path="/rent"
@@ -70,7 +59,7 @@ export class Content extends Component {
           <h2>Learn More</h2>
           <Route
             exact
-            path={["/", "/login", "/disclaimer", "/concerns"]}
+            path={["/", "/login", "/disclaimer"]}
             component={sidebarHome}
           />
         </div>

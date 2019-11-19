@@ -8,7 +8,6 @@ export class Footer extends Component {
     const { location } = this.props;
     const showButton = location => {
       switch (location.pathname) {
-        case "/concerns":
         case "/rent":
         case "/utilities":
         case "/deposits":
@@ -22,10 +21,8 @@ export class Footer extends Component {
     };
     const previousLink = location => {
       switch (location.pathname) {
-        case "/concerns":
-          return "/disclaimer";
         case "/rent":
-          return "/concerns";
+          return "/disclaimer";
         case "/utilities":
           return "/rent";
         case "/deposits":
@@ -42,8 +39,6 @@ export class Footer extends Component {
     };
     const nextLink = location => {
       switch (location.pathname) {
-        case "/concerns":
-          return "/rent";
         case "/rent":
           return "utilities";
         case "/utilities":

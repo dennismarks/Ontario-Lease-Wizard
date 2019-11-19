@@ -15,18 +15,9 @@ class App extends Component {
     // The handler is passed down as a prop method for children to manipulate parent state. Here, the handler is bound to App.js context.
     this.handler = this.handler.bind(this);
   }
-  state = {
-    concerns: {
-      rent: 0,
-      utilities: 0,
-      maintenance: 0,
-      guests: 0,
-      lengthOfTenancy: 0,
-      subletting: 0,
-      additional: []
-    }
-  };
-  // You pass the handler the full state to update each time. This means the child needs to call the current state as an object into a temporary variable, make changes, and then pass in the variable as the update here. See an example in pages/concerns.js:14 for what that looks like. For us, here. it just means we pass the state as a property down the component tree.
+  // Leave this for now, as it might be useful for us later once we share states across pages
+  state = {};
+  // You pass the handler the full state to update each time. This means the child needs to call the current state as an object into a temporary variable, make changes, and then pass in the variable as the update here. For us, here. it just means we pass the state as a property down the component tree.
   handler(update) {
     this.setState(update);
   }

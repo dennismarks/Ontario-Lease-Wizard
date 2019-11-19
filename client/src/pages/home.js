@@ -13,9 +13,8 @@ export class Home extends Component {
         <h3>{" Here's an overview of the process "}</h3>
         <ol>
           <li>1. Sign in or Create a new Lease</li>
-          <li>2. Share your Concerns</li>
-          <li>3. Review & Add Terms</li>
-          <li>4. View & Print</li>
+          <li>2. Review & Add Terms</li>
+          <li>3. View & Print</li>
         </ol>
         <Link to="/login" className="button">
           <button id="getStarted">Get Started</button>
