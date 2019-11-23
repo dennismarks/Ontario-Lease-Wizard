@@ -10,7 +10,7 @@ import {
   Grid
 } from "@material-ui/core";
 import { DAYS_IN_MONTH } from "../../shared/variables";
-import { KeyboardDatePicker } from "@material-ui/pickers";
+import { CustomDatePicker } from "../../shared/components/datePicker"
 
 const useStyles = makeStyles({
   root: {
@@ -83,19 +83,11 @@ const Dates = props => {
         </Typography>
       </Grid>
       <Grid item xs={4}>
-        <KeyboardDatePicker
-          disableToolbar
-          variant="inline"
-          inputVariant="outlined"
-          margin="normal"
+        <CustomDatePicker
           id="date-picker-move-in"
           label="Move-in Date"
-          format="DD/MM/YYYY"
           value={dates.moveIn}
           onChange={onDateChange("moveIn")}
-          KeyboardButtonProps={{
-            "aria-label": "change date"
-          }}
         />
       </Grid>
       <Grid item xs={12}>
@@ -109,19 +101,12 @@ const Dates = props => {
       </Grid>
       <Grid item xs={4}>
         {
-          <KeyboardDatePicker
-            variant="inline"
-            inputVariant="outlined"
-            margin="normal"
+          <CustomDatePicker
             id="date-picker-tenacy-start"
             label="Start of Tenacy"
-            format="DD/MM/YYYY"
             value={dates.termStart}
-            disabled={true}
             onChange={onDateChange("termStart")}
-            KeyboardButtonProps={{
-              "aria-label": "change date"
-            }}
+            disabled={true}
           />
         }
       </Grid>
@@ -168,18 +153,11 @@ const Dates = props => {
             <Typography>This amount is due on: </Typography>
           </Grid>
           <Grid item xs={4}>
-            <KeyboardDatePicker
-              inputVariant="outlined"
-              variant="inline"
-              margin="normal"
+            <CustomDatePicker 
               id="date-picker-pro-rated-due-date"
               label="Pro-rated Rent Due Date"
-              format="DD/MM/YYYY"
               value={dates.proRatedRentDue}
               onChange={onDateChange("proRatedRentDue")}
-              KeyboardButtonProps={{
-                "aria-label": "change date"
-              }}
             />
           </Grid>
         </React.Fragment>

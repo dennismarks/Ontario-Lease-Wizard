@@ -10,7 +10,7 @@ import {
   Grid,
   makeStyles
 } from "@material-ui/core";
-import { KeyboardDatePicker } from "@material-ui/pickers";
+import { CustomDatePicker } from "../shared/components/datePicker";
 import ToolTip from "../util/tooltip";
 
 const useStyles = makeStyles(theme => ({
@@ -79,7 +79,7 @@ function DepositBox(props) {
         </RadioGroup>
       </FormControl>
       <Grid container direction="row" justify="flex-start" alignItems="center">
-        <Grid item xs={0}>
+        <Grid item xs={7}>
           <TextField
             margin="none"
             id="standard-basic"
@@ -88,25 +88,15 @@ function DepositBox(props) {
             disabled={props.disabled}
           />
         </Grid>
+        <Grid item xs={4}>
+            <CustomDatePicker 
+              id="date-picker-inline"
+              value={selectedDate}
+              label="Due on"
+              onChange={handleDateChange}
+            />
+        </Grid>
         <Grid item xs={1}>
-          <p>due on: </p>
-        </Grid>
-        <Grid item xs={0}>
-          <KeyboardDatePicker
-            disableToolbar
-            className={classes.datePick}
-            variant="inline"
-            inputVariant="outlined"
-            format="MM/DD/YYYY"
-            id="date-picker-inline"
-            value={selectedDate}
-            onChange={handleDateChange}
-            KeyboardButtonProps={{
-              "aria-label": "change date"
-            }}
-          />
-        </Grid>
-        <Grid item>
           <ToolTip style={{ paddingLeft: 4 }}>{props.typeDeposit}</ToolTip>
         </Grid>
       </Grid>

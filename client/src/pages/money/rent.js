@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import moment from "moment";
-import { KeyboardDatePicker } from "@material-ui/pickers";
 
 import {
   makeStyles,
@@ -18,6 +17,7 @@ import {
 import AttachMoneyIcon from "@material-ui/icons/AttachMoney";
 import InfoIcon from "@material-ui/icons/Info";
 import { useSpring, animated } from "react-spring/web.cjs";
+import { CustomDatePicker } from "../../shared/components/datePicker"
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -112,30 +112,20 @@ const Rent = props => {
   });
 
   const calenderPickerStart = (
-    <KeyboardDatePicker
-      margin="normal"
+    <CustomDatePicker
       id="date-picker-dialog"
       label="Lease Start Date"
-      format="MM/DD/YYYY"
       value={selectedDateStart}
       onChange={handleDateChangeStart}
-      KeyboardButtonProps={{
-        "aria-label": "change date"
-      }}
     />
   );
 
   const calenderPickerEnd = (
-    <KeyboardDatePicker
-      margin="normal"
+    <CustomDatePicker
       id="date-picker-dialog"
       label="Lease End Date"
-      format="MM/DD/YYYY"
       value={selectedDateEnd}
       onChange={handleDateChangeEnd}
-      KeyboardButtonProps={{
-        "aria-label": "change date"
-      }}
       error={selectedDateStart > selectedDateEnd}
       minDate={selectedDateStart}
       helperText={
