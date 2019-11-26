@@ -1,1 +1,1 @@
-web: cd client && yarn build && cd ../server gunicorn app:app
+web: sh -c 'cd client && yarn build && cd ../server gunicorn app:app'
