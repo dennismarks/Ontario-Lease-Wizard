@@ -7,6 +7,7 @@
   "license": "MIT",
   "scripts": {
     "build": "cd client/ && yarn && yarn build && cd ..",
-    "start": "echo Starting application..."
+    "start": "echo Starting application...",
+    "dev": "cd client/ && yarn && yarn start"
   }
 }
