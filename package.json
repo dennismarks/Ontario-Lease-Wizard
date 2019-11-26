@@ -6,7 +6,7 @@
   "author": "mousav26 <amousavi@me.com>",
   "license": "MIT",
   "scripts": {
-    "build": "cd client/ && yarn build",
+    "build": "cd client/ && yarn && yarn build",
     "start": "echo Starting application..."
   }
 }
