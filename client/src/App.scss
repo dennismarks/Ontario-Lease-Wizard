@@ -144,6 +144,7 @@ table {
 }
 
 .disabledLink {
+  text-decoration: none;
   pointer-events: none;
 }
 
@@ -159,51 +160,6 @@ table {
   background-color: #fff;
   label {
     cursor: pointer;
-  }
-  input[type="checkbox"] {
-    width: 20px;
-    height: 20px;
-    vertical-align: middle;
-    display: inline-block;
-    box-shadow: none;
-    -webkit-appearance: none;
-    border: 1px solid $primary;
-    border-radius: 3px;
-    &:checked:after {
-      content: "✓";
-      font-size: 20px;
-      bottom: 1px;
-      left: 1px;
-      color: $primary;
-      position: absolute;
-      height: 20px;
-      width: 20px;
-    }
-  }
-  input[type="radio"] {
-    display: inline-block;
-    -webkit-appearance: none;
-    height: 14px;
-    width: 14px;
-    vertical-align: text-bottom;
-    border: 2px solid $primary;
-    border-radius: 30px;
-    margin-top: 16px;
-    &:checked {
-      border: 1px solid $primary;
-    }
-    &:checked:after {
-      content: "";
-      display: block;
-      height: 2px;
-      top: 2px;
-      left: 2px;
-      width: 2px;
-      border: 3px solid transparent;
-      border-radius: 5px;
-      position: absolute;
-      background-color: $primary;
-    }
   }
   span.date {
     border: 1px solid $primary;
@@ -418,6 +374,7 @@ nav {
   z-index: 1;
   line-height: 2;
   grid-row: 1 / 4;
+
   .contentRoute {
     h1 {
       font-size: calc(10px + 2vmin);
@@ -428,35 +385,45 @@ nav {
     ol {
       margin-top: 1em;
     }
-    a.button {
+    .link {
       text-decoration: none;
     }
-    button {
-      // padding: 1em 2em 1em 2em;
-      text-transform: uppercase;
-      // border-radius: 3px;
+    .button {
+      height: 42px;
+      width: 108px;
+      border-radius: 3px;
+      background-color: $primary;
+      color: white;
+      box-shadow: 2px 4px 6px 0px rgba(0, 0, 0, 0.25);
       cursor: pointer;
-      // background-color: $primary;
-      // color: white;
-      color: $primary;
-      // box-shadow: 2px 4px 6px 0px rgba(0,0,0,0.25);
+      color: white;
       outline: 0;
       border: 0;
-      font-size: 0.9em;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 19px;
+      text-align: center;
+      text-transform: uppercase;
+      text-decoration: none;
       &#getStarted {
-        margin: 0 auto;
+        width: 180px;
+        margin: 24px auto 0 auto;
         display: block;
       }
+      &#signIn {
+        margin-top: 24px;
+      }
       &:disabled {
-        // background-color: $mediumgray;
+        background-color: $mediumgray;
+        cursor: default;
       }
     }
     display: inline-block;
-    margin-top: 7vh;
     height: calc(100% - 7vh);
     overflow-y: scroll;
-    width: calc(100% - (300px + 2vw));
-    margin-left: 2vw;
+    width: calc(100% - (300px + 4vw));
+    margin: 7vh 2vw 0 2vw;
   }
 }
 
@@ -464,16 +431,6 @@ nav {
 // Login
 
 .content {
-  // input {
-  //   display: block;
-  //   outline: 0;
-  //   border: 0;
-  //   border-bottom: 1px solid $primary;
-  //   font-family: "Work Sans";
-  //   margin-top: 25px;
-  //   padding-bottom: 5px;
-  //   font-size: 1.1em;
-  // }
   .loginLeft {
     width: 25%;
     padding: 2% 18% 2% 2%;
@@ -482,18 +439,12 @@ nav {
     h3.signIn {
       margin-top: 10vh;
     }
-    input {
-      // width: 100%;
-    }
     p {
       margin-bottom: 1em;
     }
     small {
       font-size: 0.8em;
       display: block;
-    }
-    button.signIn {
-      margin-top: 1em;
     }
   }
   .loginRight {
@@ -549,19 +500,6 @@ nav {
     position: absolute;
     top: -15px;
     right: 0%;
-  }
-  input[type="submit"] {
-    padding: 1em 2em 1em 2em;
-    text-transform: uppercase;
-    border-radius: 3px;
-    cursor: pointer;
-    background-color: $primary;
-    color: white;
-    box-shadow: 2px 4px 6px 0px rgba(0, 0, 0, 0.25);
-    outline: 0;
-    border: 0;
-    font-size: 0.9em;
-    margin-bottom: 1em;
   }
 }
 
@@ -731,3 +669,7 @@ footer {
     opacity: 1;
   }
 }
+
+// .center {
+//   margin: 0 auto;
+// }

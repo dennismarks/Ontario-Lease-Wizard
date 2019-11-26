@@ -19,6 +19,7 @@ import {
   DialogContentText,
   DialogTitle
 } from "@material-ui/core";
+import { nominalTypeHack } from "prop-types";
 
 const textInfo = (
   <p>
@@ -185,7 +186,7 @@ export default function UtilitiesServices() {
     let noteButton;
     noteButton = (
       <Button
-        variant="outlined"
+        // variant="outlined"
         className={classes.button}
         startIcon={row.note == "" ? <AddIcon /> : <EditIcon />}
         onClick={() => handleOpenNoteDialog(row.utility)}
