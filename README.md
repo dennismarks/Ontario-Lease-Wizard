@@ -2,6 +2,10 @@
 <img alt="OLW Banner" src="docs/images/Banner.jpg">
 </p>
 
+## Project Note
+- Remember to cd into the `client` folder for all Front-end dev
+- PRODUCTION BUILD: https://simply-house.herokuapp.com
+
 ## Table of Contents
 
 - [Getting Started](#getting-started)
@@ -43,7 +47,7 @@ The output of the build process will be located in the `build/` folder.
 
 If you want to run the project **locally**, you can simply follow the instructions in the [Getting Started](#getting-started) section above to install dependencies and run the application development server. When you load up the app in your browser, you should see the application Home screen.
 
-We also have a up and running version of the application hosted on Heroku, which can be found [here](http://simplyhouse-stable.herokuapp.com). This is the most up-to-date version of the application on the `master` branch.
+We also have a up and running version of the application hosted on Heroku, which can be found [here](https://simply-house.herokuapp.com). This is the most up-to-date version of the application on the `master` branch.
 
 **NOTE**: We are still trying to figure out the perfect configurations and setup with Heroku, which may mean the link may not work as expected every time. If the website did not load initially, simply refresh the page once, and that should load up the website without any problems. 
 
