@@ -33,6 +33,39 @@ yarn start
 
 Navigate to [localhost:3000](http://localhost:3000) to view the running app.
 
+## Development Instructions
+In the **root directory**: 
+
+### Front end
+```shell script
+yarn dev
+```
+Runs `yarn start`, which starts a Node server on port 3000. 
+
+### Back end
+In a new terminal tab/window: 
+
+Using python version `3.6`.
+
+Create a python virtual environment (https://packaging.python.org/guides/installing-using-pip-and-virtual-environments/).
+
+Activate the virtual environment.
+
+```shell script
+pip3 install -r requirements.txt
+python3 server/app.py
+```
+This starts the Flask server on port 5000. 
+
+**Important**: Do front end dev work on the 3000 port, while making fetch requests/api calls to the 5000 port. 
+
+Eg.
+```javascript
+fetch("localhost:5000/test"); 
+```
+
+This is because `yarn start` does not make a build folder. 
+
 ## Build Instructions
 
 To build a production release, run:

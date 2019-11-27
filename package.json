@@ -1,0 +1,13 @@
+{
+  "name": "team-project-law-design-lease-wizard",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:csc301-fall-2019/team-project-law-design-lease-wizard.git",
+  "author": "mousav26 <amousavi@me.com>",
+  "license": "MIT",
+  "scripts": {
+    "build": "cd client/ && yarn && yarn build && cd ..",
+    "start": "echo Starting application...",
+    "dev": "cd client/ && yarn && yarn start"
+  }
+}
