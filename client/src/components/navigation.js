@@ -1,60 +1,86 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 import { ChevronRight } from "react-feather";
+import { ExpansionPanel, ExpansionPanelDetails, 
+   Box, Checkbox, makeStyles, ExpansionPanelSummary} from '@material-ui/core';
+
 
 let moneySvg = require("../assets/navigation/money.svg"),
-  dayToDaySvg = require("../assets/navigation/day2day.svg"),
   timelineSvg = require("../assets/navigation/timeline.svg"),
   unitSvg = require("../assets/navigation/unit.svg"),
   partiesSvg = require("../assets/navigation/parties.svg"),
   additionalTermsSvg = require("../assets/navigation/additional terms.svg");
 
-class NavigationItem extends Component {
-  constructor(props) {
-    super(props);
-    this.toggleClass = this.toggleClass.bind(this);
-    this.state = {
-      active: false
-    };
+const moneySubheaders = 
+[
+  {name: "Rent", link: "/rent", pageNumber: 1},
+  {name: "Utilities and Services", link: "/utilities", pageNumber: 2},
+  {name: "Deposits", link: "/deposits", pageNumber: 3},
+  {name: "Move-in Dates", link: "/dates", pageNumber: 4},
+  {name: "Payments", link: "/payment", pageNumber: 5}
+];
+const timelineSubheaders = [{name: "Timeline", link: "/NA", pageNumber: 6},
+                          {name: "Questions and Answers", link: "/NA", pageNumber: 7}];
+const unitSubheaders = [];
+const partiesSubheaders = [{name: "Parties", link: "/NA", pageNumber: 8},
+{name: "Changes to Parties", link: "/NA", pageNumber: 9}];
+const additionalTermsSubheaders = [{name: "Additional Terms", link: "/NA", pageNumber: 10}];
+const finishAndSignSubheaders = [];
+
+const useStyles = makeStyles(theme => ({
+  ExpansionPanel: { margin: "0px" },
+  headerImg: {marginTop: "5px"},
+  headerName: { marginTop: "5px" },
+  ExpansionPanelDetails: { padding: "0px" },
+  subheader: { marginLeft: "60px" },
+  subheaderName: { color: "black" },
+  Checkbox: { padding: "0px" }
+}));
+
+function NavigationItem(props) {
+  const classes = useStyles();
+
+  const expandHeader = () => {
+    return props.details.some((subheader) => subheader.link === window.location.pathname)
   }
-  toggleClass() {
-    const currentState = this.state.active;
-    this.setState({ active: !currentState });
+  const getCurrentPageNum = () => {
+    const page = props.details.find((subheader) => subheader.link === window.location.pathname)
+    if (expandHeader() && page){
+      return page.pageNumber
+    } else {
+      return 0
+    }
   }
-  render() {
-    let divStyle = {
-      hidden: {
-        visibility: "hidden",
-        height: 0,
-        opacity: 0
-      },
-      visible: {
-        visibility: "visible",
-        height: "auto",
-        opacity: 1
-      }
-    };
-    return (
-      <li
-        className={this.state.active ? "active" : null}
-        onClick={this.toggleClass}
-      >
-        <ChevronRight
-          className={"chevronRight " + (this.state.active ? "active" : null)}
-          side={25}
-        />
+
+  return (
+    <ExpansionPanel expanded={expandHeader()} className={classes.ExpansionPanel}>
+      <ExpansionPanelSummary>
+        <ChevronRight className={"chevronRight " + (expandHeader() ? "active" : null)}
+          side={25} />
         <img
-          src={this.props.imageSrc}
-          className={this.props.imageClass}
-          alt={this.props.imageAlt}
-        />
-        <span>{this.props.name}</span>
-        <div style={this.state.active ? divStyle.visible : divStyle.hidden}>
-          {this.props.detail}
-        </div>
-      </li>
-    );
-  }
+            src={props.imageSrc}
+            alt={props.imageAlt}
+            className={props.Name === "Money" ? classes.headerImg : null}
+          />
+        <span className={classes.headerName}>{props.name}</span>
+      </ExpansionPanelSummary>
+      <ExpansionPanelDetails className={classes.ExpansionPanelDetails}>
+        <Box>
+        {props.details.map(subheader => (
+          <div
+            key={subheader.name}
+            className={classes.subheader}
+          > 
+            <Checkbox checked={subheader.pageNumber < getCurrentPageNum()} 
+            className={classes.Checkbox} color={"primary"}/>
+              <span className={classes.subheaderName}> <u>{subheader.name}</u> </span>
+          </div>
+        ))}
+        </Box>
+      </ExpansionPanelDetails>
+    </ExpansionPanel>
+  );
+
 }
 
 export class navigation extends Component {
@@ -63,7 +89,7 @@ export class navigation extends Component {
     const hiddenNav = location.pathname === "/" ? "hidden" : "";
     return (
       <nav className={hiddenNav}>
-        <div className="navDiv">
+        <Box className="navDiv">
           <h2>Table of Contents</h2>
           <ul>
             <NavigationItem
@@ -71,39 +97,43 @@ export class navigation extends Component {
               imageClass="Money"
               imageAlt="Money"
               name="Money"
-            />
-            <NavigationItem
-              imageSrc={dayToDaySvg}
-              imageClass="dayToDay"
-              imageAlt="Day to Day"
-              name="Day to Day"
+              details={moneySubheaders}
+              optionalImgMargin={"5px"}
             />
             <NavigationItem
               imageSrc={timelineSvg}
               imageClass="Timeline"
               alt="Timeline"
               name="Timeline"
+              details={timelineSubheaders}
             />
             <NavigationItem
               imageSrc={unitSvg}
               imageClass="Unit"
               imageAlt="Unit"
               name="Unit"
+              details={unitSubheaders}
             />
             <NavigationItem
               imageSrc={partiesSvg}
               imageClass="Parties"
               imageAlt="Parties"
               name="Parties"
+              details={partiesSubheaders}
             />
             <NavigationItem
               imageSrc={additionalTermsSvg}
               imageclass="AdditionalTerms"
               imageAlt="Additional Terms"
               name="Additional Terms"
+              details={additionalTermsSubheaders}
+            />
+            <NavigationItem
+              name="Finish and Sign"
+              details={finishAndSignSubheaders}
             />
           </ul>
-        </div>
+        </Box>
       </nav>
     );
   }
