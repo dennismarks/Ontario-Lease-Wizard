@@ -313,9 +313,9 @@ nav {
         display: inline-block;
         vertical-align: middle; }
   nav div.navDiv {
-    margin-top: 8vh;
-    margin-bottom: 8vh;
-    height: calc(100% - 16vh);
+    margin-top: 0vh;
+    margin-bottom: 0vh;
+    height: calc(100% - 0vh);
     box-shadow: 4px 2px 6px 0px rgba(0, 0, 0, 0.25);
     overflow: scroll; }
 
@@ -472,8 +472,17 @@ footer {
   grid-row: 4;
   position: relative;
   background-color: #eeeeee; }
+  footer .perc-sign {
+    width: 60px;
+    margin: 38px 0 0 74px;
+    font-family: Work Sans;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 22px;
+    text-transform: uppercase;
+    color: #006689; }
   footer .track {
-    margin: 35px 280px 0 246px;
+    margin: -25px 215px 0 325px;
     height: 25px;
     background-color: #c4c4c4;
     border-radius: 3px;
@@ -485,19 +494,9 @@ footer {
       box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
       border-radius: 3px;
       transition: width 0.3s ease-in-out; }
-    footer .track .perc-sign {
-      margin-right: -50px;
-      padding-top: 1px;
-      float: right;
-      color: #424242;
-      font-family: Work Sans;
-      font-style: normal;
-      font-weight: 300;
-      font-size: 16px;
-      line-height: 24px; }
   footer button {
     width: 108px;
-    height: 44px;
+    height: 42px;
     top: 25px;
     padding: 1em 1.7em 1em 1.5em;
     text-transform: uppercase;
@@ -517,22 +516,26 @@ footer {
       transition: opacity 1s ease;
       pointer-events: none; }
     footer button#previous {
-      padding: 1em 1em 1em 1.7em;
+      padding-top: 13px;
+      padding-left: 30px;
       background-color: white;
       position: absolute;
-      left: 58px; }
+      left: 162px;
+      font-size: 16px; }
       footer button#previous svg.chevronLeft {
         position: absolute;
         left: 1px;
-        top: 11px; }
+        top: 10px; }
     footer button#next {
+      padding-top: 13px;
       background-color: #7bf1d4;
       position: absolute;
-      left: calc(100% - 158px); }
+      left: calc(100% - 158px);
+      font-size: 16px; }
       footer button#next svg.chevronRight {
         position: absolute;
-        right: 2px;
-        top: 11px; }
+        right: 1px;
+        top: 10px; }
     footer button svg.chevronRight {
       display: inline-block; }
 
