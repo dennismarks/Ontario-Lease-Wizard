@@ -6,84 +6,44 @@ export class Footer extends Component {
   render() {
     // It will only show our buttons if it's the right route for them to appear.
     const { location } = this.props;
-    const showButton = location => {
-      switch (location.pathname) {
-        case "/rent":
-        case "/utilities":
-        case "/deposits":
-        case "/dates":
-        case "/payment":
-        case "/timeline":
-          return false;
-        default:
-          return true;
-      }
-    };
+    const urls = ["/rent", "/utilities", "/deposits", "/dates", "/payment", "/timeline", "/qa", "/unit",
+                  "/parties", "/changes", "/legal", "/daytoday", "/additional"];
+
+    const showButton = location => !urls.includes(location.pathname);
+
     const previousLink = location => {
-      switch (location.pathname) {
-        case "/rent":
-          return "/disclaimer";
-        case "/utilities":
-          return "/rent";
-        case "/deposits":
-          return "/utilities";
-        case "/dates":
-          return "/deposits";
-        case "/payment":
-          return "/dates";
-        case "/timeline":
-          return "/payment";
-        default:
-          return "/";
+      const index = urls.findIndex(url => url === location.pathname);
+      if (index === 0) {
+        return "/disclaimer";
       }
+      if (index === -1) {
+        return "/";
+      }
+      return urls[index - 1];
     };
+
     const nextLink = location => {
-      switch (location.pathname) {
-        case "/rent":
-          return "utilities";
-        case "/utilities":
-          return "/deposits";
-        case "/deposits":
-          return "/dates";
-        case "/dates":
-          return "/payment";
-        case "/payment":
-          return "/timeline";
-        default:
-          return "/";
+      // Link for next button when on final page
+      const index = urls.findIndex(url => url === location.pathname);
+      if (index === urls.length - 1) {
+        return "/end";
       }
-    };
-    const progressBarHidden = location => {
-      switch (location.pathname) {
-        case "/rent":
-        case "/utilities":
-        case "/deposits":
-        case "/dates":
-        case "/payment":
-        case "/timeline":
-          return false;
-        default:
-          return true;
+      if (index === -1) {
+        return "/";
       }
+      return urls[index + 1];
     };
+
+    const progressBarHidden = location => !urls.includes(location.pathname);
+
     const progressUpdate = location => {
-      switch (location.pathname) {
-        case "/rent":
-          return 0;
-        case "/utilities":
-          return (100 / 12) * 1;
-        case "/deposits":
-          return (100 / 12) * 2;
-        case "/dates":
-          return (100 / 12) * 3;
-        case "/payment":
-          return (100 / 12) * 4;
-        case "/timeline":
-          return (100 / 12) * 5;
-        default:
-          return 0;
+      const index = urls.findIndex(url => url === location.pathname);
+      if (index === -1) {
+        return 0;
       }
+      return (100 / urls.length) * index;
     };
+
     return (
       <footer>
         <Link to={previousLink(location)}>
@@ -101,7 +61,7 @@ export class Footer extends Component {
           <div
             className="thumb"
             style={{ width: progressUpdate(location) + "%" }}
-          ></div>
+          />
           <div className="perc-sign">
             {progressBarHidden(location)
               ? ""
