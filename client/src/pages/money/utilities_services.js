@@ -44,8 +44,7 @@ function createData(utility) {
     includedInBaseRent: false,
     managedByLandlord: false,
     managedByTenant: false,
-    note: "",
-    hasChecked: false
+    note: ""
   };
 }
 
@@ -149,7 +148,6 @@ export default function UtilitiesServices() {
       [utility]: {
         ...prevState[utility],
         [option]: value,
-        hasChecked: value
       }
     }));
   };
@@ -205,7 +203,6 @@ export default function UtilitiesServices() {
               control={
                 <Checkbox
                   checked={row.includedInBaseRent}
-                  disabled={row.hasChecked && !row.includedInBaseRent}
                   onChange={handleRowChange(
                     row.utility,
                     "includedInBaseRent",
@@ -223,7 +220,6 @@ export default function UtilitiesServices() {
               control={
                 <Checkbox
                   checked={row.managedByLandlord}
-                  disabled={row.hasChecked && !row.managedByLandlord}
                   onChange={handleRowChange(
                     row.utility,
                     "managedByLandlord",
@@ -241,7 +237,6 @@ export default function UtilitiesServices() {
                 <Checkbox
                   type="checkbox"
                   checked={row.managedByTenant}
-                  disabled={row.hasChecked && !row.managedByTenant}
                   onChange={handleRowChange(
                     row.utility,
                     "managedByTenant",
