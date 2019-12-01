@@ -46,13 +46,18 @@ export class Footer extends Component {
 
     return (
       <footer>
+        <div className="perc-sign">
+          {progressBarHidden(location)
+            ? ""
+            : Math.floor(progressUpdate(location)) + "%"}
+        </div>
         <Link to={previousLink(location)}>
           <button
             id="previous"
             className={showButton(location) ? "hidden" : null}
           >
             <ChevronLeft size={24} className="chevronLeft" />
-            Previous
+            Back
           </button>
         </Link>
         <div
@@ -61,12 +66,7 @@ export class Footer extends Component {
           <div
             className="thumb"
             style={{ width: progressUpdate(location) + "%" }}
-          />
-          <div className="perc-sign">
-            {progressBarHidden(location)
-              ? ""
-              : Math.floor(progressUpdate(location)) + "%"}
-          </div>
+          ></div>
         </div>
         <Link to={nextLink(location)}>
           <button id="next" className={showButton(location) ? "hidden" : null}>

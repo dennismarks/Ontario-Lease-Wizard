@@ -570,8 +570,18 @@ footer {
   grid-row: 4;
   position: relative;
   background-color: $lightgray;
+  .perc-sign {
+    width: 60px;
+    margin: 38px 0 0 74px;
+    font-family: Work Sans;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 22px;
+    text-transform: uppercase;
+    color: #006689;
+  }
   .track {
-    margin: 35px 280px 0 246px;
+    margin: -25px 215px 0 325px;
     height: 25px;
     background-color: #c4c4c4;
     border-radius: 3px;
@@ -584,21 +594,10 @@ footer {
       border-radius: 3px;
       transition: width 0.3s ease-in-out;
     }
-    .perc-sign {
-      margin-right: -50px;
-      padding-top: 1px;
-      float: right;
-      color: #424242;
-      font-family: Work Sans;
-      font-style: normal;
-      font-weight: 300;
-      font-size: 16px;
-      line-height: 24px;
-    }
   }
   button {
     width: 108px;
-    height: 44px;
+    height: 42px;
     top: 25px;
     padding: 1em 1.7em 1em 1.5em;
     text-transform: uppercase;
@@ -619,24 +618,28 @@ footer {
       pointer-events: none;
     }
     &#previous {
-      padding: 1em 1em 1em 1.7em;
+      padding-top: 13px;
+      padding-left: 30px;
       background-color: white;
       position: absolute;
-      left: 58px;
+      left: 162px;
+      font-size: 16px;
       svg.chevronLeft {
         position: absolute;
         left: 1px;
-        top: 11px;
+        top: 10px;
       }
     }
     &#next {
+      padding-top: 13px;
       background-color: $secondary;
       position: absolute;
       left: calc(100% - 158px);
+      font-size: 16px;
       svg.chevronRight {
         position: absolute;
-        right: 2px;
-        top: 11px;
+        right: 1px;
+        top: 10px;
       }
     }
     svg.chevronRight {
