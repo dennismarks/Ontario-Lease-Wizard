@@ -22,7 +22,7 @@ const moneySubheaders =
 const timelineSubheaders = [{name: "Timeline", link: "/NA", pageNumber: 6},
                           {name: "Questions and Answers", link: "/NA", pageNumber: 7}];
 const unitSubheaders = [];
-const partiesSubheaders = [{name: "Parties", link: "/NA", pageNumber: 8},
+const partiesSubheaders = [{name: "Parties", link: "/parties", pageNumber: 8},
 {name: "Changes to Parties", link: "/NA", pageNumber: 9}];
 const additionalTermsSubheaders = [{name: "Additional Terms", link: "/NA", pageNumber: 10}];
 const finishAndSignSubheaders = [];
