@@ -11,6 +11,7 @@ import Dates from "../pages/money/dates";
 import PaymentMethods from "../pages/money/payment";
 import Utilities from "../pages/money/utilities_services.js";
 import Deposits from "../pages/money/deposits";
+import AdditionalTerms from "../pages/additional terms/AdditionalTerms";
 
 // Importing our sidebars (they change with the route, as the pages do.)
 import sidebarHome from "../sidebars/home.js";
@@ -54,6 +55,7 @@ export class Content extends Component {
             />
             <Route exact path="/payment" component={PaymentMethods} />
             <Route exact path="/deposits" component={Deposits} />
+            <Route exact path="/additional" component={AdditionalTerms} />
           </AnimatedSwitch>
         </div>
         <div className="sidebar">
@@ -64,7 +66,7 @@ export class Content extends Component {
           />
           <Route
             exact
-            path={["/rent", "/utilities", "/deposits", "/dates", "/payment"]}
+            path={["/rent", "/utilities", "/deposits", "/dates", "/payment", "/additional"]}
             component={RightHandBar}
           />
         </div>
