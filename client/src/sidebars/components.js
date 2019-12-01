@@ -6,7 +6,8 @@ export class ListItem extends Component {
     super(props);
     this.toggleClass = this.toggleClass.bind(this);
     this.state = {
-      active: false
+      active: false,
+      static: props.static
     };
   }
   toggleClass() {
@@ -23,19 +24,29 @@ export class ListItem extends Component {
       visible: {
         visibility: "visible",
         height: "auto",
-        opacity: 1
+        opacity: 1,
+        fontWeight: "300",
+        fontStyle: "normal",
+        fontSize: "16px"
       }
     };
     return (
       <li
         className={this.state.active ? "active" : null}
         onClick={this.toggleClass}
+        style={
+          this.state.static
+            ? { paddingLeft: "26px", fontWeight: "450", fontSize: "17px" }
+            : { paddingLeft: "18px", fontWeight: "normal", fontSize: "17px" }
+        }
       >
         <ChevronRight
           className={"chevronRight " + (this.state.active ? "active" : null)}
-          size={25}
+          size={this.state.static ? 0 : 25}
         />
-        <span>{this.props.text}</span>
+        <span style={this.state.static ? { cursor: "default" } : null}>
+          {this.props.text}
+        </span>
         <div style={this.state.active ? divStyle.visible : divStyle.hidden}>
           {this.props.detail}
         </div>

@@ -176,8 +176,9 @@ header {
   width: 100vw;
   height: 90px;
   background-color: #006689; }
+  header .pointer:hover {
+    cursor: pointer; }
   header::after {
-    content: "";
     position: absolute;
     width: 100vw;
     height: 90px;
@@ -313,9 +314,7 @@ nav {
         display: inline-block;
         vertical-align: middle; }
   nav div.navDiv {
-    margin-top: 0vh;
-    margin-bottom: 0vh;
-    height: calc(100% - 0vh);
+    min-height: calc(100vh - 150px);
     box-shadow: 4px 2px 6px 0px rgba(0, 0, 0, 0.25);
     overflow: scroll; }
 
@@ -432,9 +431,7 @@ nav {
 
 .sidebar {
   box-shadow: -4px 2px 6px 0px rgba(0, 0, 0, 0.25);
-  margin-top: 8vh;
-  margin-bottom: 8vh;
-  height: calc(100% - 16vh);
+  height: calc(100vh - 150px);
   overflow: scroll;
   float: right;
   width: 300px; }
@@ -454,7 +451,7 @@ nav {
     list-style-type: none; }
     .sidebar div ul li {
       display: block;
-      padding: 1em 0.5em 1em 2em;
+      padding: 1em 1em 1em 2em;
       width: 90%;
       border-top: 1px solid #c4c4c4; }
       .sidebar div ul li span {

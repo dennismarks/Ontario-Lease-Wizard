@@ -14,6 +14,7 @@ import Deposits from "../pages/money/deposits";
 
 // Importing our sidebars (they change with the route, as the pages do.)
 import sidebarHome from "../sidebars/home.js";
+import RightHandBar from "../sidebars/RightHandBar.js";
 
 // The Router below changes the page content depending on the current route path. Each page is going to have some way -- whether in the footer or on the page, or even through components/navigation.js -- to push a new path, thus changing the content.
 
@@ -56,11 +57,15 @@ export class Content extends Component {
           </AnimatedSwitch>
         </div>
         <div className="sidebar">
-          <h2>Learn More</h2>
           <Route
             exact
             path={["/", "/login", "/disclaimer"]}
             component={sidebarHome}
+          />
+          <Route
+            exact
+            path={["/rent", "/utilities", "/deposits", "/dates", "/payment"]}
+            component={RightHandBar}
           />
         </div>
       </div>

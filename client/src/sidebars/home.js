@@ -5,11 +5,9 @@ export class sidebarHome extends Component {
   render() {
     return (
       <div>
+        <h2>Learn More</h2>
         <ul>
-          <ListItem
-            text={"Who's this for?"}
-            detail={"Here's more information."}
-          />
+          <ListItem text={"Key Deposits"} detail={"Here's more information."} />
           <ListItem text={"Can I trust it?"} />
           <ListItem text={"Why standard terms?"} />
           <ListItem text={"Is my personal information safe?"} />
