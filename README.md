@@ -21,13 +21,13 @@
 
 ## Description
 
-Completing a lease is a tedious and complicated task, where most of the language is not comprehensible by non-legal expert.
-In collaboration with Law & CoLab, we are aiming to make it easier for landlords and tenants to handle their contracts themselves, without requiring a lawyer to draft and explain all the legal terms within a lease contract for.
+Completing a lease is a tedious and complicated task, where most of the language is not comprehensible by non-legal experts.
+In collaboration with Law & CoLab, we are aiming to make it easier for landlords and tenants to handle their contracts themselves, without requiring a lawyer to draft and explain all the legal terms within a lease contract.
  
-In this web application, which we have called **simplyHouse** (analogous to simplyTax), we are trying to make it easier for landlords and tenants to communicate with each other directly, and be their own lawyers. This would greatly save time and money for both parties, while still comprehensive information for such a contract. Our core goals for this product are:
+In this web application, which we have called **simplyHouse** (analogous to simplyTax), we are trying to make it easier for landlords and tenants to communicate with each other directly, and be their own lawyers. This would greatly save time and money for both parties, while still retaining comprehensive information for a contract. Our core goals for this product are to:
  
-1. Provide easy-to-use and simple UI for lease application
-2. Source for all essential legal information regarding a lease (For both parties involved)
+1. Provide an easy-to-use and simple UI for lease application
+2. Be a source for all essential legal information regarding a lease (For both parties involved)
 3. Process and generate the required forms needed by authorities with no hassle for the users
 
 
@@ -140,7 +140,7 @@ As a landlord user, you have the ability to create multiple leases for multiple 
 
 ### Tenant
 
-As a tenant user, you have the ability to view the terms, requiremtns, and any relevant information set out by the landlord in a consise and simple user interface. Analagous to the landlord view, any common terms, policies, or frequently asked questions will be answered in the **Resources** section.
+As a tenant user, you have the ability to view the terms, requirements, and any relevant information set out by the landlord in a consise and simple user interface. Analagous to the landlord view, any common terms, policies, or frequently asked questions will be answered in the **Resources** section.
 
 ## Licenses
 
