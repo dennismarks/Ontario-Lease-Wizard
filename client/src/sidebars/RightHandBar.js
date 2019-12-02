@@ -23,7 +23,7 @@ export class RightHandBar extends Component {
           />
           <ListItem text={"Subheading 2.2"} detail={"Will be updated soon."} />
           <ListItem text={"Subheading 2.3"} detail={"Will be updated soon."} />
-          <li></li>
+          <li style={{ height: "200px" }}></li>
         </ul>
       </div>
     );

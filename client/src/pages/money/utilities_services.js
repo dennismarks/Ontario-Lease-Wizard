@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import EditIcon from "@material-ui/icons/Edit";
 import AddIcon from "@material-ui/icons/Add";
 import {
@@ -20,6 +20,8 @@ import {
   DialogTitle
 } from "@material-ui/core";
 import { nominalTypeHack } from "prop-types";
+import {sendData} from "../../shared/functions";
+import ToolTip from "../../util/tooltip";
 
 const textInfo = (
   <p>
@@ -142,6 +144,12 @@ export default function UtilitiesServices() {
     )
   );
 
+  useEffect(() => {
+    return () => {
+      sendData(rows);
+    }
+  }, []);
+
   const handleRowChange = (utility, option, value) => event => {
     setRows(prevState => ({
       ...prevState,
@@ -262,11 +270,27 @@ export default function UtilitiesServices() {
         <hr color="#006689" />
         <Table>
           <TableHead>
-            <TableRow>
+            <TableRow >
               <TableCell>Utility or Service</TableCell>
-              <TableCell>Included in Base Rent</TableCell>
-              <TableCell>Managed by Landlord</TableCell>
-              <TableCell>Managed by Tenant</TableCell>
+
+              <TableCell>
+                <div style={{ display: "flex"}}>
+                  <p>Included in Base Rent</p>
+                  <ToolTip style={{ paddingLeft: 4 }}>More Info on Base Rent</ToolTip>
+                </div>
+              </TableCell>
+              <TableCell>
+                <div style={{ display: "flex"}}>
+                  <p>Managed by Landlord</p>
+                  <ToolTip style={{ paddingLeft: 4 }}>This Utility will be handled by the landlord</ToolTip>
+                </div>
+              </TableCell>
+              <TableCell>
+                <div style={{ display: "flex"}}>
+                  <p>Managed by Tenant</p>
+                  <ToolTip style={{ paddingLeft: 4 }}>This Utility will be handled by the tenant </ToolTip>
+                </div>
+              </TableCell>
               <TableCell>Custom Notes</TableCell>
             </TableRow>
           </TableHead>
@@ -276,3 +300,4 @@ export default function UtilitiesServices() {
     </div>
   );
 }
+

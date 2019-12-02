@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import moment from "moment";
+import { sendData } from "../../shared/functions";
 
 import {
   makeStyles,
@@ -18,6 +19,7 @@ import AttachMoneyIcon from "@material-ui/icons/AttachMoney";
 import InfoIcon from "@material-ui/icons/Info";
 import { useSpring, animated } from "react-spring/web.cjs";
 import { CustomDatePicker } from "../../shared/components/datePicker"
+import ToolTip from "../../util/tooltip";
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -56,6 +58,19 @@ const Rent = props => {
   const [rentAmount, setRentAmount] = useState("");
   const [rentPeriodText, setRentPeriodText] = useState("bi-weekly");
   const [open, setOpen] = useState(false);
+
+  useEffect(() => {
+    return () => {
+      console.log(rentAmount);
+      sendData({
+        selectedDateStart: selectedDateStart.format(),
+        selectedDateEnd: selectedDateEnd.format(),
+        fixedTerm,
+        rentPeriod,
+        rentAmount
+      });
+    }
+  }, []);
 
   const handleRentPeriodText = event => {
     setRentPeriodText(event.target.value);
@@ -300,12 +315,10 @@ const Rent = props => {
           and can include the cost of certain services and utilites. On the next
           page, you will specify what’s included or excluded from
         </p>
-        <p onClick={handleOpen}>
-          <b>
-            Base Rent <InfoIcon />
-          </b>
-        </p>
-
+        <div style={{ display: "flex"}}> 
+          <p>Base Rent</p>
+          <ToolTip style={{ paddingLeft: 4 }}>More Info on Base Rent</ToolTip>
+        </div>
         {infoModal}
 
         <br />

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   FormGroup,
   FormControlLabel,
@@ -10,6 +10,7 @@ import {
   makeStyles
 } from "@material-ui/core";
 import Tooltip from "../../util/tooltip";
+import {sendData} from "../../shared/functions";
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -53,6 +54,12 @@ const PaymentMethods = props => {
   const [autoDeposit, setAutoDeposit] = useState(false);
   const [other, setOther] = useState(null);
   const [postDatedCheque, setPostDatedCheque] = useState(false);
+
+  useEffect(() => {
+    return () => {
+      sendData({methods, email, autoDeposit, other, postDatedCheque});
+    }
+  }, []);
 
   const handleMethodsChange = method => {
     setMethods(prevState => ({ ...prevState, [method]: !methods[method] }));

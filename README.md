@@ -2,12 +2,13 @@
 <img alt="OLW Banner" src="docs/images/Banner.jpg">
 </p>
 
-## Project Note
-- Remember to cd into the `client` folder for all Front-end dev
-- PRODUCTION BUILD: https://simply-house.herokuapp.com
+## Quick links
+- Stable version found [here](https://simply-house.herokuapp.com)
 
 ## Table of Contents
 
+- [Description](#Description)
+- [Key Features](#Key-Features)
 - [Getting Started](#getting-started)
 - [Build Instructions](#build-instructions)
 - [TA Instructions](#ta-instructions)
@@ -18,11 +19,43 @@
   - [Tenant](#tenant)
 - [Resources](#resources)
 
+## Description
+
+Completing a lease is a tedious and complicated task, where most of the language is not comprehensible by non-legal expert.
+In collaboration with Law & CoLab, we are aiming to make it easier for landlords and tenants to handle their contracts themselves, without requiring a lawyer to draft and explain all the legal terms within a lease contract for.
+ 
+In this web application, which we have called **simplyHouse** (analogous to simplyTax), we are trying to make it easier for landlords and tenants to communicate with each other directly, and be their own lawyers. This would greatly save time and money for both parties, while still comprehensive information for such a contract. Our core goals for this product are:
+ 
+1. Provide easy-to-use and simple UI for lease application
+2. Source for all essential legal information regarding a lease (For both parties involved)
+3. Process and generate the required forms needed by authorities with no hassle for the users
+
+
+## Key Features
+
+### Lease Guidance
+  * Each page is simple to understand with minimal amount of information required
+  * Each page is self contained
+  * Info Modals for every legal term on the term as well as clarification
+  * Uses pre populated options whenever possible to limit choices to only valid options
+  * Makes the application easier to use when less choices have to be made at once
+ 
+### Progress Bar
+  * Shows how much is left to be completed
+  * Gives a quick indication of where in the process a user is at any given point
+  * Follows good design pattern of being transparent with user
+ 
+### Export to PDF
+  * Can send directly to tenant
+  * Easy to e-sign PDF documents
+  * Standard format for legal use
+
+
 ## Getting Started
 
-We use `yarn` as the package manager for this project. If you don't have yarn installed already, you can do so by following [this link](https://yarnpkg.com/lang/en/docs/install/). 
+We use `yarn` as the package manager for this project. If you don't have yarn installed already, you can do so by following [this link](https://yarnpkg.com/lang/en/docs/install/).
 
-Any version of `Node+8` will suffice. If you don't have node installed, [Download](https://nodejs.org/en/download/) from here, or `homebrew` for easier installation on Mac.
+Node version for this application is  `Node12`. If you don't have node installed, [Download](https://nodejs.org/en/download/) from here, or `homebrew` for easier installation on Mac.
 
 To run the application, clone the repo and run the following commands:
 
@@ -34,16 +67,16 @@ yarn start
 Navigate to [localhost:3000](http://localhost:3000) to view the running app.
 
 ## Development Instructions
-In the **root directory**: 
+In the **root directory**:
 
 ### Front end
 ```shell script
 yarn dev
 ```
-Runs `yarn start`, which starts a Node server on port 3000. 
+Runs `yarn start`, which starts a Node server on port 3000.
 
 ### Back end
-In a new terminal tab/window: 
+In a new terminal tab/window:
 
 Using python version `3.6`.
 
@@ -55,16 +88,16 @@ Activate the virtual environment.
 pip3 install -r requirements.txt
 python3 server/app.py
 ```
-This starts the Flask server on port 5000. 
+This starts the Flask server on port 5000.
 
-**Important**: Do front end dev work on the 3000 port, while making fetch requests/api calls to the 5000 port. 
+**Important**: Do front end dev work on the 3000 port, while making fetch requests/api calls to the 5000 port.
 
 Eg.
 ```javascript
-fetch("localhost:5000/test"); 
+fetch("localhost:5000/test");
 ```
 
-This is because `yarn start` does not make a build folder. 
+This is because `yarn start` does not make a build folder.
 
 ## Build Instructions
 
@@ -82,7 +115,7 @@ If you want to run the project **locally**, you can simply follow the instructio
 
 We also have a up and running version of the application hosted on Heroku, which can be found [here](https://simply-house.herokuapp.com). This is the most up-to-date version of the application on the `master` branch.
 
-**NOTE**: We are still trying to figure out the perfect configurations and setup with Heroku, which may mean the link may not work as expected every time. If the website did not load initially, simply refresh the page once, and that should load up the website without any problems. 
+**NOTE**: We are still trying to figure out the perfect configurations and setup with Heroku, which may mean the link may not work as expected every time. If the website did not load initially, simply refresh the page once, and that should load up the website without any problems.
 
 ## Motivation
 
@@ -108,6 +141,12 @@ As a landlord user, you have the ability to create multiple leases for multiple 
 ### Tenant
 
 As a tenant user, you have the ability to view the terms, requiremtns, and any relevant information set out by the landlord in a consise and simple user interface. Analagous to the landlord view, any common terms, policies, or frequently asked questions will be answered in the **Resources** section.
+
+## Licenses
+
+ This project is licensed under the terms of the MIT license.
+
+We chose this license because it allows the distribution of this product freely, as we are working with nonprofit organizations, and this would result in achieving our ultimate goal of providing assistance to tenants and landlords.
 
 ## Resources
 
