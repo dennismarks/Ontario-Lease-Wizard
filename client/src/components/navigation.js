@@ -15,7 +15,8 @@ let moneySvg = require("../assets/navigation/money.svg"),
   unitSvg = require("../assets/navigation/unit.svg"),
   partiesSvg = require("../assets/navigation/parties.svg"),
   legalReqSvg = require("../assets/navigation/legalReq.svg"),
-  additionalTermsSvg = require("../assets/navigation/additional terms.svg");
+  additionalTermsSvg = require("../assets/navigation/additional terms.svg"),
+  finish = require("../assets/navigation/finish.svg");
 
 const moneySubheaders = [
   { name: "Rent", link: "/rent", pageNumber: 1 },
@@ -25,18 +26,23 @@ const moneySubheaders = [
   { name: "Payments", link: "/payment", pageNumber: 5 }
 ];
 const timelineSubheaders = [
-  { name: "Timeline", link: "/NA", pageNumber: 6 },
-  { name: "Questions and Answers", link: "/NA", pageNumber: 7 }
+  { name: "Timeline", link: "/timeline", pageNumber: 6 },
+  { name: "Questions and Answers", link: "/qa", pageNumber: 7 }
 ];
-const unitSubheaders = [];
+const unitSubheaders = [{ name: "unit", link: "/unit", pageNumber: 8 }];
 const partiesSubheaders = [
-  { name: "Parties", link: "/parties", pageNumber: 8 },
-  { name: "Changes to Parties", link: "/NA", pageNumber: 9 }
+  { name: "Parties", link: "/parties", pageNumber: 9 },
+  { name: "Changes to Parties", link: "/changes", pageNumber: 10 }
+];
+const legalRequirementsSubheaders = [
+  { name: "Legal Requirements", link: "/legal", pageNumber: 11 }
 ];
 const additionalTermsSubheaders = [
-  { name: "Additional Terms", link: "/NA", pageNumber: 10 }
+  { name: "Additional Terms", link: "/additional", pageNumber: 12 }
 ];
-const finishAndSignSubheaders = [];
+const finishAndSignSubheaders = [
+  { name: "Finish and Sign", link: "/end", pageNumber: 13 }
+];
 
 const useStyles = makeStyles(theme => ({
   ExpansionPanel: { margin: "0px" },
@@ -111,7 +117,7 @@ export class navigation extends Component {
     const hiddenNav = location.pathname === "/" ? "hidden" : "";
     return (
       <nav className={hiddenNav}>
-        <Box className="navDiv">
+        <div className="navDiv">
           <h2>Table of Contents</h2>
           <ul>
             <NavigationItem
@@ -148,7 +154,7 @@ export class navigation extends Component {
               imageclass="legalReqSvg"
               imageAlt="legalReqSvg"
               name="Legal Requirements"
-              details={additionalTermsSubheaders}
+              details={legalRequirementsSubheaders}
             />
             <NavigationItem
               imageSrc={additionalTermsSvg}
@@ -158,11 +164,15 @@ export class navigation extends Component {
               details={additionalTermsSubheaders}
             />
             <NavigationItem
+              imageSrc={finish}
+              imageclass="Finish"
+              imageAlt="Finish"
               name="Finish and Sign"
               details={finishAndSignSubheaders}
             />
+            <div style={{ height: "200px" }}></div>
           </ul>
-        </Box>
+        </div>
       </nav>
     );
   }

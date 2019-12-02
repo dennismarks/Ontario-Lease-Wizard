@@ -74,14 +74,31 @@ export class Content extends Component {
           />
           <Route
             exact
-            path={["/rent", "/utilities", "/deposits", "/dates", "/payment", "timeline", "/additional"]}
+            path={["/rent",
+		   "/utilities",
+		    "/deposits",
+		    "/dates",
+		    "/payment",
+		    "/timeline",
+		    "/qa",
+		    "/unit",
+		    "/parties",
+		    "/changes",
+		    "/legal",
+		    "/additional"
+	    ]}
             path={[
               "/rent",
               "/utilities",
               "/deposits",
               "/dates",
               "/payment",
-              "timeline",
+              "/timeline",
+	      "/qa",
+	      "/unit",
+  	      "/parties",
+	      "changes",
+	      "/legal",
               "/additional"
             ]}
             component={RightHandBar}
