@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import moment from "moment";
+import { sendData } from "../../shared/functions";
 
 import {
   makeStyles,
@@ -57,6 +58,19 @@ const Rent = props => {
   const [rentAmount, setRentAmount] = useState("");
   const [rentPeriodText, setRentPeriodText] = useState("bi-weekly");
   const [open, setOpen] = useState(false);
+
+  useEffect(() => {
+    return () => {
+      console.log(rentAmount);
+      sendData({
+        selectedDateStart: selectedDateStart.format(),
+        selectedDateEnd: selectedDateEnd.format(),
+        fixedTerm,
+        rentPeriod,
+        rentAmount
+      });
+    }
+  }, []);
 
   const handleRentPeriodText = event => {
     setRentPeriodText(event.target.value);
@@ -305,7 +319,6 @@ const Rent = props => {
           <p>Base Rent</p>
           <ToolTip style={{ paddingLeft: 4 }}>More Info on Base Rent</ToolTip>
         </div>
-
         {infoModal}
 
         <br />

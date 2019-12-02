@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import EditIcon from "@material-ui/icons/Edit";
 import AddIcon from "@material-ui/icons/Add";
 import {
@@ -20,6 +20,7 @@ import {
   DialogTitle
 } from "@material-ui/core";
 import { nominalTypeHack } from "prop-types";
+import {sendData} from "../../shared/functions";
 import ToolTip from "../../util/tooltip";
 
 const textInfo = (
@@ -142,6 +143,12 @@ export default function UtilitiesServices() {
       {}
     )
   );
+
+  useEffect(() => {
+    return () => {
+      sendData(rows);
+    }
+  }, []);
 
   const handleRowChange = (utility, option, value) => event => {
     setRows(prevState => ({

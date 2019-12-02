@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import moment from "moment";
 import {
   makeStyles,
@@ -11,6 +11,7 @@ import {
 } from "@material-ui/core";
 import { DAYS_IN_MONTH } from "../../shared/variables";
 import { CustomDatePicker } from "../../shared/components/datePicker"
+import {sendData} from "../../shared/functions";
 
 const useStyles = makeStyles({
   root: {
@@ -34,6 +35,12 @@ const Dates = props => {
 
   const [isProRated, setIsProRated] = useState(false);
   const [totalProRatedRent, setTotalProRatedRent] = useState(0);
+
+  useEffect(() => {
+    return () => {
+      sendData({dates, isProRated, totalProRatedRent});
+    }
+  }, []);
 
   const onDateChange = name => selectedMoveInDate => {
     setDates(prevDate => ({ ...prevDate, [name]: selectedMoveInDate }));
