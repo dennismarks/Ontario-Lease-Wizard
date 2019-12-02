@@ -1,35 +1,46 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 import { ChevronRight } from "react-feather";
-import { ExpansionPanel, ExpansionPanelDetails, 
-   Box, Checkbox, makeStyles, ExpansionPanelSummary} from '@material-ui/core';
-
+import {
+  ExpansionPanel,
+  ExpansionPanelDetails,
+  Box,
+  Checkbox,
+  makeStyles,
+  ExpansionPanelSummary
+} from "@material-ui/core";
 
 let moneySvg = require("../assets/navigation/money.svg"),
   timelineSvg = require("../assets/navigation/timeline.svg"),
   unitSvg = require("../assets/navigation/unit.svg"),
   partiesSvg = require("../assets/navigation/parties.svg"),
+  legalReqSvg = require("../assets/navigation/legalReq.svg"),
   additionalTermsSvg = require("../assets/navigation/additional terms.svg");
 
-const moneySubheaders = 
-[
-  {name: "Rent", link: "/rent", pageNumber: 1},
-  {name: "Utilities and Services", link: "/utilities", pageNumber: 2},
-  {name: "Deposits", link: "/deposits", pageNumber: 3},
-  {name: "Move-in Dates", link: "/dates", pageNumber: 4},
-  {name: "Payments", link: "/payment", pageNumber: 5}
+const moneySubheaders = [
+  { name: "Rent", link: "/rent", pageNumber: 1 },
+  { name: "Utilities and Services", link: "/utilities", pageNumber: 2 },
+  { name: "Deposits", link: "/deposits", pageNumber: 3 },
+  { name: "Move-in Dates", link: "/dates", pageNumber: 4 },
+  { name: "Payments", link: "/payment", pageNumber: 5 }
 ];
-const timelineSubheaders = [{name: "Timeline", link: "/NA", pageNumber: 6},
-                          {name: "Questions and Answers", link: "/NA", pageNumber: 7}];
+const timelineSubheaders = [
+  { name: "Timeline", link: "/NA", pageNumber: 6 },
+  { name: "Questions and Answers", link: "/NA", pageNumber: 7 }
+];
 const unitSubheaders = [];
-const partiesSubheaders = [{name: "Parties", link: "/parties", pageNumber: 8},
-{name: "Changes to Parties", link: "/NA", pageNumber: 9}];
-const additionalTermsSubheaders = [{name: "Additional Terms", link: "/NA", pageNumber: 10}];
+const partiesSubheaders = [
+  { name: "Parties", link: "/parties", pageNumber: 8 },
+  { name: "Changes to Parties", link: "/NA", pageNumber: 9 }
+];
+const additionalTermsSubheaders = [
+  { name: "Additional Terms", link: "/NA", pageNumber: 10 }
+];
 const finishAndSignSubheaders = [];
 
 const useStyles = makeStyles(theme => ({
   ExpansionPanel: { margin: "0px" },
-  headerImg: {marginTop: "5px"},
+  headerImg: { marginTop: "5px" },
   headerName: { marginTop: "5px" },
   ExpansionPanelDetails: { padding: "0px" },
   subheader: { marginLeft: "60px" },
@@ -41,46 +52,57 @@ function NavigationItem(props) {
   const classes = useStyles();
 
   const expandHeader = () => {
-    return props.details.some((subheader) => subheader.link === window.location.pathname)
-  }
+    return props.details.some(
+      subheader => subheader.link === window.location.pathname
+    );
+  };
   const getCurrentPageNum = () => {
-    const page = props.details.find((subheader) => subheader.link === window.location.pathname)
-    if (expandHeader() && page){
-      return page.pageNumber
+    const page = props.details.find(
+      subheader => subheader.link === window.location.pathname
+    );
+    if (expandHeader() && page) {
+      return page.pageNumber;
     } else {
-      return 0
+      return 0;
     }
-  }
+  };
 
   return (
-    <ExpansionPanel expanded={expandHeader()} className={classes.ExpansionPanel}>
+    <ExpansionPanel
+      expanded={expandHeader()}
+      className={classes.ExpansionPanel}
+    >
       <ExpansionPanelSummary>
-        <ChevronRight className={"chevronRight " + (expandHeader() ? "active" : null)}
-          side={25} />
+        <ChevronRight
+          className={"chevronRight " + (expandHeader() ? "active" : null)}
+          side={25}
+        />
         <img
-            src={props.imageSrc}
-            alt={props.imageAlt}
-            className={props.Name === "Money" ? classes.headerImg : null}
-          />
+          src={props.imageSrc}
+          alt={props.imageAlt}
+          className={props.Name === "Money" ? classes.headerImg : null}
+        />
         <span className={classes.headerName}>{props.name}</span>
       </ExpansionPanelSummary>
       <ExpansionPanelDetails className={classes.ExpansionPanelDetails}>
         <Box>
-        {props.details.map(subheader => (
-          <div
-            key={subheader.name}
-            className={classes.subheader}
-          > 
-            <Checkbox checked={subheader.pageNumber < getCurrentPageNum()} 
-            className={classes.Checkbox} color={"primary"}/>
-              <span className={classes.subheaderName}> <u>{subheader.name}</u> </span>
-          </div>
-        ))}
+          {props.details.map(subheader => (
+            <div key={subheader.name} className={classes.subheader}>
+              <Checkbox
+                checked={subheader.pageNumber < getCurrentPageNum()}
+                className={classes.Checkbox}
+                color={"primary"}
+              />
+              <span className={classes.subheaderName}>
+                {" "}
+                <u>{subheader.name}</u>{" "}
+              </span>
+            </div>
+          ))}
         </Box>
       </ExpansionPanelDetails>
     </ExpansionPanel>
   );
-
 }
 
 export class navigation extends Component {
@@ -120,6 +142,13 @@ export class navigation extends Component {
               imageAlt="Parties"
               name="Parties"
               details={partiesSubheaders}
+            />
+            <NavigationItem
+              imageSrc={legalReqSvg}
+              imageclass="legalReqSvg"
+              imageAlt="legalReqSvg"
+              name="Legal Requirements"
+              details={additionalTermsSubheaders}
             />
             <NavigationItem
               imageSrc={additionalTermsSvg}

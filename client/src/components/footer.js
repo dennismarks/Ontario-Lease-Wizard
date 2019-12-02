@@ -8,7 +8,12 @@ export class Footer extends Component {
     const { location } = this.props;
     const urls = ["/rent", "/utilities", "/deposits", "/dates", "/payment", "/timeline", "/qa", "/unit",
                   "/parties", "/changes", "/legal", "/daytoday", "/additional"];
-
+    const hiddenFooter =
+      location.pathname === "/" ||
+      location.pathname === "/login" ||
+      location.pathname === "/disclaimer"
+        ? true
+        : false;
     const showButton = location => !urls.includes(location.pathname);
 
     const previousLink = location => {
@@ -45,7 +50,7 @@ export class Footer extends Component {
     };
 
     return (
-      <footer>
+      <footer style={hiddenFooter ? { visibility: "hidden" } : null}>
         <div className="perc-sign">
           {progressBarHidden(location)
             ? ""
