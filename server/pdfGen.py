@@ -3,6 +3,16 @@ import io
 from reportlab.pdfgen import canvas
 from reportlab.lib.pagesizes import letter
 import math
+import pymongo
+
+mongo = pymongo.MongoClient(
+    'mongodb+srv://csc301:csc301@cluster0-bzlks.mongodb.net/test?retryWrites=true&w=majority')
+db = mongo["database"]
+# leases refers to the leases collection
+# can also use mongo.db.leases instead
+collection = db["leases"]
+
+data = collection.find_one()
 
 existing_pdf = PdfFileReader(
     open("./lease_wizard/pdf/finalForm.pdf", "rb"), strict=False)
@@ -32,15 +42,15 @@ def fill_page1():
     # Landlords names
 
     # maximum 4 entries
-    tenantNames = [
+    landlordNames = [
         ("Max", "Pham"),
         ("Demetre", "Jouras"),
         ("Yu Ji", "Mao"),
         ("Mark", "Abdullah")]
 
-    for i in range(len(tenantNames)):
+    for i in range(len(landlordNames)):
         can.drawString(
-            150, 450 - i*27, "{} {}".format(tenantNames[i][0], tenantNames[i][1]))
+            150, 450 - i*27, "{} {}".format(landlordNames[i][0], landlordNames[i][1]))
 
     # Tenants names
     # maximum 8 entries
@@ -121,10 +131,12 @@ def fill_page2():
     ############################################
     # term of tenancy agreement
 
-    startDate = "1999/06/27"
-    endDate = "2020/01/01"
-    otherSpecification = "Bi-daily because reasons"
-    checkmarks = [True, True, True]
+    startDate = data['selectedDateEnd'][:10]
+    endDate = data['selectedDateStart'][:10]
+    otherSpecification = data['rent_period']
+    checkmarks = [False if data['fixedTerm'].lower() == 'no' else True,
+                  False if data['rentPeriod'].lower() != 'monthly' else True,
+                  False if data['rent_period'].lower() == 'monthly' else True]
 
     can.drawString(140, 237, startDate)
 
@@ -164,25 +176,42 @@ def fill_page3():
                 can.drawString(42, 740, "x")
                 can.drawString(160, 740, other)
 
-    can.drawString(380, 695, "base rent")
-    can.drawString(380, 678, "parking")
+    parkingFee = 500
 
-    for i in range(10):
+    can.drawString(380, 695, str(data['rent']))
+    can.drawString(380, 678, str(parkingFee))
+
+    for i in range(6):
         can.drawString(80, 637 - 20*i, "line {0}".format(i))
         can.drawString(370, 637 - 20*i, "line {0}, field 2".format(i))
 
     can.drawString(370, 414, "total rent")
 
-    can.drawString(30, 310, "payable to")
-    can.drawString(30, 268, "Payment method")
+    can.drawString(30, 312, str(data['email']))
 
-    can.drawString(455, 205, "partial payment")
+    paymentMethod = ''
+    if data['methods']['cash']:
+        paymentMethod += "Cash ,"
+    if data['methods']['cheque']:
+        paymentMethod += "Cheque ,"
+    if data['methods']['email']:
+        paymentMethod += "Email ,"
+    if data['methods']['other']:
+        paymentMethod += "Other , "
+    if data['methods']['paypal']:
+        paymentMethod += "Paypal"
 
-    can.drawString(40, 180, "partial payment day")
+    can.drawString(30, 262, paymentMethod)
 
-    can.drawString(370, 175, "pp start day")
-    can.drawString(460, 175, "pp end day")
-    can.drawString(160, 115, "administration charge")
+    can.drawString(455, 204, "partial payment")
+
+    can.drawString(40, 182, "partial payment day")
+
+    can.drawString(370, 180, data['selectedDateEnd'][:10])
+    can.drawString(460, 180, data['selectedDateStart'][:10])
+
+    administrationCharge = 2000
+    can.drawString(163, 120, str(administrationCharge))
 
     can.save()
 
@@ -194,25 +223,25 @@ def fill_page4():
 
     # services and utilities
     index_services = 0
-    services = {"Gas": True,
-                "AC": True,
-                "Storage": True,
-                "Laundry": True,
-                "Parking": True,
-                "Other1": True,
-                "Other2": True,
-                "Other3": True,
-                "Other4": True,
-                "Other5": True}
+    services = {"Gas": data['Gas']['includedInBaseRent'],
+                "AC": data['Air Conditioning']['includedInBaseRent'],
+                "Storage": data['Water']['includedInBaseRent'],
+                "Laundry": data['Washer/Dryer']['includedInBaseRent'],
+                "Parking": data['Tenant Parking']['includedInBaseRent'],
+                "Internet": data['Internet']['includedInBaseRent'],
+                "Cable": data['Cable']['includedInBaseRent'],
+                "Guest Parking": data['Guest Parking']['includedInBaseRent'],
+                "Snow Removal": data['Snow Removal']['includedInBaseRent'],
+                "Tenant Insurance": data['Tenant Insurance']['includedInBaseRent']}
     for i in services:
         if services[i]:
             can.drawString(345, 710 - index_services*21.5, "x")
         else:
-            can.drawString(385, 710 - index_services*21.5, "x")
+            can.drawString(386, 710 - index_services*21.5, "x")
         index_services += 1
 
-    laundryCost = True
-    parkingCost = False
+    laundryCost = True if data['Washer/Dryer']['managedByLandlord'] else False
+    parkingCost = True if data['Tenant Parking']['managedByLandlord'] else False
 
     if services["Laundry"]:
         if laundryCost:
@@ -226,12 +255,20 @@ def fill_page4():
         else:
             can.drawString(496, 623, "x")
 
-    otherServices = ["PS4", "PC", "Switch", "Xbox", "Broke"]
+    otherServices = ["Internet", "Cable", "Guest Parking",
+                     "Snow Removal", "Tenant Insurance"]
+
     for i in range(len(otherServices)):
         can.drawString(
             80, 604 - i*22, "{0}".format(otherServices[i]))
 
-    details_services = "The io module provides Python’s main facilities for dealing with various types of I/O. There are three main types of I/O: text I/O, binary I/O and raw I/O. These are generic categories, and various backing stores can be used for each of them. A concrete object belonging to any of these categories is called a file object. Other common terms are stream and file-like object."
+    noteInternet = "Internet: " + \
+        data['Internet']['note'] if data['Internet']['note'] else " "
+    noteGas = " Gas: " + data['Gas']['note'] if data['Gas']['note'] else " "
+    noteAC = " AC: " + \
+        data['Air Conditioning']['note'] if data['Air Conditioning']['note'] else " "
+
+    details_services = noteInternet + noteGas + noteAC
 
     # TODO: Words are getting cut off wh
     # ich is annoying.
@@ -245,9 +282,9 @@ def fill_page4():
 
     # TRUE == Landlord ------- False == Tenant
     # TODO: Can both parties be responsible of this ?
-    responsibilities = {"Electricity": True,
-                        "Heat": False,
-                        "Water": True}
+    responsibilities = {"Electricity": True if data['Electricity']['managedByLandlord'] else False,
+                        "Heat": True if data['Heat']['managedByLandlord'] else False,
+                        "Water": True if data['Water']['managedByLandlord'] else False}
     index_respon = 0
     for i in responsibilities:
         if responsibilities[i]:
@@ -256,7 +293,14 @@ def fill_page4():
             can.drawString(150, 301 - index_respon*21.5, "x")
         index_respon += 1
 
-    details_responsibility = "The io module provides Python’s main facilities for dealing with various types of I/O. There are three main types of I/O: text I/O, binary I/O and raw I/O. These are generic categories, and various backing stores can be used for each of them. A concrete object belonging to any of these categories is called a file object. Other common terms are stream and file-like object."
+    noteElectricity = "Electricity: " + \
+        data['Electricity']['note'] if data['Electricity']['note'] else " "
+    noteHeat = " Heat: " + \
+        data['Heat']['note'] if data['Heat']['note'] else " "
+    noteWater = " Water: " + \
+        data['Water']['note'] if data['Water']['note'] else " "
+
+    details_responsibility = noteElectricity + noteHeat + noteWater
 
     # TODO: Words are getting cut off wh
     # ich is annoying.
@@ -359,7 +403,7 @@ def fill_page6():
 
     ###########################################
     # Rent Deposit
-    tenantInsurance = False
+    tenantInsurance = data['Tenant Insurance']['managedByTenant']
 
     if tenantInsurance:
         can.drawString(23, 438, "x")  # + 40
@@ -397,6 +441,7 @@ def main():
     fill_page3()
     fill_page4()
     fill_page5()
+    fill_page6()
     fill_page7()
 
     for i in range(PAGES_READY, existing_pdf.numPages - 1):
