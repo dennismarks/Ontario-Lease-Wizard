@@ -1,5 +1,6 @@
 from PyPDF2 import PdfFileWriter, PdfFileReader
 import io
+import os
 from reportlab.pdfgen import canvas
 from reportlab.lib.pagesizes import letter
 import math
@@ -14,8 +15,10 @@ collection = db["leases"]
 
 data = collection.find_one()
 
+root_dir = os.path.dirname(os.getcwd())
+
 existing_pdf = PdfFileReader(
-    open("./lease_wizard/pdf/finalForm.pdf", "rb"), strict=False)
+    open(os.path.join(root_dir, 'server', 'lease_wizard', 'pdf', 'finalForm.pdf'), "rb"), strict=False)
 re = PdfFileWriter()
 
 
@@ -451,6 +454,7 @@ def main():
     # re.write(tmp)
     # return tmp.getvalue()
     # finally, write "output" to a real file
-    outputStream = open("./lease_wizard/pdf/destination.pdf", "wb")
+    outputStream = open(os.path.join(root_dir, 'server',
+                                     'lease_wizard', 'pdf', 'destination.pdf'), "wb")
     re.write(outputStream)
     outputStream.close()
