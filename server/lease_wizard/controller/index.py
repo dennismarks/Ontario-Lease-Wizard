@@ -59,8 +59,10 @@ def serve(path):
 def pdfUpload():
     try:
         print("GENERATING")
-        pdfGen.main()
+
         root_dir = os.path.abspath(os.path.dirname(__file__))
-        return send_from_directory(os.path.join(root_dir, 'lease_wizard', 'pdf'), "destination.pdf", as_attachment=True), 200
+        print(root_dir)
+        pdfGen.main()
+        return send_from_directory(os.path.join(root_dir, '../', 'pdf'), "destination.pdf", as_attachment=True), 200
     except FileNotFoundError:
         return "File not found", 404
