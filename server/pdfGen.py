@@ -16,6 +16,7 @@ collection = db["leases"]
 data = collection.find_one()
 
 root_dir = os.path.abspath(os.path.dirname(__file__))
+print(root_dir)
 
 existing_pdf = PdfFileReader(
     open(os.path.join(root_dir, 'lease_wizard', 'pdf', 'finalForm.pdf'), "rb"), strict=False)
@@ -452,7 +453,6 @@ def main():
 
 
     # finally, write "output" to a real file
-    outputStream = open(os.path.join(root_dir, 'server',
-                                     'lease_wizard', 'pdf', 'destination.pdf'), "wb")
+    outputStream = open(os.path.join(root_dir, 'lease_wizard', 'pdf', 'destination.pdf'), "wb")
     re.write(outputStream)
     outputStream.close()
