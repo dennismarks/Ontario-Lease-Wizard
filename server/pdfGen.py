@@ -437,15 +437,15 @@ def fill_page7():
 
 
 def main():
-    PAGES_READY = 7
+    PAGES_READY = 1
 
     fill_page1()
-    fill_page2()
-    fill_page3()
-    fill_page4()
-    fill_page5()
-    fill_page6()
-    fill_page7()
+    # fill_page2()
+    # fill_page3()
+    # fill_page4()
+    # fill_page5()
+    # fill_page6()
+    # fill_page7()
 
     for i in range(PAGES_READY, existing_pdf.numPages - 1):
         re.addPage(existing_pdf.getPage(i))
