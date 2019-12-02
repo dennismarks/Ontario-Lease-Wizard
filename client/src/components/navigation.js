@@ -28,16 +28,14 @@ const timelineSubheaders = [
   { name: "Timeline", link: "/timeline", pageNumber: 6 },
   { name: "Questions and Answers", link: "/qa", pageNumber: 7 }
 ];
-const unitSubheaders = [
-  { name: "unit", link: "/unit", pageNumber: 8 }
-];
+const unitSubheaders = [{ name: "unit", link: "/unit", pageNumber: 8 }];
 const partiesSubheaders = [
   { name: "Parties", link: "/parties", pageNumber: 9 },
   { name: "Changes to Parties", link: "/changes", pageNumber: 10 }
 ];
 const legalRequirementsSubheaders = [
   { name: "Legal Requirements", link: "/legal", pageNumber: 11 }
-]
+];
 const additionalTermsSubheaders = [
   { name: "Additional Terms", link: "/additional", pageNumber: 12 }
 ];
@@ -168,6 +166,7 @@ export class navigation extends Component {
               name="Finish and Sign"
               details={finishAndSignSubheaders}
             />
+            <div style={{ height: "200px" }}></div>
           </ul>
         </div>
       </nav>
