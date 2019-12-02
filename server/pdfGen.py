@@ -15,10 +15,10 @@ collection = db["leases"]
 
 data = collection.find_one()
 
-root_dir = os.path.dirname(os.getcwd())
+root_dir = os.path.abspath(os.path.dirname(__file__))
 
 existing_pdf = PdfFileReader(
-    open(os.path.join(root_dir, 'server', 'lease_wizard', 'pdf', 'finalForm.pdf'), "rb"), strict=False)
+    open(os.path.join(root_dir, 'lease_wizard', 'pdf', 'finalForm.pdf'), "rb"), strict=False)
 re = PdfFileWriter()
 
 
