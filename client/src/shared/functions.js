@@ -16,12 +16,11 @@ export const sendData = (data) => {
   });
 };
 
-export const getData = () => {
-  // Will have to change in production
+export const getData = () =>
+  // Will have to change in production 
   fetch(`${path}/lease`)
     .then(response => response.json())
     .then(data => data)
     .catch(error => {
       console.log(error);
     });
-};
