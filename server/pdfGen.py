@@ -450,9 +450,7 @@ def main():
     for i in range(PAGES_READY, existing_pdf.numPages - 1):
         re.addPage(existing_pdf.getPage(i))
 
-    # tmp = io.BytesIO()
-    # re.write(tmp)
-    # return tmp.getvalue()
+
     # finally, write "output" to a real file
     outputStream = open(os.path.join(root_dir, 'server',
                                      'lease_wizard', 'pdf', 'destination.pdf'), "wb")
