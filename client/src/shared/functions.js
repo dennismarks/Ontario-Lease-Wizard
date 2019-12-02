@@ -1,8 +1,7 @@
 export const sendData = (data) => {
   // Will have to change in production
-  const hostname = window.location.hostname;
-  const port = '5000';
-  fetch(`http://${hostname}:${port}/lease`,
+  const path = process.env.NODE_ENV === "development" ? `http://${window.location.hostname}:5000` : `https://${window.location.hostname}`
+  fetch(`${path}/lease`,
     {
     headers: {
       'Content-Type': 'application/json'

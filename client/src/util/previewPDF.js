@@ -3,13 +3,12 @@
  */
 
 function previewPDF() {
-  const host = window.location.host;
   const myHeaders = new Headers();
   myHeaders.append("pragma", "no-cache");
   myHeaders.append("cache-control", "no-cache");
   myHeaders.append("Content-Type", "application/pdf");
-  console.log(window.location.hostname);
-  fetch(`https://${window.location.hostname}/PDF`, {
+  const path = process.env.NODE_ENV === "development" ? `http://${window.location.hostname}:5000` : `https://${window.location.hostname}`
+  fetch(`${path}/PDF`, {
     method: "GET",
     headers: myHeaders
   })

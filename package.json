@@ -8,7 +8,7 @@
   "scripts": {
     "build": "cd client/ && yarn && yarn build && cd ..",
     "start": "echo Starting application...",
-    "dev": "cd client/ && yarn && yarn start"
+    "dev": "cd client/ && yarn && NODE_ENV=development yarn start"
   },
   "engines": {
     "node": "^12.0.0",

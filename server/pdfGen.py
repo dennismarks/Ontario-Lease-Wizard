@@ -16,7 +16,7 @@ collection = db["leases"]
 data = collection.find_one()
 
 root_dir = os.path.abspath(os.path.dirname(__file__))
-print(root_dir)
+print("root_dir", root_dir)
 
 existing_pdf = PdfFileReader(
     open(os.path.join(root_dir, 'lease_wizard', 'pdf', 'finalForm.pdf'), "rb"), strict=False)
