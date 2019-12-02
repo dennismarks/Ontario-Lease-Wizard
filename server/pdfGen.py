@@ -13,7 +13,6 @@ db = mongo["database"]
 # can also use mongo.db.leases instead
 collection = db["leases"]
 
-data = collection.find_one()
 
 root_dir = os.path.abspath(os.path.dirname(__file__))
 print("root_dir", root_dir)
@@ -42,6 +41,7 @@ def squish(raw_file, page):
 def fill_page1():
 
     RAW, can = setup_RAW()
+    data = collection.find_one()
 
     # Landlords names
 
@@ -79,6 +79,7 @@ def fill_page1():
 def fill_page2():
 
     RAW, can = setup_RAW()
+    data = collection.find_one()
 
     # Rental Unit
     unit = "202"
@@ -168,6 +169,7 @@ def fill_page2():
 def fill_page3():
 
     RAW, can = setup_RAW()
+    data = collection.find_one()
 
     # RENT
     rentChecks = [True, True]
@@ -224,6 +226,7 @@ def fill_page3():
 
 def fill_page4():
     RAW, can = setup_RAW()
+    data = collection.find_one()
 
     print(data)
 
@@ -324,6 +327,7 @@ def fill_page4():
 
 def fill_page5():
     RAW, can = setup_RAW()
+    data = collection.find_one()
 
     # Rent Discounts
     rentDiscounts = False
@@ -386,6 +390,7 @@ def fill_page5():
 
 def fill_page6():
     RAW, can = setup_RAW()
+    data = collection.find_one()
 
     # Smoking
     smoking = False
@@ -425,6 +430,7 @@ def fill_page6():
 
 def fill_page7():
     RAW, can = setup_RAW()
+    data = collection.find_one()
 
     # Additional Terms
     smoking = False
