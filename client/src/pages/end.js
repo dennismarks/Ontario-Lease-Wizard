@@ -6,6 +6,7 @@ import SaveAlt from "@material-ui/icons/SaveAlt";
 import Restart from "@material-ui/icons/Cached";
 import Mail from "@material-ui/icons/MailOutline";
 import {withRouter} from "react-router";
+import Title from "../shared/components/title";
 
 const useStyles = makeStyles(theme => ({
   listItem: {
@@ -50,7 +51,7 @@ const End = props => {
 
   return (
     <>
-      <h1>You're almost done!</h1>
+      <Title>You're almost done!</Title>
       <p>Thank you for filling out all the sections. Now you can view a copy of your lease and send it to your tenant
         for review. Please note we recommend printing our the PDF, then review and sign with your tenant.</p><br/>
       <h1>Here's a few options for you: </h1>

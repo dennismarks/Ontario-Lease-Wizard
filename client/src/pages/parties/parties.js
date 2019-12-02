@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { makeStyles, Grid, TextField, Typography, Button, Checkbox } from '@material-ui/core';
 import AddIcon from '@material-ui/icons/Add';
+import Title from "../../shared/components/title";
 
 const useStyles = makeStyles(theme => ({
   textField: {
@@ -41,11 +42,8 @@ export default function Parties() {
   };
   return (
     <Grid container direction="row" justify="flex-start" alignItems="center">
-      <Grid item xs={9}>
-      <Typography variant="h4" gutterBottom> Parties </Typography>
-      </Grid>
-      <Grid item xs={3}>
-        <Button variant="outlined">PREVIEW LEASE</Button>
+      <Grid item xs={12}>
+      <Title>Parties</Title>
       </Grid>
 
       {/*Legal names block */}

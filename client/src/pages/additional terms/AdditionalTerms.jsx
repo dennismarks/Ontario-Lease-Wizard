@@ -8,6 +8,7 @@ import Modal from "@material-ui/core/Modal";
 import Backdrop from "@material-ui/core/Backdrop";
 import Fade from "@material-ui/core/Fade";
 import RightHandBar from "../../sidebars/RightHandBar";
+import Title from "../../shared/components/title";
 
 const useStyles = makeStyles(theme => ({
   formControl: {
@@ -76,7 +77,7 @@ export default function AdditionalTerms() {
 
   return (
     <div id="additionaTerms">
-      <h1 className={classes.h1}>Additional Terms</h1>
+      <Title>Additional Terms</Title>
       <div className={classes.modalText}>
         <p>
           You and your tenant can agree to to additional terms that are specific
