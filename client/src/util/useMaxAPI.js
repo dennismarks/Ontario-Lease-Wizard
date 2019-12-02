@@ -4,15 +4,25 @@
 
 function useMaxAPI() {
   const host = window.location.host;
-  fetch(`http://127.0.0.1:5000/PDF`, {
-    responseType: "blob" //Force to receive data in a Blob Format
+  const myHeaders = new Headers();
+  myHeaders.append("pragma", "no-cache");
+  myHeaders.append("cache-control", "no-cache");
+  // myHeaders.append("Content-Type", "application/pdf");
+  fetch(`${window.location.hostname} + "/PDF"`, {
+    method: "GET",
+    headers: myHeaders
   })
+    .then(res => res.blob())
     .then(response => {
       //Create a Blob from the PDF Stream
-      const file = new Blob([response.data], { type: "application/pdf" }); //Build a URL from the file
-      const fileURL = URL.createObjectURL(file); //Open the URL on new Window
-      console.log(fileURL);
-      window.open("http://127.0.0.1:5000/PDF");
+      console.log(response);
+      const file = new Blob([response], {
+        type: "application/pdf"
+      });
+      //Build a URL from the file
+      const fileURL = URL.createObjectURL(file);
+      //Open the URL on new Window
+      window.open(fileURL);
     })
     .catch(error => {
       console.log(error);

@@ -68,5 +68,6 @@ def pdfUpload():
         pdfGen.main()
         root_dir = os.path.dirname(os.getcwd())
         return send_from_directory(os.path.join(root_dir, 'server', 'lease_wizard', 'pdf'), "destination.pdf", as_attachment=True), 200
+        # return send_file(re, attachment_filename='ohhey.pdf')
     except FileNotFoundError:
         return "File not found", 404
