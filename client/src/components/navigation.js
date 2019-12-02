@@ -15,7 +15,8 @@ let moneySvg = require("../assets/navigation/money.svg"),
   unitSvg = require("../assets/navigation/unit.svg"),
   partiesSvg = require("../assets/navigation/parties.svg"),
   legalReqSvg = require("../assets/navigation/legalReq.svg"),
-  additionalTermsSvg = require("../assets/navigation/additional terms.svg");
+  additionalTermsSvg = require("../assets/navigation/additional terms.svg"),
+  finish = require("../assets/navigation/finish.svg");
 
 const moneySubheaders = [
   { name: "Rent", link: "/rent", pageNumber: 1 },
@@ -153,16 +154,19 @@ export class navigation extends Component {
               imageclass="legalReqSvg"
               imageAlt="legalReqSvg"
               name="Legal Requirements"
-              details={additionalTermsSubheaders}
+              details={legalRequirementsSubheaders}
             />
             <NavigationItem
               imageSrc={additionalTermsSvg}
               imageclass="AdditionalTerms"
               imageAlt="Additional Terms"
               name="Additional Terms"
-              details={legalRequirementsSubheaders}
+              details={additionalTermsSubheaders}
             />
             <NavigationItem
+              imageSrc={finish}
+              imageclass="Finish"
+              imageAlt="Finish"
               name="Finish and Sign"
               details={finishAndSignSubheaders}
             />
