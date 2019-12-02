@@ -118,7 +118,7 @@ export class navigation extends Component {
     const hiddenNav = location.pathname === "/" ? "hidden" : "";
     return (
       <nav className={hiddenNav}>
-        <Box className="navDiv">
+        <div className="navDiv">
           <h2>Table of Contents</h2>
           <ul>
             <NavigationItem
@@ -169,7 +169,7 @@ export class navigation extends Component {
               details={finishAndSignSubheaders}
             />
           </ul>
-        </Box>
+        </div>
       </nav>
     );
   }
