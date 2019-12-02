@@ -25,18 +25,23 @@ const moneySubheaders = [
   { name: "Payments", link: "/payment", pageNumber: 5 }
 ];
 const timelineSubheaders = [
-  { name: "Timeline", link: "/NA", pageNumber: 6 },
-  { name: "Questions and Answers", link: "/NA", pageNumber: 7 }
+  { name: "Timeline", link: "/timeline", pageNumber: 6 },
+  { name: "Questions and Answers", link: "/qa", pageNumber: 7 }
 ];
 const unitSubheaders = [];
 const partiesSubheaders = [
   { name: "Parties", link: "/parties", pageNumber: 8 },
-  { name: "Changes to Parties", link: "/NA", pageNumber: 9 }
+  { name: "Changes to Parties", link: "/changes", pageNumber: 9 }
 ];
 const additionalTermsSubheaders = [
-  { name: "Additional Terms", link: "/NA", pageNumber: 10 }
+  { name: "Additional Terms", link: "/additional", pageNumber: 10 }
 ];
-const finishAndSignSubheaders = [];
+const legelRequirementsSubheaders = [
+  { name: "Legal requirements", link: "/legal", pageNumber: 11 }
+]
+const finishAndSignSubheaders = [
+  { name: "Finish and Sign", link: "/end", pageNumber: 12 }
+];
 
 const useStyles = makeStyles(theme => ({
   ExpansionPanel: { margin: "0px" },
