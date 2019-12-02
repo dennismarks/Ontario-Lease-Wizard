@@ -2,13 +2,14 @@
  * http://uoft-courseapi.herokuapp.com/get/CSC309H1
  */
 
-function useMaxAPI() {
+function previewPDF() {
   const host = window.location.host;
   const myHeaders = new Headers();
   myHeaders.append("pragma", "no-cache");
   myHeaders.append("cache-control", "no-cache");
-  // myHeaders.append("Content-Type", "application/pdf");
-  fetch(`${window.location.hostname} + "/PDF"`, {
+  myHeaders.append("Content-Type", "application/pdf");
+  console.log(window.location.hostname);
+  fetch(`http://${window.location.hostname}/PDF`, {
     method: "GET",
     headers: myHeaders
   })
@@ -29,4 +30,4 @@ function useMaxAPI() {
     });
 }
 
-export default useMaxAPI;
+export default previewPDF;

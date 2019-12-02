@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import Button from "@material-ui/core/Button";
-import useMaxAPI from "../util/useMaxAPI";
+// import useMaxAPI from "../util/useMaxAPI";
 
 export class Home extends Component {
   render() {
@@ -17,9 +17,9 @@ export class Home extends Component {
           <li>1. Sign in or Create a new Lease</li>
           <li>2. Review & Add Terms</li>
           <li>3. View & Print</li>
-          <Button className="button" id="pdf" onClick={useMaxAPI}>
+          {/* <Button className="button" id="pdf" onClick={useMaxAPI}>
             Preview PDF
-          </Button>
+          </Button> */}
         </ol>
         <Link to="/login" className="link">
           <Button className="button" id="getStarted">

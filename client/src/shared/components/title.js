@@ -1,6 +1,7 @@
 import React from "react";
 import { Button, Typography, makeStyles } from "@material-ui/core";
 import Eye from "@material-ui/icons/RemoveRedEyeOutlined";
+import previewPDF from "../../util/previewPDF"
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -29,6 +30,7 @@ const Title = props => {
         className={classes.button}
         variant="outlined"
         startIcon={<Eye />}
+        onClick={previewPDF}
       >
         Preview Lease
       </Button>
