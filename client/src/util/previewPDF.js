@@ -9,7 +9,7 @@ function previewPDF() {
   myHeaders.append("cache-control", "no-cache");
   myHeaders.append("Content-Type", "application/pdf");
   console.log(window.location.hostname);
-  fetch(`http://${window.location.hostname}/PDF`, {
+  fetch(`https://${window.location.hostname}/PDF`, {
     method: "GET",
     headers: myHeaders
   })
