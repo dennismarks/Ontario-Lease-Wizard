@@ -7,6 +7,7 @@ import pymongo
 from flask import request
 import json
 import datetime
+import pdfGen
 
 # TODO: make this dynamically chose beteen local and hosted DB URI
 mongo = pymongo.MongoClient(
@@ -51,8 +52,6 @@ def update_lease():
         return json.dumps("nice")
 
 
-
-
 @app.route('/', defaults={'path': ''})
 @app.route('/<path:path>')
 def serve(path):
@@ -65,6 +64,9 @@ def serve(path):
 @app.route('/PDF', methods=['GET'])
 def pdfUpload():
     try:
-        return send_from_directory("../pdf/", 'destination.pdf', as_attachment=True)
+        print("GENERATING")
+        pdfGen.main()
+        root_dir = os.path.dirname(os.getcwd())
+        return send_from_directory(os.path.join(root_dir, 'server', 'lease_wizard', 'pdf'), "destination.pdf", as_attachment=True), 200
     except FileNotFoundError:
         return "File not found", 404
