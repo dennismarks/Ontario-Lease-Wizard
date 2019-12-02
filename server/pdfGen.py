@@ -441,8 +441,8 @@ def main():
     PAGES_READY = 4
 
     fill_page1()
-    fill_page2()
-    fill_page3()
+    # fill_page2()
+    # fill_page3()
     fill_page4()
     # fill_page5()
     # fill_page6()
