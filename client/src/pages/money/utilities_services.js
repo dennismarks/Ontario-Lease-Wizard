@@ -22,6 +22,7 @@ import {
 import { nominalTypeHack } from "prop-types";
 import {sendData} from "../../shared/functions";
 import ToolTip from "../../util/tooltip";
+import Title from "../../shared/components/title";
 
 const textInfo = (
   <p>
@@ -264,7 +265,7 @@ export default function UtilitiesServices() {
 
   return (
     <div id="utilities">
-      <h1>Utilities and Services</h1>
+      <Title>Utilities and Services</Title>
       {textInfo}
       <Paper>
         <hr color="#006689" />

@@ -20,6 +20,7 @@ import InfoIcon from "@material-ui/icons/Info";
 import { useSpring, animated } from "react-spring/web.cjs";
 import { CustomDatePicker } from "../../shared/components/datePicker"
 import ToolTip from "../../util/tooltip";
+import Title from "../../shared/components/title";
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -296,7 +297,7 @@ const Rent = props => {
   return (
     <div id="rent">
       <div className={classes.root} id="left">
-        <h1>Rent</h1>
+        <Title>Rent</Title>
         <h3>Will there be a fixed-term?</h3>
         <Grid container spacing={2}>
           <Grid item xs={12}>

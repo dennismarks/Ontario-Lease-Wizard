@@ -12,6 +12,7 @@ import {
 import { DAYS_IN_MONTH } from "../../shared/variables";
 import { CustomDatePicker } from "../../shared/components/datePicker"
 import {sendData} from "../../shared/functions";
+import Title from "../../shared/components/title";
 
 const useStyles = makeStyles({
   root: {
@@ -80,9 +81,9 @@ const Dates = props => {
   return (
     <Grid container className={classes.root} spacing={2}>
       <Grid item xs={12}>
-        <Typography variant="h1" color="primary">
+        <Title>
           Move-in Dates
-        </Typography>
+        </Title>
       </Grid>
       <Grid item xs={8}>
         <Typography>

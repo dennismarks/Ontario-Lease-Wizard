@@ -11,6 +11,7 @@ import {
 } from "@material-ui/core";
 import Tooltip from "../../util/tooltip";
 import {sendData} from "../../shared/functions";
+import Title from "../../shared/components/title";
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -94,7 +95,7 @@ const PaymentMethods = props => {
 
   return (
     <>
-      <h1>Payment Methods</h1>
+      <Title>Payment Methods</Title>
       <div>
         <p>Select all the payment methods you will accept from your tenant</p>
         <FormGroup className={classes.formGroup}>
