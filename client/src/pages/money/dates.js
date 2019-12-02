@@ -11,7 +11,7 @@ import {
 } from "@material-ui/core";
 import { DAYS_IN_MONTH } from "../../shared/variables";
 import { CustomDatePicker } from "../../shared/components/datePicker"
-import {sendData} from "../../shared/functions";
+import {sendData, getData} from "../../shared/functions";
 import Title from "../../shared/components/title";
 
 const useStyles = makeStyles({
@@ -45,6 +45,12 @@ const Dates = props => {
   });
 
   useEffect(() => {
+    getData()
+      .then(([data]) => {
+        const { isProRated, dates } = data;
+        setIsProRated(isProRated);
+        Object.entries(dates).forEach(([key, value]) => setDates(prevDate => console.log(key, value) || ({ ...prevDate, [key]: moment(value) })));
+      })
     return () => {
       sendData(data.current);
     }
