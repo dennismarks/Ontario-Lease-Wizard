@@ -2,6 +2,7 @@ import React from "react";
 import DepositBox from "../../components/DepositBox";
 import { BASE_RENT_FORMATTED } from "../../shared/variables";
 import { makeStyles } from "@material-ui/core";
+import Title from "../../shared/components/title";
 
 const useStyles = makeStyles(theme => ({
   otherDeposits: {
@@ -13,7 +14,7 @@ function Deposits() {
   const classes = useStyles();
   return (
     <div>
-      <h1>Deposits</h1>
+      <Title>Deposits</Title>
       <DepositBox
         typeDeposit="Rent deposit"
         typeDepositInfo="Rent deposit"

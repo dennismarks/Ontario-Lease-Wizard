@@ -13,6 +13,7 @@ import Typography from "@material-ui/core/Typography";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import Fade from "@material-ui/core/Fade";
 import Tooltip from "../util/tooltip";
+import Title from "../shared/components/title";
 
 let utilitiesSvg = require("../assets/legal/utilities.svg"),
   installations = require("../assets/legal/installations.svg"),
@@ -103,9 +104,9 @@ export default function LegalRequirements() {
 
   return (
     <div id="legalReq">
-      <h1 style={{ fontSize: "36px", marginBottom: "26px" }}>
+      <Title>
         Legal Requirements
-      </h1>
+      </Title>
 
       <div className={classes.modalText}>
         <p style={{ marginBottom: "24px" }}>

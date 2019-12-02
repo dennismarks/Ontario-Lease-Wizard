@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import {
   FormGroup,
   FormControlLabel,
@@ -10,7 +10,9 @@ import {
   makeStyles
 } from "@material-ui/core";
 import Tooltip from "../../util/tooltip";
-import {sendData} from "../../shared/functions";
+import {getData, sendData} from "../../shared/functions";
+import Title from "../../shared/components/title";
+import moment from "moment";
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -54,10 +56,26 @@ const PaymentMethods = props => {
   const [autoDeposit, setAutoDeposit] = useState(false);
   const [other, setOther] = useState(null);
   const [postDatedCheque, setPostDatedCheque] = useState(false);
+  const data = useRef({});
 
   useEffect(() => {
     return () => {
-      sendData({methods, email, autoDeposit, other, postDatedCheque});
+      data.current = { methods, email, autoDeposit, other, postDatedCheque }
+    }
+  });
+
+  useEffect(() => {
+    getData().then(([data]) => {
+      const { methods, email, autoDeposit, other, postDatedCheque } = data;
+      setMethods(methods);
+      setEmail(email);
+      setAutoDeposit(autoDeposit);
+      setOther(other);
+      setPostDatedCheque(postDatedCheque);
+    });
+
+    return () => {
+      sendData(data.current);
     }
   }, []);
 
@@ -94,7 +112,7 @@ const PaymentMethods = props => {
 
   return (
     <>
-      <h1>Payment Methods</h1>
+      <Title>Payment Methods</Title>
       <div>
         <p>Select all the payment methods you will accept from your tenant</p>
         <FormGroup className={classes.formGroup}>

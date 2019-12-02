@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, {useState, useEffect, useRef} from "react";
 import EditIcon from "@material-ui/icons/Edit";
 import AddIcon from "@material-ui/icons/Add";
 import {
@@ -20,8 +20,9 @@ import {
   DialogTitle
 } from "@material-ui/core";
 import { nominalTypeHack } from "prop-types";
-import {sendData} from "../../shared/functions";
+import {getData, sendData} from "../../shared/functions";
 import ToolTip from "../../util/tooltip";
+import Title from "../../shared/components/title";
 
 const textInfo = (
   <p>
@@ -143,10 +144,24 @@ export default function UtilitiesServices() {
       {}
     )
   );
+  const data = useRef({});
 
   useEffect(() => {
     return () => {
-      sendData(rows);
+      data.current = {rows};
+    }
+  });
+
+  useEffect(() => {
+    getData().then(([data]) => {
+      const { rows } = data;
+      if (rows) {
+        setRows(rows);
+      }
+    });
+
+    return () => {
+      sendData(data.current);
     }
   }, []);
 
@@ -264,7 +279,7 @@ export default function UtilitiesServices() {
 
   return (
     <div id="utilities">
-      <h1>Utilities and Services</h1>
+      <Title>Utilities and Services</Title>
       {textInfo}
       <Paper>
         <hr color="#006689" />
