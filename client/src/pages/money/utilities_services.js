@@ -20,7 +20,7 @@ import {
   DialogTitle
 } from "@material-ui/core";
 import { nominalTypeHack } from "prop-types";
-import {sendData} from "../../shared/functions";
+import {getData, sendData} from "../../shared/functions";
 import ToolTip from "../../util/tooltip";
 import Title from "../../shared/components/title";
 
@@ -148,11 +148,18 @@ export default function UtilitiesServices() {
 
   useEffect(() => {
     return () => {
-      data.current = rows;
+      data.current = {rows};
     }
   });
 
   useEffect(() => {
+    getData().then(([data]) => {
+      const { rows } = data;
+      if (rows) {
+        setRows(rows);
+      }
+    });
+
     return () => {
       sendData(data.current);
     }

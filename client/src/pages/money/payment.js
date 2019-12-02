@@ -10,8 +10,9 @@ import {
   makeStyles
 } from "@material-ui/core";
 import Tooltip from "../../util/tooltip";
-import {sendData} from "../../shared/functions";
+import {getData, sendData} from "../../shared/functions";
 import Title from "../../shared/components/title";
+import moment from "moment";
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -64,6 +65,15 @@ const PaymentMethods = props => {
   });
 
   useEffect(() => {
+    getData().then(([data]) => {
+      const { methods, email, autoDeposit, other, postDatedCheque } = data;
+      setMethods(methods);
+      setEmail(email);
+      setAutoDeposit(autoDeposit);
+      setOther(other);
+      setPostDatedCheque(postDatedCheque);
+    });
+
     return () => {
       sendData(data.current);
     }

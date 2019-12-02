@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import moment from "moment";
-import { sendData } from "../../shared/functions";
+import {getData, sendData} from "../../shared/functions";
 
 import {
   makeStyles,
@@ -59,11 +59,11 @@ const Rent = props => {
   const [rentAmount, setRentAmount] = useState("");
   const [rentPeriodText, setRentPeriodText] = useState("bi-weekly");
   const [open, setOpen] = useState(false);
-  const val = useRef({});
+  const data = useRef({});
 
   useEffect(() => {
     return () => {
-      val.current = {
+      data.current = {
         selectedDateStart: selectedDateStart.format(),
         selectedDateEnd: selectedDateEnd.format(),
         fixedTerm,
@@ -74,8 +74,18 @@ const Rent = props => {
   });
 
   useEffect(() => {
+    getData().then(([data]) => {
+      const { selectedDateStart, selectedDateEnd, fixedTerm, rentPeriod, rentAmount, rentPeriodText } = data;
+      setSelectedDateStart(moment(selectedDateStart));
+      setSelectedDateEnd(moment(selectedDateEnd));
+      setFixedTerm(fixedTerm);
+      setRentPeriod(rentPeriod);
+      setRentAmount(rentAmount);
+      setRentPeriodText(rentPeriodText);
+    });
+
     return () => {
-      sendData(val.current);
+      sendData(data.current);
     }
   }, []);
 
