@@ -1,6 +1,6 @@
 from lease_wizard import app
 import os
-from flask import send_from_directory
+from flask import send_from_directory, send_file
 from flask_pymongo import PyMongo
 from flask import Flask
 import pymongo
@@ -9,7 +9,8 @@ import json
 import datetime
 
 # TODO: make this dynamically chose beteen local and hosted DB URI
-mongo = pymongo.MongoClient('mongodb+srv://csc301:csc301@cluster0-bzlks.mongodb.net/test?retryWrites=true&w=majority')
+mongo = pymongo.MongoClient(
+    'mongodb+srv://csc301:csc301@cluster0-bzlks.mongodb.net/test?retryWrites=true&w=majority')
 db = mongo["database"]
 # leases refers to the leases collection
 # can also use mongo.db.leases instead
@@ -33,18 +34,18 @@ def update_lease():
 
         all_leases = []
         for lease in cursor:
-            temp = {"rent":lease['rent'], "rent_period": lease['rent_period']}
+            temp = {"rent": lease['rent'], "rent_period": lease['rent_period']}
             all_leases.append(temp)
 
         return json.dumps(all_leases)
-
 
     # updates current lease by merging with request body
     if request.method == 'PATCH':
         # parses input body into json
         body = request.json
 
-        lease = collection.find_one_and_update({}, {'$set': body}, {'upsert': True})
+        lease = collection.find_one_and_update(
+            {}, {'$set': body}, {'upsert': True})
 
         # issues json serializing the _id value of lease
         return json.dumps("nice")
@@ -59,3 +60,11 @@ def serve(path):
         return send_from_directory(app.static_folder, path)
     else:
         return send_from_directory(app.static_folder, 'index.html')
+
+
+@app.route('/PDF', methods=['GET'])
+def pdfUpload():
+    try:
+        return send_from_directory("../pdf/", 'destination.pdf', as_attachment=True)
+    except FileNotFoundError:
+        return "File not found", 404
