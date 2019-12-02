@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, {useState, useEffect, useRef} from "react";
 import moment from "moment";
 import {
   makeStyles,
@@ -36,10 +36,17 @@ const Dates = props => {
 
   const [isProRated, setIsProRated] = useState(false);
   const [totalProRatedRent, setTotalProRatedRent] = useState(0);
+  const data = useRef({});
 
   useEffect(() => {
     return () => {
-      sendData({dates, isProRated, totalProRatedRent});
+      data.current = { dates, isProRated, totalProRatedRent }
+    }
+  });
+
+  useEffect(() => {
+    return () => {
+      sendData(data.current);
     }
   }, []);
 

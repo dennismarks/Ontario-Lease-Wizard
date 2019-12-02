@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import moment from "moment";
 import { sendData } from "../../shared/functions";
 
@@ -59,17 +59,23 @@ const Rent = props => {
   const [rentAmount, setRentAmount] = useState("");
   const [rentPeriodText, setRentPeriodText] = useState("bi-weekly");
   const [open, setOpen] = useState(false);
+  const val = useRef({});
 
   useEffect(() => {
     return () => {
-      console.log(rentAmount);
-      sendData({
+      val.current = {
         selectedDateStart: selectedDateStart.format(),
         selectedDateEnd: selectedDateEnd.format(),
         fixedTerm,
         rentPeriod,
         rentAmount
-      });
+      }
+    }
+  });
+
+  useEffect(() => {
+    return () => {
+      sendData(val.current);
     }
   }, []);
 

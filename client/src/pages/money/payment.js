@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import {
   FormGroup,
   FormControlLabel,
@@ -55,10 +55,17 @@ const PaymentMethods = props => {
   const [autoDeposit, setAutoDeposit] = useState(false);
   const [other, setOther] = useState(null);
   const [postDatedCheque, setPostDatedCheque] = useState(false);
+  const data = useRef({});
 
   useEffect(() => {
     return () => {
-      sendData({methods, email, autoDeposit, other, postDatedCheque});
+      data.current = { methods, email, autoDeposit, other, postDatedCheque }
+    }
+  });
+
+  useEffect(() => {
+    return () => {
+      sendData(data.current);
     }
   }, []);
 

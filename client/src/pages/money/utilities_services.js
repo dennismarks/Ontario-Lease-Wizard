@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, {useState, useEffect, useRef} from "react";
 import EditIcon from "@material-ui/icons/Edit";
 import AddIcon from "@material-ui/icons/Add";
 import {
@@ -144,10 +144,17 @@ export default function UtilitiesServices() {
       {}
     )
   );
+  const data = useRef({});
 
   useEffect(() => {
     return () => {
-      sendData(rows);
+      data.current = rows;
+    }
+  });
+
+  useEffect(() => {
+    return () => {
+      sendData(data.current);
     }
   }, []);
 
