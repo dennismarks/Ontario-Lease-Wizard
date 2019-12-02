@@ -1,12 +1,7 @@
 from lease_wizard import app
 import os
-from flask import send_from_directory
-from flask_pymongo import PyMongo
-from flask import Flask
+from flask import send_from_directory, request, jsonify
 import pymongo
-from flask import request
-import json
-import datetime
 
 # TODO: make this dynamically chose beteen local and hosted DB URI
 mongo = pymongo.MongoClient('mongodb+srv://csc301:csc301@cluster0-bzlks.mongodb.net/test?retryWrites=true&w=majority')
@@ -19,13 +14,12 @@ collection = db["leases"]
 # can use for debugging
 @app.route('/test')
 def test():
-    return json.dumps("Connection to database")
+    return jsonify("Connection to database")
 
 
 # updates the current lease
 @app.route('/lease', methods=['PATCH', 'GET'])
 def update_lease():
-
     # returns current lease in database
     if request.method == 'GET':
 
@@ -33,11 +27,10 @@ def update_lease():
 
         all_leases = []
         for lease in cursor:
-            temp = {"rent":lease['rent'], "rent_period": lease['rent_period']}
-            all_leases.append(temp)
+            lease['_id'] = str(lease['_id'])
+            all_leases.append(lease)
 
-        return json.dumps(all_leases)
-
+        return jsonify(all_leases)
 
     # updates current lease by merging with request body
     if request.method == 'PATCH':
@@ -47,9 +40,7 @@ def update_lease():
         lease = collection.find_one_and_update({}, {'$set': body}, {'upsert': True})
 
         # issues json serializing the _id value of lease
-        return json.dumps("nice")
-
-
+        return jsonify("Done")
 
 
 @app.route('/', defaults={'path': ''})
