@@ -1,10 +1,12 @@
 from lease_wizard import app
 import os
-from flask import send_from_directory, request, jsonify
+import pdfGen
+from flask import send_from_directory, request, jsonify, send_file
 import pymongo
 
 # TODO: make this dynamically chose beteen local and hosted DB URI
-mongo = pymongo.MongoClient('mongodb+srv://csc301:csc301@cluster0-bzlks.mongodb.net/test?retryWrites=true&w=majority')
+mongo = pymongo.MongoClient(
+    'mongodb+srv://csc301:csc301@cluster0-bzlks.mongodb.net/test?retryWrites=true&w=majority')
 db = mongo["database"]
 # leases refers to the leases collection
 # can also use mongo.db.leases instead
@@ -37,7 +39,8 @@ def update_lease():
         # parses input body into json
         body = request.json
 
-        lease = collection.find_one_and_update({}, {'$set': body}, {'upsert': True})
+        lease = collection.find_one_and_update(
+            {}, {'$set': body}, {'upsert': True})
 
         # issues json serializing the _id value of lease
         return jsonify("Done")
@@ -50,3 +53,15 @@ def serve(path):
         return send_from_directory(app.static_folder, path)
     else:
         return send_from_directory(app.static_folder, 'index.html')
+
+
+@app.route('/PDF', methods=['GET'])
+def pdfUpload():
+    try:
+        print("GENERATING")
+        pdfGen.main()
+        root_dir = os.path.dirname(os.getcwd())
+        return send_from_directory(os.path.join(root_dir, 'server', 'lease_wizard', 'pdf'), "destination.pdf", as_attachment=True), 200
+        # return send_file(re, attachment_filename='ohhey.pdf')
+    except FileNotFoundError:
+        return "File not found", 404
