@@ -11,9 +11,8 @@ export class Footer extends Component {
     const hiddenFooter =
       location.pathname === "/" ||
       location.pathname === "/login" ||
-      location.pathname === "/disclaimer"
-        ? true
-        : false;
+      location.pathname === "/disclaimer" ||
+      location.pathname === "/end";
     const showButton = location => !urls.includes(location.pathname);
 
     const previousLink = location => {
