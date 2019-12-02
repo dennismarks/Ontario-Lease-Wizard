@@ -33,12 +33,12 @@ const partiesSubheaders = [
   { name: "Parties", link: "/parties", pageNumber: 8 },
   { name: "Changes to Parties", link: "/changes", pageNumber: 9 }
 ];
-const additionalTermsSubheaders = [
-  { name: "Additional Terms", link: "/additional", pageNumber: 10 }
-];
-const legelRequirementsSubheaders = [
-  { name: "Legal requirements", link: "/legal", pageNumber: 11 }
+const legalRequirementsSubheaders = [
+  { name: "Legal Requirements", link: "/legal", pageNumber: 10 }
 ]
+const additionalTermsSubheaders = [
+  { name: "Additional Terms", link: "/additional", pageNumber: 11 }
+];
 const finishAndSignSubheaders = [
   { name: "Finish and Sign", link: "/end", pageNumber: 12 }
 ];
@@ -160,7 +160,7 @@ export class navigation extends Component {
               imageclass="AdditionalTerms"
               imageAlt="Additional Terms"
               name="Additional Terms"
-              details={additionalTermsSubheaders}
+              details={legalRequirementsSubheaders}
             />
             <NavigationItem
               name="Finish and Sign"
