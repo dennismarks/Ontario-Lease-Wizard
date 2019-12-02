@@ -225,6 +225,8 @@ def fill_page3():
 def fill_page4():
     RAW, can = setup_RAW()
 
+    print(data)
+
     # services and utilities
     index_services = 0
     services = {"Gas": data['Gas']['includedInBaseRent'],
@@ -451,8 +453,8 @@ def main():
     for i in range(PAGES_READY, existing_pdf.numPages - 1):
         re.addPage(existing_pdf.getPage(i))
 
-
     # finally, write "output" to a real file
-    outputStream = open(os.path.join(root_dir, 'lease_wizard', 'pdf', 'destination.pdf'), "wb")
+    outputStream = open(os.path.join(
+        root_dir, 'lease_wizard', 'pdf', 'destination.pdf'), "wb")
     re.write(outputStream)
     outputStream.close()
