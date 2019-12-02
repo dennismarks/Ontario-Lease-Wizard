@@ -14,6 +14,7 @@ import Deposits from "../pages/money/deposits";
 import LegalRequirements from "../pages/LegalRequirements";
 import Parties from "../pages/parties/parties";
 import AdditionalTerms from "../pages/additional terms/AdditionalTerms";
+import Timeline from "../pages/timeline";
 import End from "../pages/end";
 
 // Importing our sidebars (they change with the route, as the pages do.)
@@ -58,6 +59,7 @@ export class Content extends Component {
             />
             <Route exact path="/payment" component={PaymentMethods} />
             <Route exact path="/deposits" component={Deposits} />
+            <Route exact path="/timeline" component={Timeline} />
             <Route exact path="/legal" component={LegalRequirements} />
             <Route exact path="/parties" component={Parties} />
             <Route exact path="/additional" component={AdditionalTerms} />
@@ -72,12 +74,14 @@ export class Content extends Component {
           />
           <Route
             exact
+            path={["/rent", "/utilities", "/deposits", "/dates", "/payment", "timeline", "/additional"]}
             path={[
               "/rent",
               "/utilities",
               "/deposits",
               "/dates",
               "/payment",
+              "timeline",
               "/additional"
             ]}
             component={RightHandBar}
