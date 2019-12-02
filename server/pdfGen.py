@@ -232,16 +232,16 @@ def fill_page4():
 
     # services and utilities
     index_services = 0
-    services = {"Gas": data['Gas']['includedInBaseRent'],
-                "AC": data['Air Conditioning']['includedInBaseRent'],
-                "Storage": data['Water']['includedInBaseRent'],
-                "Laundry": data['Washer/Dryer']['includedInBaseRent'],
-                "Parking": data['Tenant Parking']['includedInBaseRent'],
-                "Internet": data['Internet']['includedInBaseRent'],
-                "Cable": data['Cable']['includedInBaseRent'],
-                "Guest Parking": data['Guest Parking']['includedInBaseRent'],
-                "Snow Removal": data['Snow Removal']['includedInBaseRent'],
-                "Tenant Insurance": data['Tenant Insurance']['includedInBaseRent']}
+    services = {"Gas": data['rows']['Gas']['includedInBaseRent'],
+                "AC": data['rows']['Air Conditioning']['includedInBaseRent'],
+                "Storage": data['rows']['Water']['includedInBaseRent'],
+                "Laundry": data['rows']['Washer/Dryer']['includedInBaseRent'],
+                "Parking": data['rows']['Tenant Parking']['includedInBaseRent'],
+                "Internet": data['rows']['Internet']['includedInBaseRent'],
+                "Cable": data['rows']['Cable']['includedInBaseRent'],
+                "Guest Parking": data['rows']['Guest Parking']['includedInBaseRent'],
+                "Snow Removal": data['rows']['Snow Removal']['includedInBaseRent'],
+                "Tenant Insurance": data['rows']['Tenant Insurance']['includedInBaseRent']}
     for i in services:
         if services[i]:
             can.drawString(345, 710 - index_services*21.5, "x")
@@ -249,8 +249,8 @@ def fill_page4():
             can.drawString(386, 710 - index_services*21.5, "x")
         index_services += 1
 
-    laundryCost = True if data['Washer/Dryer']['managedByLandlord'] else False
-    parkingCost = True if data['Tenant Parking']['managedByLandlord'] else False
+    laundryCost = True if data['rows']['Washer/Dryer']['managedByLandlord'] else False
+    parkingCost = True if data['rows']['Tenant Parking']['managedByLandlord'] else False
 
     if services["Laundry"]:
         if laundryCost:
@@ -272,10 +272,10 @@ def fill_page4():
             80, 604 - i*22, "{0}".format(otherServices[i]))
 
     noteInternet = "Internet: " + \
-        data['Internet']['note'] if data['Internet']['note'] else " "
-    noteGas = " Gas: " + data['Gas']['note'] if data['Gas']['note'] else " "
+        data['rows']['Internet']['note'] if data['rows']['Internet']['note'] else " "
+    noteGas = " Gas: " + data['rows']['Gas']['note'] if data['rows']['Gas']['note'] else " "
     noteAC = " AC: " + \
-        data['Air Conditioning']['note'] if data['Air Conditioning']['note'] else " "
+        data['rows']['Air Conditioning']['note'] if data['rows']['Air Conditioning']['note'] else " "
 
     details_services = noteInternet + noteGas + noteAC
 
@@ -291,9 +291,9 @@ def fill_page4():
 
     # TRUE == Landlord ------- False == Tenant
     # TODO: Can both parties be responsible of this ?
-    responsibilities = {"Electricity": True if data['Electricity']['managedByLandlord'] else False,
-                        "Heat": True if data['Heat']['managedByLandlord'] else False,
-                        "Water": True if data['Water']['managedByLandlord'] else False}
+    responsibilities = {"Electricity": True if data['rows']['Electricity']['managedByLandlord'] else False,
+                        "Heat": True if data['rows']['Heat']['managedByLandlord'] else False,
+                        "Water": True if data['rows']['Water']['managedByLandlord'] else False}
     index_respon = 0
     for i in responsibilities:
         if responsibilities[i]:
@@ -303,11 +303,11 @@ def fill_page4():
         index_respon += 1
 
     noteElectricity = "Electricity: " + \
-        data['Electricity']['note'] if data['Electricity']['note'] else " "
+        data['rows']['Electricity']['note'] if data['Electricity']['note'] else " "
     noteHeat = " Heat: " + \
-        data['Heat']['note'] if data['Heat']['note'] else " "
+        data['rows']['Heat']['note'] if data['Heat']['note'] else " "
     noteWater = " Water: " + \
-        data['Water']['note'] if data['Water']['note'] else " "
+        data['rows']['Water']['note'] if data['Water']['note'] else " "
 
     details_responsibility = noteElectricity + noteHeat + noteWater
 
@@ -414,7 +414,7 @@ def fill_page6():
 
     ###########################################
     # Rent Deposit
-    tenantInsurance = data['Tenant Insurance']['managedByTenant']
+    tenantInsurance = data['rows']['Tenant Insurance']['managedByTenant']
 
     if tenantInsurance:
         can.drawString(23, 438, "x")  # + 40
