@@ -47,9 +47,10 @@ const Dates = props => {
   useEffect(() => {
     getData()
       .then(([data]) => {
-        const { isProRated, dates } = data;
+        let { isProRated, dates } = data;
+        dates.termStart = data.selectedDateStart;
         setIsProRated(isProRated);
-        Object.entries(dates).forEach(([key, value]) => setDates(prevDate => console.log(key, value) || ({ ...prevDate, [key]: moment(value) })));
+        Object.entries(dates).forEach(([key, value]) => setDates(prevDate => ({ ...prevDate, [key]: moment(value) })));
       })
     return () => {
       sendData(data.current);
