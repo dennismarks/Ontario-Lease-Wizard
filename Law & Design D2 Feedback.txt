@@ -1,0 +1,80 @@
+Law & Design 
+
+PLAN.md
+
+Roles:4
+- Very detailed!
+
+Communication:3 
+- meets expectations
+
+Meetings:3
+- meets expectations
+
+Conflict Resolution:3
+- Provided more than three 
+
+Events:3
+- meets expectations
+- very thorough 
+
+Partner Meetings:3
+- meets expectations
+
+Artifacts:3
+- meets expectations
+
+Github + Deployment: 3
+- meets expectations 
+
+Deployment: 2
+- deployment strategy can be more detailed 
+
+Product
+
+Goals: 2
+- You should be more detailed here, what are the tasks involved in implementing each of your gaols
+
+Artifacts: 0
+- You are not talking about your artifacts, you are instead describing your Github and Trello board?
+
+---------------------------------------------------------------------------
+
+REVIEW.md
+
+Process
+
+Good Decisions: 3
+- meets expectations
+
+Bad Decisions:3
+- meets expectations
+
+Planned Changes: 3
+- meets expectations
+
+Product
+
+Goals Met: 4
+- very thorough!
+
+Goals Not Met: 4
+- very thorough
+
+Meeting Highlights: 4
+- Very detailed! Great breakdown!
+
+--------------------------------------------------------------------------
+
+README.md
+
+- Your readme file has been updated since D2 for D3, to be fair, I looked at your history to find the README file for D2
+
+Description: 2
+- There should be more details on how your application solves the problem discussed 
+
+Features: 2
+- you should provide more details on the user interactions, i.e. what type of form are you able to fill out? etc. 
+
+Instructions: 2
+- missing details on how to access your features - what steps should I take once I am on your site?

@@ -1,0 +1,34 @@
+Law and Design - Team 9 
+
+FINAL.md
+
+Changes: 85
+Changes: 85
+- Meets expectations
+
+Handoff: 85
+- Very thorough!
+
+README.md
+- Very nicely organized
+
+Description: 85
+- Meets expectations
+
+Key Features: 75
+- Could provide more details - i.e. is there a login process, can anyone access your applications?
+
+Instructions: 75
+- You should provide more detailed instructions on how to navigate your website and access different features that you have built
+
+Development Requirement: 75
+- meets expectations but missing deployment instructions here
+
+Licensing
+- Could be more detailed: 75
+
+Deployed Product: 75
+- You still have placeholders for all the headings and subheadings
+- Your timeline and unit pages are empty
+- I'm not able to view the completed lease or save it as a PDF
+- Great effort overall though! 
